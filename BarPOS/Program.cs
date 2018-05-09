@@ -16,7 +16,7 @@ namespace BarPOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new POSScreen());
+            Application.Run(new PayScreen());
         }
     }
 }
