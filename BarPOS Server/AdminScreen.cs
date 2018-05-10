@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BarPOS
 {
-    public partial class AdminScreen : Form
+    public partial class ConfigurationScreen : Form
     {
-        public AdminScreen()
+        public ConfigurationScreen()
         {
             InitializeComponent();
         }

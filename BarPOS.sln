@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarPOS", "BarPOS\BarPOS.csproj", "{D8794522-BD48-40B7-A6C4-336AE5BB7D51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarPOS Client", "BarPOS\BarPOS Client.csproj", "{D8794522-BD48-40B7-A6C4-336AE5BB7D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarPOS Server", "BarPOS Server\BarPOS Server.csproj", "{065F9440-ABBD-44E1-BB37-A4D82929BBD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D8794522-BD48-40B7-A6C4-336AE5BB7D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8794522-BD48-40B7-A6C4-336AE5BB7D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8794522-BD48-40B7-A6C4-336AE5BB7D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{065F9440-ABBD-44E1-BB37-A4D82929BBD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065F9440-ABBD-44E1-BB37-A4D82929BBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065F9440-ABBD-44E1-BB37-A4D82929BBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065F9440-ABBD-44E1-BB37-A4D82929BBD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿namespace BarPOS
 {
-    partial class AdminScreen
+    partial class ConfigurationScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // AdminScreen
+            // ConfigurationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminScreen";
-            this.Text = "AdminScreen";
+            this.Name = "ConfigurationScreen";
+            this.Text = "ConfigurationScreen";
             this.ResumeLayout(false);
 
         }
