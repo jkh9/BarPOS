@@ -87,7 +87,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.pnlPayProducts = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlPayProduct = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTableProducts = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlTableProduct = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -117,12 +117,12 @@
             this.pnlProducts.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlPayProducts.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlPayProduct.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlTableProducts.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.pnlTableProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -779,25 +779,25 @@
             // 
             this.pnlPayProducts.AutoScroll = true;
             this.pnlPayProducts.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPayProducts.Controls.Add(this.panel2);
+            this.pnlPayProducts.Controls.Add(this.pnlPayProduct);
             this.pnlPayProducts.Location = new System.Drawing.Point(671, 130);
             this.pnlPayProducts.Name = "pnlPayProducts";
             this.pnlPayProducts.Size = new System.Drawing.Size(348, 283);
             this.pnlPayProducts.TabIndex = 59;
             // 
-            // panel2
+            // pnlPayProduct
             // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(330, 33);
-            this.panel2.TabIndex = 53;
+            this.pnlPayProduct.BackColor = System.Drawing.Color.DimGray;
+            this.pnlPayProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlPayProduct.Controls.Add(this.panel3);
+            this.pnlPayProduct.Controls.Add(this.label10);
+            this.pnlPayProduct.Controls.Add(this.label11);
+            this.pnlPayProduct.Controls.Add(this.label9);
+            this.pnlPayProduct.ForeColor = System.Drawing.Color.Black;
+            this.pnlPayProduct.Location = new System.Drawing.Point(0, 0);
+            this.pnlPayProduct.Name = "pnlPayProduct";
+            this.pnlPayProduct.Size = new System.Drawing.Size(330, 33);
+            this.pnlPayProduct.TabIndex = 53;
             // 
             // panel3
             // 
@@ -1040,23 +1040,23 @@
             // 
             this.pnlTableProducts.AutoScroll = true;
             this.pnlTableProducts.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTableProducts.Controls.Add(this.panel6);
+            this.pnlTableProducts.Controls.Add(this.pnlTableProduct);
             this.pnlTableProducts.Location = new System.Drawing.Point(24, 98);
             this.pnlTableProducts.Name = "pnlTableProducts";
             this.pnlTableProducts.Size = new System.Drawing.Size(623, 162);
             this.pnlTableProducts.TabIndex = 57;
             // 
-            // panel6
+            // pnlTableProduct
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.button51);
-            this.panel6.Controls.Add(this.label15);
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Location = new System.Drawing.Point(0, -1);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(90, 145);
-            this.panel6.TabIndex = 85;
+            this.pnlTableProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTableProduct.Controls.Add(this.button1);
+            this.pnlTableProduct.Controls.Add(this.button51);
+            this.pnlTableProduct.Controls.Add(this.label15);
+            this.pnlTableProduct.Controls.Add(this.pictureBox1);
+            this.pnlTableProduct.Location = new System.Drawing.Point(0, -1);
+            this.pnlTableProduct.Name = "pnlTableProduct";
+            this.pnlTableProduct.Size = new System.Drawing.Size(90, 145);
+            this.pnlTableProduct.TabIndex = 85;
             // 
             // button1
             // 
@@ -1139,13 +1139,13 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlPayProducts.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnlPayProduct.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.pnlTableProducts.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.pnlTableProduct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1219,7 +1219,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlPayProduct;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
@@ -1232,7 +1232,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel pnlTableProducts;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlTableProduct;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button51;
         private System.Windows.Forms.Label label15;
