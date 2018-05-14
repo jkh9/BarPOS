@@ -71,6 +71,9 @@
     <Compile Include="TablesScreen.designer.cs">
       <DependentUpon>TablesScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConfigurationScreen.resx">
+      <DependentUpon>ConfigurationScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayScreen.resx">
       <DependentUpon>PayScreen.cs</DependentUpon>
     </EmbeddedResource>
