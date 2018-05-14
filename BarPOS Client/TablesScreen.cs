@@ -10,12 +10,23 @@ namespace BarPOS
 {
     public partial class TableScreen : Form
     {
-        TableList Tables { get;}
-        Image Image { get; set; }
+        Image image;
+
+        TableList tables;
+        ProductsList products;
+        BillList bills;
+        UsersList user;
+        ConfigurationScreen configuration;
+        POSScreenList POSScreens;
 
         public TableScreen()
         {
-            Image = this.picTables.Image;
+            tables = new TableList();
+            products = new ProductsList();
+            bills = new BillList();
+            user = new UsersList();
+            configuration = new ConfigurationScreen(products, bills);
+            POSScreens = new POSScreenList(products);
             InitializeComponent();
         }
     }
