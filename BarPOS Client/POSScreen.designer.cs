@@ -1112,9 +1112,9 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(953, 712);
+            this.btnBack.Location = new System.Drawing.Point(954, 698);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(71, 57);
+            this.btnBack.Size = new System.Drawing.Size(70, 70);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
