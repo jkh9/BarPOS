@@ -95,7 +95,7 @@
             this.btnTableUp.FlatAppearance.BorderSize = 0;
             this.btnTableUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTableUp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableUp.Location = new System.Drawing.Point(433, 4);
+            this.btnTableUp.Location = new System.Drawing.Point(476, 4);
             this.btnTableUp.Name = "btnTableUp";
             this.btnTableUp.Size = new System.Drawing.Size(40, 40);
             this.btnTableUp.TabIndex = 23;
@@ -121,7 +121,7 @@
             this.btnTableDown.FlatAppearance.BorderSize = 0;
             this.btnTableDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTableDown.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableDown.Location = new System.Drawing.Point(480, 4);
+            this.btnTableDown.Location = new System.Drawing.Point(433, 4);
             this.btnTableDown.Name = "btnTableDown";
             this.btnTableDown.Size = new System.Drawing.Size(40, 40);
             this.btnTableDown.TabIndex = 24;

@@ -1,0 +1,12 @@
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\bin\Debug\BarPOS Server.exe.config
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\bin\Debug\BarPOS Server.exe
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\bin\Debug\BarPOS Server.pdb
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS.AccoutingManagmentScreen.resources
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS.AdminScreen.resources
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS.ProductManagmentScreen.resources
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS_Server.Properties.Resources.resources
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS.UserManagmentScreen.resources
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.csproj.GenerateResource.Cache
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.csproj.CoreCompileInputs.cache
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.exe
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.pdb

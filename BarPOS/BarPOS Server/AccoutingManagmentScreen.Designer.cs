@@ -32,9 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTableNumber = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnTableUp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnTableDown = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +48,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAccount = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,12 +59,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblTableNumber);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnTableUp);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnTableDown);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -111,19 +111,6 @@
             this.button2.Text = "12/05/2018";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // btnTableUp
-            // 
-            this.btnTableUp.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnTableUp.FlatAppearance.BorderSize = 0;
-            this.btnTableUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTableUp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableUp.Location = new System.Drawing.Point(509, 4);
-            this.btnTableUp.Name = "btnTableUp";
-            this.btnTableUp.Size = new System.Drawing.Size(40, 40);
-            this.btnTableUp.TabIndex = 23;
-            this.btnTableUp.Text = "+";
-            this.btnTableUp.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Firebrick;
@@ -136,19 +123,6 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnTableDown
-            // 
-            this.btnTableDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.btnTableDown.FlatAppearance.BorderSize = 0;
-            this.btnTableDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTableDown.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableDown.Location = new System.Drawing.Point(556, 4);
-            this.btnTableDown.Name = "btnTableDown";
-            this.btnTableDown.Size = new System.Drawing.Size(40, 40);
-            this.btnTableDown.TabIndex = 24;
-            this.btnTableDown.Text = "-";
-            this.btnTableDown.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -321,6 +295,32 @@
             this.button3.Text = "Search";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Chartreuse;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(554, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(40, 40);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "+";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(511, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(40, 40);
+            this.button5.TabIndex = 27;
+            this.button5.Text = "-";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // AccoutingManagmentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,9 +349,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnTableUp;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnTableDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTableNumber;
         private System.Windows.Forms.Button button2;
@@ -370,5 +368,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
