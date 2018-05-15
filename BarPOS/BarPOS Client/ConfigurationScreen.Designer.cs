@@ -30,12 +30,12 @@
         {
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblLogin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,13 +51,14 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back to Main Screen";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblLogin);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -67,6 +68,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 700);
             this.panel1.TabIndex = 8;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(252, 309);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(403, 55);
+            this.lblLogin.TabIndex = 8;
+            this.lblLogin.Text = "Login Required!!!!";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(368, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(200, 150);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close POS";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // button5
             // 
@@ -120,29 +145,6 @@
             this.button1.Text = "Log In";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(368, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 150);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Close POS";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(252, 309);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(403, 55);
-            this.lblLogin.TabIndex = 8;
-            this.lblLogin.Text = "Login Required!!!!";
-            // 
             // ConfigurationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +170,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClose;
     }
 }

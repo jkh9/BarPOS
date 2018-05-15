@@ -951,6 +951,7 @@
             this.btnPay.TabIndex = 6;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // label8
             // 
@@ -1118,6 +1119,7 @@
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // POSScreen
             // 

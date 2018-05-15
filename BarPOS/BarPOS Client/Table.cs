@@ -2,16 +2,27 @@
 
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
+// V0.02 15-May-2018 Moisés: Added name, constructor,Products, deleted sprite
 
-using System.Windows.Forms;
+using System;
 
 namespace BarPOS
 {
+    [Serializable]
     public class Table
     {
-        public Button Sprite { get; set; } 
-        public double X { get; set; }
-        public double Y { get; set; }
+        public TableProductsList Products { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public string Name { get; set; }
+
+        public Table(int x, int y , string name)
+        {
+            X = x;
+            Y = y;
+            Name = name;
+            Products = new TableProductsList();
+        }
     }
 }
 

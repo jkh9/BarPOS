@@ -2,15 +2,31 @@
 
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
+// V0.02 15-May-2018 Moisés: Methods completeds
 
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace BarPOS
 {
     public class UsersList
     {
-        List<User> Users;
+        public const string PATH = "users.dat";
+        public List<User> Users { get; set; }
         public int Index { get; set; }
+        
+        public UsersList()
+        {
+            Load();
+        }
+
+        ~UsersList()
+        {
+            Save();
+        }
 
         public void Add(User userToAdd)
         {
@@ -24,12 +40,46 @@ namespace BarPOS
 
         public void Load()
         {
-            //TO DO
+            if (!(File.Exists(PATH)))
+            {
+                MessageBox.Show("Creating the users file");
+                Users = new List<User>();
+            }
+            else
+            {
+                try
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    FileStream input = new FileStream(PATH, FileMode.Open);
+
+                    Users = (List<User>)binaryFormatter.Deserialize(input);
+
+                    input.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error loading the users file: "
+                        + e.Message);
+                }
+            }
         }
 
         public void Save()
         {
-            //TO DO
+            try
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                FileStream output = new FileStream(PATH, FileMode.Create);
+
+                binaryFormatter.Serialize(output, Users);
+
+                output.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error saving the users file: "
+                    + e.Message);
+            }
         }
     }
 }

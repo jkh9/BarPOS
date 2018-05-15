@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Bar POS, class Program
+
+// Versiones: 
+// V0.01 15-May-2018 Moisés: TableScreen center to the window
+
+using System;
 using System.Windows.Forms;
 
 namespace BarPOS
@@ -10,7 +15,9 @@ namespace BarPOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TableScreen());
+            TableScreen tableScreen = new TableScreen();
+            tableScreen.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(tableScreen);
         }
     }
 }

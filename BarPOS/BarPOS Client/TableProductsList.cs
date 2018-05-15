@@ -2,29 +2,32 @@
 
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
+// V0.02 15-May-2018 Moisés: Methods completeds
 
+using System;
 using System.Collections.Generic;
 
 namespace BarPOS
 {
+    [Serializable]
     public class TableProductsList
     {
-        public List<ProductToSell> Products;
+        public List<SellProduct> Products { get; set; }
         public int Index { get; set; }
 
-        public void Add()
+        public void Add(SellProduct product)
         {
-            //TO DO
+            Products.Add(product);
         }
 
-        public void Remove()
+        public void Remove(int index)
         {
-           //TO DO
+            Products.RemoveAt(index);
         }
 
-        public void MoveToSelled()
+        public SellProduct MoveToSelled(int index)
         {
-            //TO DO
+            return Products[index - 1];
         }
     }
 }

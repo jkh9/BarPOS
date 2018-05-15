@@ -47,7 +47,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -265,17 +265,18 @@
             this.label5.Text = "999,99";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button17
+            // btnClose
             // 
-            this.button17.BackColor = System.Drawing.Color.Red;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(278, 0);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(35, 35);
-            this.button17.TabIndex = 10;
-            this.button17.Text = "X";
-            this.button17.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(278, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(35, 35);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // button14
             // 
@@ -316,7 +317,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.Controls.Add(this.button17);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(313, 35);
@@ -380,7 +381,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
