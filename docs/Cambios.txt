@@ -1,0 +1,3 @@
+Eliminadas clases posscreenlist, posproducts list
+Table contiene tableproductslist
+Poss screen tiene movetotable
