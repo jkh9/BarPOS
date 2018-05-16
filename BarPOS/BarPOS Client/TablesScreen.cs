@@ -43,7 +43,7 @@ namespace BarPOS
         //This method will draw the buttons we use for the tables
         public void DrawTables()
         {
-            for (int i = 0; i < tables.Tables.Count; i++)
+            for (int i = 0; i < tables.Count; i++)
             {
                 Button btn = new Button();
                 btn.BackColor = Color.FromArgb(((int)(((byte)(255)))), 
@@ -52,8 +52,8 @@ namespace BarPOS
                 btn.FlatStyle = FlatStyle.Popup;
                 btn.Font = new Font("Arial", 36F, FontStyle.Regular, 
                     GraphicsUnit.Point, ((byte)(0)));
-                btn.Location = new Point(tables.Tables[i].X, 
-                    tables.Tables[i].Y);
+                btn.Location = new Point(tables.Get(i).X, 
+                    tables.Get(i).Y);
                 btn.Name = "table"+(i+1);
                 btn.Size = new Size(88, 88);
                 btn.TabIndex = 2;

@@ -13,7 +13,12 @@ namespace BarPOS
     public class TableProductsList
     {
         public List<SellProduct> Products { get; set; }
-        public int Index { get; set; }
+        public int Count { get { return Products.Count; } }
+
+        public SellProduct Get(int index)
+        {
+            return Products[index - 1];
+        }
 
         public void Add(SellProduct product)
         {
@@ -22,7 +27,7 @@ namespace BarPOS
 
         public void Remove(int index)
         {
-            Products.RemoveAt(index);
+            Products.RemoveAt(index -1);
         }
 
         public SellProduct MoveToSelled(int index)

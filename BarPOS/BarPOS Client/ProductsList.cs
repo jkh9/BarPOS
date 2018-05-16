@@ -17,7 +17,7 @@ namespace BarPOS
     {
         public const string PATH = "products.dat";
         public List<Product> Products { get; set; }
-        public int Index { get; set; }
+        public int Count { get { return Products.Count; } }
 
         public ProductsList()
         {
