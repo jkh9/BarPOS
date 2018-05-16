@@ -4,6 +4,7 @@
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: Added POSScreen, drawTable, deleted posScreenList,
 //    tableClick added
+// V0.03 16-May-2018 Moisés: Minor changes, method checklogin
 
 using System;
 using System.Drawing;
@@ -17,16 +18,26 @@ namespace BarPOS
         TableList tables;
         ProductsList products;
         BillList bills;
-        UsersList user;
+        UsersList users;
 
         public TableScreen()
         {
+            CheckLogin();
             tables = new TableList();
             products = new ProductsList();
             bills = new BillList();
-            user = new UsersList();
+            users = new UsersList();
             DrawTables();
             InitializeComponent();
+        }
+
+        //Checking if the user logs in before opening the tableScreen
+        public void CheckLogin()
+        {
+            ConfigurationScreen configurationScreen = new
+                ConfigurationScreen(products, bills, users);
+            configurationScreen.StartPosition = FormStartPosition.CenterScreen;
+            configurationScreen.ShowDialog();
         }
 
         //This method will draw the buttons we use for the tables
@@ -48,27 +59,28 @@ namespace BarPOS
                 btn.TabIndex = 2;
                 btn.Text = (i+1).ToString();
                 btn.UseVisualStyleBackColor = false;
-                btn.Click += new System.EventHandler(this.table_Click);
+                btn.Click += new EventHandler(this.table_Click);
 
                 this.Controls.Add(btn);
             }
         }
 
-        //This event will open the POSScreen when we click on a table
+        //Event for open the POSScreen when we click on a table
         private void table_Click(object sender, System.EventArgs e)
         {
             int tableNumber = Convert.ToInt32(((Button)sender).Text);
             
             POSScreen actual = new POSScreen(products,
-                tables.Tables[tableNumber-1].Products, bills);
+                tables, bills, tableNumber);
             actual.StartPosition = FormStartPosition.CenterScreen;
             actual.Show();
         }
 
+        //Event for open the configurationScreen
         private void btnConfiguration_Click(object sender, EventArgs e)
         {
             ConfigurationScreen configurationScreen = new 
-                ConfigurationScreen(products,bills);
+                ConfigurationScreen(products,bills, users);
             configurationScreen.StartPosition = FormStartPosition.CenterScreen;
             configurationScreen.Show();
         }

@@ -4,6 +4,7 @@
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: Load and Save Methods, minor changes, 
 //       added save PATH
+// V0.03 16-May-2018 Moisés: Get method
 
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,11 @@ namespace BarPOS
         ~TableList()
         {
             Save();
+        }
+
+        public Table Get(int index)
+        {
+            return Tables[index - 1];
         }
 
         public void Add(Table newTable)

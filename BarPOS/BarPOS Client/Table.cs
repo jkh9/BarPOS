@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: Added name, constructor,Products, deleted sprite
+// V0.03 16-May-2018 Moisés: new property InUse
 
 using System;
 
@@ -15,6 +16,7 @@ namespace BarPOS
         public int X { get; set; }
         public int Y { get; set; }
         public string Name { get; set; }
+        public bool InUse { get; set; }
 
         public Table(int x, int y , string name)
         {
@@ -22,6 +24,7 @@ namespace BarPOS
             Y = y;
             Name = name;
             Products = new TableProductsList();
+            InUse = false;
         }
     }
 }

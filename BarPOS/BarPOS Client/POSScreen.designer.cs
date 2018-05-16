@@ -696,12 +696,13 @@
             this.btnTableUp.FlatAppearance.BorderSize = 0;
             this.btnTableUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTableUp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableUp.Location = new System.Drawing.Point(880, 3);
+            this.btnTableUp.Location = new System.Drawing.Point(927, 3);
             this.btnTableUp.Name = "btnTableUp";
             this.btnTableUp.Size = new System.Drawing.Size(40, 40);
             this.btnTableUp.TabIndex = 19;
             this.btnTableUp.Text = "+";
             this.btnTableUp.UseVisualStyleBackColor = false;
+            this.btnTableUp.Click += new System.EventHandler(this.btnTableUp_Click);
             // 
             // btnTableDown
             // 
@@ -709,12 +710,13 @@
             this.btnTableDown.FlatAppearance.BorderSize = 0;
             this.btnTableDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTableDown.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableDown.Location = new System.Drawing.Point(927, 3);
+            this.btnTableDown.Location = new System.Drawing.Point(881, 3);
             this.btnTableDown.Name = "btnTableDown";
             this.btnTableDown.Size = new System.Drawing.Size(40, 40);
             this.btnTableDown.TabIndex = 20;
             this.btnTableDown.Text = "-";
             this.btnTableDown.UseVisualStyleBackColor = false;
+            this.btnTableDown.Click += new System.EventHandler(this.btnTableDown_Click);
             // 
             // lblTableNumber
             // 
@@ -723,11 +725,11 @@
             this.lblTableNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTableNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTableNumber.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumber.Location = new System.Drawing.Point(833, 1);
+            this.lblTableNumber.Location = new System.Drawing.Point(805, 1);
             this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(41, 44);
+            this.lblTableNumber.Size = new System.Drawing.Size(62, 44);
             this.lblTableNumber.TabIndex = 14;
-            this.lblTableNumber.Text = "1";
+            this.lblTableNumber.Text = "10";
             // 
             // lblBoxNumber
             // 
@@ -758,7 +760,7 @@
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(684, 3);
+            this.label3.Location = new System.Drawing.Point(656, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 42);
             this.label3.TabIndex = 17;

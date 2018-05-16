@@ -1,4 +1,6 @@
-﻿namespace BarPOS
+﻿using System;
+
+namespace BarPOS
 {
     partial class ConfigurationScreen
     {
@@ -31,11 +33,12 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.btnAdminScreen = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(200, 150);
             this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "Back to Main Screen";
+            this.btnBack.Text = "Tables";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -58,12 +61,13 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblLogin);
+            this.panel1.Controls.Add(this.btnAdminScreen);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnLogOut);
+            this.panel1.Controls.Add(this.btnLogIn);
             this.panel1.Location = new System.Drawing.Point(35, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 700);
@@ -79,6 +83,20 @@
             this.lblLogin.TabIndex = 8;
             this.lblLogin.Text = "Login Required!!!!";
             // 
+            // btnAdminScreen
+            // 
+            this.btnAdminScreen.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdminScreen.FlatAppearance.BorderSize = 0;
+            this.btnAdminScreen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdminScreen.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminScreen.Location = new System.Drawing.Point(337, 159);
+            this.btnAdminScreen.Name = "btnAdminScreen";
+            this.btnAdminScreen.Size = new System.Drawing.Size(271, 102);
+            this.btnAdminScreen.TabIndex = 7;
+            this.btnAdminScreen.Text = "AdminScreen";
+            this.btnAdminScreen.UseVisualStyleBackColor = false;
+            this.btnAdminScreen.Click += new System.EventHandler(this.btnAdminScreen_Click);
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
@@ -89,7 +107,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(200, 150);
             this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Close POS";
+            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -119,31 +137,33 @@
             this.button4.Text = "Open box";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnLogOut
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(572, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(360, 150);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Log Out";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLogOut.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogOut.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(572, 3);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(360, 150);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // button1
+            // btnLogIn
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(360, 150);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogIn.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnLogIn.FlatAppearance.BorderSize = 0;
+            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogIn.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.Location = new System.Drawing.Point(3, 3);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(360, 150);
+            this.btnLogIn.TabIndex = 7;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // ConfigurationScreen
             // 
@@ -167,9 +187,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAdminScreen;
     }
 }

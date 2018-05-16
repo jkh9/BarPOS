@@ -4,19 +4,25 @@
 // V0.01 14-May-2018 Moisés: Basic skeleton;
 // V0.02 15-May-2018 Moisés: Close method for the windows and the program
 
+using System;
 using System.Windows.Forms;
 
 namespace BarPOS
 {
     public partial class ConfigurationScreen : Form
     {
-        BillList Bills { get; set; }
-        ProductsList Products { get; set; }
+        public BillList Bills { get; }
+        public ProductsList Products { get; }
+        public UsersList Users { get; }
+        public bool LogIn { get; set; }
 
-        public ConfigurationScreen(ProductsList products, BillList bills)
+        public ConfigurationScreen(ProductsList products, BillList bills,
+            UsersList users)
         {
+            LogIn = false;
             this.Products = products;
             this.Bills = bills;
+            Users = Users;
             InitializeComponent();
         }
 
@@ -27,12 +33,14 @@ namespace BarPOS
 
         public void OpenUser()
         {
-            //TO DO
+            LogIn = true;
+            lblLogin.Text = "";
         }
 
         public void CloseUser()
         {
-            //TO DO
+            LogIn = false;
+            lblLogin.Text = "Login Required!!!!";
         }
 
         public void OpenTheDrawer()
@@ -43,13 +51,33 @@ namespace BarPOS
         //Method to close the windows
         private void btnBack_Click(object sender, System.EventArgs e)
         {
-            this.Close();
+            if (LogIn)
+            {
+                this.Close();
+            }
         }
 
         //Method to close the program
         private void btnClose_Click(object sender, System.EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAdminScreen_Click(object sender, EventArgs e)
+        {
+            AdminScreen adminScreen = new AdminScreen(Users, Bills, Products);
+            adminScreen.StartPosition = FormStartPosition.CenterScreen;
+            adminScreen.Show();
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            OpenUser();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            CloseUser();
         }
     }
 }

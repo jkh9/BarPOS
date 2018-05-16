@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: Methods completeds
+// V0.03 16-May-2018 Moisés: Get method
 
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,11 @@ namespace BarPOS
             Save();
         }
         
+        public Product Get(int index)
+        {
+            return Products[index -1];
+        }
+
         public void Add(Product product)
         {
             Products.Add(product);

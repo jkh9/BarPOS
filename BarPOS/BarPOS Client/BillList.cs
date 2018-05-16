@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: Methods completeds
+// V0.03 16-May-2018 Moisés: Get method
 
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace BarPOS
         ~BillList()
         {
             Save();
+        }
+
+        public Bill Get(int index)
+        {
+            return Bills[index - 1];
         }
 
         public void Add(Bill bill)

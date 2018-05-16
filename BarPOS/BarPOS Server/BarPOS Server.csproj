@@ -69,5 +69,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BarPOS Client\BarPOS Client.csproj">
+      <Project>{d8794522-bd48-40b7-a6c4-336ae5bb7d51}</Project>
+      <Name>BarPOS Client</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,17 +2,18 @@
 
 // Versiones: 
 // V0.01 15-May-2018 Moisés: Basic skeleton
+// V0.02 16-May-2018 Moisés: Event to close the form
 
 using System.Windows.Forms;
 
 namespace BarPOS
 {
-    public partial class AccoutingManagmentScreen : Form
+    public partial class AccountingManagmentScreen : Form
     {
         public int Index { get; set; }
         public BillList Bills { get; set; }
 
-        public AccoutingManagmentScreen(BillList bills)
+        public AccountingManagmentScreen(BillList bills)
         {
             Bills = bills;
             InitializeComponent();
@@ -41,6 +42,12 @@ namespace BarPOS
         public void ChangeDate()
         {
             //TO DO
+        }
+
+        //Event to close the window
+        private void btnClose_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
     }
 }

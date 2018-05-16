@@ -1,6 +1,6 @@
 ﻿namespace BarPOS
 {
-    partial class ProductManagmentScreen
+    partial class ProductsManagmentScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTableUp = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnTableDown = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTableNumber = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.btnTableUp);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnTableDown);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblTableNumber);
@@ -81,18 +81,19 @@
             this.btnTableUp.Text = "+";
             this.btnTableUp.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(650, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.Firebrick;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(650, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(50, 50);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnTableDown
             // 
@@ -324,7 +325,7 @@
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
             // 
-            // ProductManagmentScreen
+            // ProductsManagmentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,7 +350,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProductManagmentScreen";
+            this.Name = "ProductsManagmentScreen";
             this.Text = "ProductManagmentScreen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -363,7 +364,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTableUp;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnTableDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTableNumber;

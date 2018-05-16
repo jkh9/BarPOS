@@ -1,20 +1,21 @@
-﻿// Bar POS, class UserManagmentScreen
+﻿// Bar POS, class ProductManagmentScreen
 
 // Versiones: 
 // V0.01 15-May-2018 Moisés: Basic skeleton
+// V0.02 16-May-2018 Moisés: Event to close the form
 
 using System.Windows.Forms;
 
 namespace BarPOS
 {
-    public partial class UserManagmentScreen : Form
+    public partial class ProductsManagmentScreen : Form
     {
         public int Index { get; set; }
-        public UsersList Users { get; set; }
+        public ProductsList Products { get; set; }
 
-        public UserManagmentScreen(UsersList users)
+        public ProductsManagmentScreen(ProductsList products)
         {
-            Users = users;
+            Products = products;
             InitializeComponent();
         }
 
@@ -46,6 +47,12 @@ namespace BarPOS
         public void MoveBackward()
         {
             //TO DO
+        }
+
+        //Event to close the window
+        private void btnClose_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
     }
 }
