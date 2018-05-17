@@ -38,7 +38,11 @@ namespace BarPOS
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.picHelp = new System.Windows.Forms.PictureBox();
+            this.btnExitHelp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -59,6 +63,9 @@ namespace BarPOS
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnExitHelp);
+            this.panel1.Controls.Add(this.picHelp);
+            this.panel1.Controls.Add(this.btnHelp);
             this.panel1.Controls.Add(this.lblLogin);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnBack);
@@ -149,6 +156,46 @@ namespace BarPOS
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHelp.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(853, 497);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(79, 40);
+            this.btnHelp.TabIndex = 21;
+            this.btnHelp.Text = "HELP";
+            this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // picHelp
+            // 
+            this.picHelp.BackColor = System.Drawing.Color.Silver;
+            this.picHelp.Image = global::BarPOS.Properties.Resources.picHelp;
+            this.picHelp.Location = new System.Drawing.Point(32, 49);
+            this.picHelp.Name = "picHelp";
+            this.picHelp.Size = new System.Drawing.Size(877, 606);
+            this.picHelp.TabIndex = 87;
+            this.picHelp.TabStop = false;
+            this.picHelp.Visible = false;
+            // 
+            // btnExitHelp
+            // 
+            this.btnExitHelp.BackColor = System.Drawing.Color.Red;
+            this.btnExitHelp.FlatAppearance.BorderSize = 0;
+            this.btnExitHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExitHelp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitHelp.Location = new System.Drawing.Point(869, 49);
+            this.btnExitHelp.Name = "btnExitHelp";
+            this.btnExitHelp.Size = new System.Drawing.Size(40, 40);
+            this.btnExitHelp.TabIndex = 88;
+            this.btnExitHelp.Text = "X";
+            this.btnExitHelp.UseVisualStyleBackColor = false;
+            this.btnExitHelp.Visible = false;
+            this.btnExitHelp.Click += new System.EventHandler(this.btnExitHelp_Click);
+            // 
             // ConfigurationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +208,7 @@ namespace BarPOS
             this.Text = "ConfigurationScreen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,5 +223,8 @@ namespace BarPOS
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.PictureBox picHelp;
+        private System.Windows.Forms.Button btnExitHelp;
     }
 }

@@ -80,6 +80,7 @@
             this.button20 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnTableUp = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.btnTableDown = new System.Windows.Forms.Button();
             this.lblTableNumber = new System.Windows.Forms.Label();
             this.lblBoxNumber = new System.Windows.Forms.Label();
@@ -87,6 +88,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.pnlPayProducts = new System.Windows.Forms.Panel();
+            this.btnExitHelp = new System.Windows.Forms.Button();
             this.pnlPayProduct = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -114,6 +116,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.picHelp = new System.Windows.Forms.PictureBox();
             this.pnlProducts.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlPayProducts.SuspendLayout();
@@ -124,6 +127,7 @@
             this.pnlTableProducts.SuspendLayout();
             this.pnlTableProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProducts
@@ -679,6 +683,7 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnTableUp);
+            this.panel4.Controls.Add(this.btnHelp);
             this.panel4.Controls.Add(this.btnTableDown);
             this.panel4.Controls.Add(this.lblTableNumber);
             this.panel4.Controls.Add(this.lblBoxNumber);
@@ -703,6 +708,20 @@
             this.btnTableUp.Text = "+";
             this.btnTableUp.UseVisualStyleBackColor = false;
             this.btnTableUp.Click += new System.EventHandler(this.btnTableUp_Click);
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHelp.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(519, 3);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(79, 40);
+            this.btnHelp.TabIndex = 20;
+            this.btnHelp.Text = "HELP";
+            this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // btnTableDown
             // 
@@ -786,6 +805,21 @@
             this.pnlPayProducts.Name = "pnlPayProducts";
             this.pnlPayProducts.Size = new System.Drawing.Size(348, 283);
             this.pnlPayProducts.TabIndex = 59;
+            // 
+            // btnExitHelp
+            // 
+            this.btnExitHelp.BackColor = System.Drawing.Color.Red;
+            this.btnExitHelp.FlatAppearance.BorderSize = 0;
+            this.btnExitHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExitHelp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitHelp.Location = new System.Drawing.Point(883, 79);
+            this.btnExitHelp.Name = "btnExitHelp";
+            this.btnExitHelp.Size = new System.Drawing.Size(40, 40);
+            this.btnExitHelp.TabIndex = 87;
+            this.btnExitHelp.Text = "X";
+            this.btnExitHelp.UseVisualStyleBackColor = false;
+            this.btnExitHelp.Visible = false;
+            this.btnExitHelp.Click += new System.EventHandler(this.btnExitHelp_Click);
             // 
             // pnlPayProduct
             // 
@@ -1123,12 +1157,24 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // picHelp
+            // 
+            this.picHelp.BackColor = System.Drawing.Color.Silver;
+            this.picHelp.Image = global::BarPOS.Properties.Resources.picHelp;
+            this.picHelp.Location = new System.Drawing.Point(46, 79);
+            this.picHelp.Name = "picHelp";
+            this.picHelp.Size = new System.Drawing.Size(877, 606);
+            this.picHelp.TabIndex = 86;
+            this.picHelp.TabStop = false;
+            this.picHelp.Visible = false;
+            // 
             // POSScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.btnExitHelp);
             this.Controls.Add(this.pnlPayProducts);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -1136,6 +1182,7 @@
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.pnlTableProducts);
+            this.Controls.Add(this.picHelp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "POSScreen";
             this.Text = "POSScreen";
@@ -1151,6 +1198,7 @@
             this.pnlTableProducts.ResumeLayout(false);
             this.pnlTableProduct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1242,5 +1290,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.PictureBox picHelp;
+        private System.Windows.Forms.Button btnExitHelp;
     }
 }

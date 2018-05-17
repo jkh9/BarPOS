@@ -121,4 +121,7 @@
   <data name="TableImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TableImage.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="picHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picHelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

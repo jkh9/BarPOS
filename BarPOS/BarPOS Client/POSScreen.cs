@@ -6,6 +6,8 @@
 //      added the close method, open the payScreen
 // V0.03 16-May-2018 Moisés: Changes in the constructor, method move to table
 // method tableup, tabledown
+// V0.04 17-May-2018 César: Added the help button so that a help menu appears 
+// on the screen with its different options that will be made later.
 
 using System.Windows.Forms;
 
@@ -88,6 +90,21 @@ namespace BarPOS
             } while (!Tables.Get(Index).InUse);
 
             lblTableNumber.Text = Index.ToString();
+        }
+
+        //Event to show 
+        private void btnHelp_Click(object sender, System.EventArgs e)
+        {
+            picHelp.BringToFront();
+            picHelp.Visible = true;
+            btnExitHelp.BringToFront();
+            btnExitHelp.Visible = true;
+        }
+
+        private void btnExitHelp_Click(object sender, System.EventArgs e)
+        {
+            picHelp.Visible = false;
+            btnExitHelp.Visible = false;
         }
     }
 }

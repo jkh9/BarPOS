@@ -73,5 +73,19 @@ namespace BarPOS
         {
             CloseUser();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            picHelp.BringToFront();
+            picHelp.Visible = true;
+            btnExitHelp.BringToFront();
+            btnExitHelp.Visible = true;
+        }
+
+        private void btnExitHelp_Click(object sender, System.EventArgs e)
+        {
+            picHelp.Visible = false;
+            btnExitHelp.Visible = false;
+        }
     }
 }
