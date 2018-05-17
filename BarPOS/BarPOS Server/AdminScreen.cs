@@ -14,12 +14,11 @@ namespace BarPOS
         BillList bills;
         ProductsList products;
 
-        public AdminScreen(UsersList users, BillList bills, 
-            ProductsList products)
+        public AdminScreen()
         {
-            this.users = users;
-            this.bills = bills;
-            this.products = products;
+            this.users = new UsersList();
+            this.bills = new BillList();
+            this.products = new ProductsList();
 
             InitializeComponent();
         }

@@ -20,30 +20,21 @@ namespace BarPOS
         BillList bills;
         UsersList users;
 
-        public TableScreen()
+        public TableScreen(ProductsList products, BillList bills,
+            UsersList users)
         {
-            CheckLogin();
             tables = new TableList();
-            products = new ProductsList();
-            bills = new BillList();
-            users = new UsersList();
+            this.products = products;
+            this.bills = bills;
+            this.users = users;
             DrawTables();
             InitializeComponent();
-        }
-
-        //Checking if the user logs in before opening the tableScreen
-        public void CheckLogin()
-        {
-            ConfigurationScreen configurationScreen = new
-                ConfigurationScreen(products, bills, users);
-            configurationScreen.StartPosition = FormStartPosition.CenterScreen;
-            configurationScreen.ShowDialog();
         }
 
         //This method will draw the buttons we use for the tables
         public void DrawTables()
         {
-            for (int i = 0; i < tables.Count; i++)
+            for (int i = 1; i <= tables.Count; i++)
             {
                 Button btn = new Button();
                 btn.BackColor = Color.FromArgb(((int)(((byte)(255)))), 
@@ -54,10 +45,10 @@ namespace BarPOS
                     GraphicsUnit.Point, ((byte)(0)));
                 btn.Location = new Point(tables.Get(i).X, 
                     tables.Get(i).Y);
-                btn.Name = "table"+(i+1);
+                btn.Name = "table"+(i);
                 btn.Size = new Size(88, 88);
                 btn.TabIndex = 2;
-                btn.Text = (i+1).ToString();
+                btn.Text = (i).ToString();
                 btn.UseVisualStyleBackColor = false;
                 btn.Click += new EventHandler(this.table_Click);
 
@@ -79,10 +70,7 @@ namespace BarPOS
         //Event for open the configurationScreen
         private void btnConfiguration_Click(object sender, EventArgs e)
         {
-            ConfigurationScreen configurationScreen = new 
-                ConfigurationScreen(products,bills, users);
-            configurationScreen.StartPosition = FormStartPosition.CenterScreen;
-            configurationScreen.Show();
+            this.Close();
         }
     }
 }

@@ -45,8 +45,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\BarPOS Client\Bill.cs">
+      <Link>Bill.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\BillHeader.cs">
+      <Link>BillHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\BillLine.cs">
+      <Link>BillLine.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\BillList.cs">
+      <Link>BillList.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\Product.cs">
+      <Link>Product.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\ProductsList.cs">
+      <Link>ProductsList.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\User.cs">
+      <Link>User.cs</Link>
+    </Compile>
+    <Compile Include="..\BarPOS Client\UsersList.cs">
+      <Link>UsersList.cs</Link>
+    </Compile>
+    <Compile Include="AccountingManagmentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountingManagmentScreen.Designer.cs">
+      <DependentUpon>AccountingManagmentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminScreen.Designer.cs">
+      <DependentUpon>AdminScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsManagmentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsManagmentScreen.Designer.cs">
+      <DependentUpon>ProductsManagmentScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersManagmentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManagmentScreen.Designer.cs">
+      <DependentUpon>UsersManagmentScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountingManagmentScreen.resx">
+      <DependentUpon>AccountingManagmentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminScreen.resx">
+      <DependentUpon>AdminScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsManagmentScreen.resx">
+      <DependentUpon>ProductsManagmentScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -56,6 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UsersManagmentScreen.resx">
+      <DependentUpon>UsersManagmentScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -68,12 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BarPOS Client\BarPOS Client.csproj">
-      <Project>{d8794522-bd48-40b7-a6c4-336ae5bb7d51}</Project>
-      <Name>BarPOS Client</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

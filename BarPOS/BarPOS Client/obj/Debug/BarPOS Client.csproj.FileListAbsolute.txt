@@ -28,3 +28,16 @@ C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Client\obj\Debug\Ba
 C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.AccountingManagmentScreen.resources
 C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.ProductsManagmentScreen.resources
 C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.UsersManagmentScreen.resources
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.exe.config
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.exe
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.pdb
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.ConfigurationScreen.resources
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.PayScreen.resources
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.POSScreen.resources
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.Properties.Resources.resources
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.TableScreen.resources
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csproj.GenerateResource.Cache
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csproj.CoreCompileInputs.cache
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.exe
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.pdb
+C:\Users\jkh9L\OneDrive\Documents\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csprojResolveAssemblyReference.cache

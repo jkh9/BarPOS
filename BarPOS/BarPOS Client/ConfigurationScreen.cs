@@ -16,13 +16,12 @@ namespace BarPOS
         public UsersList Users { get; }
         public bool LogIn { get; set; }
 
-        public ConfigurationScreen(ProductsList products, BillList bills,
-            UsersList users)
+        public ConfigurationScreen()
         {
+            Products = new ProductsList();
+            Bills = new BillList();
+            Users = new UsersList();
             LogIn = false;
-            this.Products = products;
-            this.Bills = bills;
-            Users = Users;
             InitializeComponent();
         }
 
@@ -53,7 +52,9 @@ namespace BarPOS
         {
             if (LogIn)
             {
-                this.Close();
+                TableScreen tableScreen = new TableScreen(Products, Bills, Users);
+                tableScreen.StartPosition = FormStartPosition.CenterScreen;
+                tableScreen.Show();
             }
         }
 
@@ -61,13 +62,6 @@ namespace BarPOS
         private void btnClose_Click(object sender, System.EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void btnAdminScreen_Click(object sender, EventArgs e)
-        {
-            AdminScreen adminScreen = new AdminScreen(Users, Bills, Products);
-            adminScreen.StartPosition = FormStartPosition.CenterScreen;
-            adminScreen.Show();
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)

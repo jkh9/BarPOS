@@ -15,9 +15,9 @@ namespace BarPOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            TableScreen tableScreen = new TableScreen();
-            tableScreen.StartPosition = FormStartPosition.CenterScreen;
-            Application.Run(tableScreen);
+            ConfigurationScreen configurationScreen = new ConfigurationScreen();
+            configurationScreen.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(configurationScreen);
         }
     }
 }

@@ -33,7 +33,6 @@ namespace BarPOS
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.btnAdminScreen = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@ namespace BarPOS
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblLogin);
-            this.panel1.Controls.Add(this.btnAdminScreen);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.button5);
@@ -82,20 +80,6 @@ namespace BarPOS
             this.lblLogin.Size = new System.Drawing.Size(403, 55);
             this.lblLogin.TabIndex = 8;
             this.lblLogin.Text = "Login Required!!!!";
-            // 
-            // btnAdminScreen
-            // 
-            this.btnAdminScreen.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAdminScreen.FlatAppearance.BorderSize = 0;
-            this.btnAdminScreen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdminScreen.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminScreen.Location = new System.Drawing.Point(337, 159);
-            this.btnAdminScreen.Name = "btnAdminScreen";
-            this.btnAdminScreen.Size = new System.Drawing.Size(271, 102);
-            this.btnAdminScreen.TabIndex = 7;
-            this.btnAdminScreen.Text = "AdminScreen";
-            this.btnAdminScreen.UseVisualStyleBackColor = false;
-            this.btnAdminScreen.Click += new System.EventHandler(this.btnAdminScreen_Click);
             // 
             // btnClose
             // 
@@ -191,6 +175,5 @@ namespace BarPOS
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnAdminScreen;
     }
 }

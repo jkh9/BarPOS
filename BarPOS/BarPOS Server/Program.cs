@@ -13,7 +13,9 @@ namespace BarPOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminScreen());
+            AdminScreen adminScreen = new AdminScreen();
+            adminScreen.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(adminScreen);
         }
     }
 }
