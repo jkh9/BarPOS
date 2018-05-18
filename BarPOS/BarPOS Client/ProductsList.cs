@@ -4,18 +4,18 @@
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: Methods completeds
 // V0.03 16-May-2018 Moisés: Get method
+// V0.04 18-May-2018 Moisés: Load and Save changeds to txt
 
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace BarPOS
 {
     public class ProductsList
     {
-        public const string PATH = @"..\..\..\Files1\products.dat";
+        public const string PATH = @"..\..\..\Files\products.txt";
         public List<Product> Products { get; set; }
         public int Count { get { return Products.Count; } }
 
@@ -46,19 +46,39 @@ namespace BarPOS
 
         public void Load()
         {
+            Products = new List<Product>();
+
             if (!(File.Exists(PATH)))
             {
                 MessageBox.Show("Creating the products file");
-                Products = new List<Product>();
             }
             else
             {
                 try
                 {
-                    BinaryFormatter binaryFormatter = new BinaryFormatter();
-                    FileStream input = new FileStream(PATH, FileMode.Open);
+                    StreamReader input = new StreamReader(PATH);
 
-                    Products = (List<Product>)binaryFormatter.Deserialize(input);
+                    string line = "";
+                    do
+                    {
+                        line = input.ReadLine();
+                        if (line != null)
+                        {
+                            string[] parts = line.Split('·');
+
+                            Product product = new Product();
+
+                            product.Description = parts[0];
+                            product.Price = Convert.ToDouble(parts[1]);
+                            product.ImagePath = parts[2];
+                            product.Stock = Convert.ToInt32(parts[3]);
+                            product.MinimunStock = Convert.ToInt32(parts[4]);
+                            product.Code = Convert.ToInt32(parts[5]);
+                            product.Category = parts[6];
+                            product.BuyPrice = Convert.ToDouble(parts[7]);
+                            this.Add(product);
+                        }
+                    } while (line != null);
 
                     input.Close();
                 }
@@ -74,10 +94,12 @@ namespace BarPOS
         {
             try
             {
-                BinaryFormatter binaryFormatter = new BinaryFormatter();
-                FileStream output = new FileStream(PATH, FileMode.Create);
+                StreamWriter output = new StreamWriter(PATH);
 
-                binaryFormatter.Serialize(output, Products);
+                foreach (Product product in Products)
+                {
+                    output.WriteLine(product);
+                }
 
                 output.Close();
             }

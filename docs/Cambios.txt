@@ -1,3 +1,1 @@
-Cambiar los loads y saves por la serialización casera
-Hacer el metodo de construir la factura
-Implementar la funcion de add para productos
+

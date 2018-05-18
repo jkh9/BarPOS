@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 15-May-2018 Moisés: CompanyData spreed into name,addres
+// V0.03 18-May-2018 Moisés: Method ToString
 
 using System;
 
@@ -33,6 +34,11 @@ namespace BarPOS
             Employee = employee;
             Number = number;
             Date = DateTime.Now;
+        }
+
+        public override string ToString()
+        {
+            return Table + "·" + Number + "·" + Date + "=" + Employee.ToString();
         }
     }
 }

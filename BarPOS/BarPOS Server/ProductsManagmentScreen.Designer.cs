@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTableUp = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnTableDown = new System.Windows.Forms.Button();
+            this.btnBackward = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblTableNumber = new System.Windows.Forms.Label();
+            this.lblProductCode = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,28 +58,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.btnTableUp);
+            this.panel1.Controls.Add(this.btnForward);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnTableDown);
+            this.panel1.Controls.Add(this.btnBackward);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblTableNumber);
+            this.panel1.Controls.Add(this.lblProductCode);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 50);
             this.panel1.TabIndex = 16;
             // 
-            // btnTableUp
+            // btnForward
             // 
-            this.btnTableUp.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnTableUp.FlatAppearance.BorderSize = 0;
-            this.btnTableUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTableUp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableUp.Location = new System.Drawing.Point(477, 4);
-            this.btnTableUp.Name = "btnTableUp";
-            this.btnTableUp.Size = new System.Drawing.Size(40, 40);
-            this.btnTableUp.TabIndex = 23;
-            this.btnTableUp.Text = "+";
-            this.btnTableUp.UseVisualStyleBackColor = false;
+            this.btnForward.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnForward.FlatAppearance.BorderSize = 0;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(477, 4);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(40, 40);
+            this.btnForward.TabIndex = 23;
+            this.btnForward.Text = "+";
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
             // btnClose
             // 
@@ -95,18 +96,19 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnTableDown
+            // btnBackward
             // 
-            this.btnTableDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.btnTableDown.FlatAppearance.BorderSize = 0;
-            this.btnTableDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTableDown.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableDown.Location = new System.Drawing.Point(432, 4);
-            this.btnTableDown.Name = "btnTableDown";
-            this.btnTableDown.Size = new System.Drawing.Size(40, 40);
-            this.btnTableDown.TabIndex = 24;
-            this.btnTableDown.Text = "-";
-            this.btnTableDown.UseVisualStyleBackColor = false;
+            this.btnBackward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.btnBackward.FlatAppearance.BorderSize = 0;
+            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackward.Location = new System.Drawing.Point(432, 4);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(40, 40);
+            this.btnBackward.TabIndex = 24;
+            this.btnBackward.Text = "-";
+            this.btnBackward.UseVisualStyleBackColor = false;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // label3
             // 
@@ -119,18 +121,18 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Product code";
             // 
-            // lblTableNumber
+            // lblProductCode
             // 
-            this.lblTableNumber.AutoSize = true;
-            this.lblTableNumber.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTableNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTableNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblTableNumber.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumber.Location = new System.Drawing.Point(326, 3);
-            this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(83, 44);
-            this.lblTableNumber.TabIndex = 21;
-            this.lblTableNumber.Text = "001";
+            this.lblProductCode.AutoSize = true;
+            this.lblProductCode.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblProductCode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblProductCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblProductCode.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductCode.Location = new System.Drawing.Point(326, 3);
+            this.lblProductCode.Name = "lblProductCode";
+            this.lblProductCode.Size = new System.Drawing.Size(83, 44);
+            this.lblProductCode.TabIndex = 21;
+            this.lblProductCode.Text = "000";
             // 
             // txtName
             // 
@@ -141,7 +143,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(288, 32);
             this.txtName.TabIndex = 20;
-            this.txtName.Text = "Hamburguesita";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -172,7 +173,6 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(288, 32);
             this.txtPrice.TabIndex = 23;
-            this.txtPrice.Text = "12.5";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -194,7 +194,6 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(288, 32);
             this.txtStock.TabIndex = 25;
-            this.txtStock.Text = "12";
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
@@ -216,7 +215,6 @@
             this.txtMinimunStock.Name = "txtMinimunStock";
             this.txtMinimunStock.Size = new System.Drawing.Size(288, 32);
             this.txtMinimunStock.TabIndex = 27;
-            this.txtMinimunStock.Text = "4";
             this.txtMinimunStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
@@ -238,7 +236,6 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(288, 32);
             this.txtCategory.TabIndex = 29;
-            this.txtCategory.Text = "Hamburguesas";
             this.txtCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
@@ -270,7 +267,6 @@
             this.txtBuyPrice.Name = "txtBuyPrice";
             this.txtBuyPrice.Size = new System.Drawing.Size(288, 32);
             this.txtBuyPrice.TabIndex = 29;
-            this.txtBuyPrice.Text = "5";
             this.txtBuyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnSearch
@@ -298,6 +294,7 @@
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -311,6 +308,7 @@
             this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnModify
             // 
@@ -363,11 +361,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnTableUp;
+        private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnTableDown;
+        private System.Windows.Forms.Button btnBackward;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblTableNumber;
+        private System.Windows.Forms.Label lblProductCode;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

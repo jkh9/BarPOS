@@ -2,9 +2,9 @@
 
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
+// V0.02 18-May-2018 Moisés: Method ToString
 
 using System;
-using System.Drawing;
 
 
 namespace BarPOS
@@ -14,6 +14,11 @@ namespace BarPOS
     {
         public string Name { get; set; }
         public int Code { get; set; }
-        public Image Image { get; set; }
+        public string ImagePath { get; set; }
+
+        public override string ToString()
+        {
+            return Name + "·" + Code + "·" + ImagePath;
+        }
     }
 }
