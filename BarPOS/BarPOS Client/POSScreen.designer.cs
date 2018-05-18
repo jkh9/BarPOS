@@ -88,7 +88,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.pnlPayProducts = new System.Windows.Forms.Panel();
-            this.btnExitHelp = new System.Windows.Forms.Button();
             this.pnlPayProduct = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -97,6 +96,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnExitHelp = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblVA = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -806,21 +806,6 @@
             this.pnlPayProducts.Size = new System.Drawing.Size(348, 283);
             this.pnlPayProducts.TabIndex = 59;
             // 
-            // btnExitHelp
-            // 
-            this.btnExitHelp.BackColor = System.Drawing.Color.Red;
-            this.btnExitHelp.FlatAppearance.BorderSize = 0;
-            this.btnExitHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExitHelp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitHelp.Location = new System.Drawing.Point(883, 79);
-            this.btnExitHelp.Name = "btnExitHelp";
-            this.btnExitHelp.Size = new System.Drawing.Size(40, 40);
-            this.btnExitHelp.TabIndex = 87;
-            this.btnExitHelp.Text = "X";
-            this.btnExitHelp.UseVisualStyleBackColor = false;
-            this.btnExitHelp.Visible = false;
-            this.btnExitHelp.Click += new System.EventHandler(this.btnExitHelp_Click);
-            // 
             // pnlPayProduct
             // 
             this.pnlPayProduct.BackColor = System.Drawing.Color.DimGray;
@@ -925,6 +910,21 @@
             this.label9.TabIndex = 50;
             this.label9.Text = " 2";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnExitHelp
+            // 
+            this.btnExitHelp.BackColor = System.Drawing.Color.Red;
+            this.btnExitHelp.FlatAppearance.BorderSize = 0;
+            this.btnExitHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExitHelp.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitHelp.Location = new System.Drawing.Point(883, 79);
+            this.btnExitHelp.Name = "btnExitHelp";
+            this.btnExitHelp.Size = new System.Drawing.Size(40, 40);
+            this.btnExitHelp.TabIndex = 87;
+            this.btnExitHelp.Text = "X";
+            this.btnExitHelp.UseVisualStyleBackColor = false;
+            this.btnExitHelp.Visible = false;
+            this.btnExitHelp.Click += new System.EventHandler(this.btnExitHelp_Click);
             // 
             // panel9
             // 
@@ -1159,7 +1159,7 @@
             // 
             // picHelp
             // 
-            this.picHelp.BackColor = System.Drawing.Color.Silver;
+            this.picHelp.BackColor = System.Drawing.Color.Transparent;
             this.picHelp.Image = global::BarPOS.Properties.Resources.picHelp;
             this.picHelp.Location = new System.Drawing.Point(46, 79);
             this.picHelp.Name = "picHelp";
