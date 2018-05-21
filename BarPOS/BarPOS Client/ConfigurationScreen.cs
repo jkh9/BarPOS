@@ -30,13 +30,13 @@ namespace BarPOS
             //TO DO
         }
 
-        public void OpenUser()
+        public void LogInUser()
         {
             LogIn = true;
             lblLogin.Text = "";
         }
 
-        public void CloseUser()
+        public void LogOutUser()
         {
             LogIn = false;
             lblLogin.Text = "Login Required!!!!";
@@ -66,12 +66,12 @@ namespace BarPOS
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            OpenUser();
+            LogInUser();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            CloseUser();
+            LogOutUser();
         }
 
         private void btnHelp_Click(object sender, EventArgs e)

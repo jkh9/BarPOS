@@ -10,10 +10,10 @@ namespace BarPOS
 {
     public partial class PayScreen : Form
     {
-        SelledProductsList Products { get; set; }
+        ProductToSellList Products { get; set; }
         BillList Bills { get; set; }
 
-        public PayScreen(SelledProductsList products, BillList bills)
+        public PayScreen(ProductToSellList products, BillList bills)
         {
             Products = products;
             Bills = bills;

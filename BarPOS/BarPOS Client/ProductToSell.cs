@@ -5,7 +5,7 @@
 
 namespace BarPOS
 {
-    public class SellProduct
+    public class ProductToSell
     {
         public Product ActualProduct { get; set; }
         public int Amount { get; set; }

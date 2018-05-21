@@ -17,7 +17,7 @@ namespace BarPOS
     {
         public ProductsList Products { get; set; }
         public TableList Tables { get; set; }
-        public SelledProductsList SelledProducts { get; set; }
+        public ProductToSellList ProductsToSell { get; set; }
         public BillList Bills { get; set; }
         public int Index { get; set; }
 
@@ -51,7 +51,7 @@ namespace BarPOS
         //Event to open the payScreen
         private void btnPay_Click(object sender, System.EventArgs e)
         {
-            PayScreen PayScreen = new PayScreen(SelledProducts, Bills);
+            PayScreen PayScreen = new PayScreen(ProductsToSell, Bills);
             PayScreen.StartPosition = FormStartPosition.CenterScreen;
             PayScreen.Show();
         }
@@ -61,7 +61,7 @@ namespace BarPOS
         {
             do
             {
-                if (Index < Tables.Tables.Count)
+                if (Index < Tables.Count)
                 {
                     Index++;
                 }
@@ -85,7 +85,7 @@ namespace BarPOS
                 }
                 else
                 {
-                    Index = Tables.Tables.Count;
+                    Index = Tables.Count;
                 }
             } while (!Tables.Get(Index).InUse);
 

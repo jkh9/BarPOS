@@ -8,17 +8,17 @@ using System.Collections.Generic;
 
 namespace BarPOS
 {
-    public class SelledProductsList
+    public class ProductToSellList
     {
-        public List<SellProduct> ProductsToSell { get; set; }
+        public List<ProductToSell> ProductsToSell { get; set; }
         public int Count { get { return ProductsToSell.Count; } }
 
-        public SellProduct Get(int index)
+        public ProductToSell Get(int index)
         {
             return ProductsToSell[index - 1];
         }
 
-        public void Add(SellProduct product)
+        public void Add(ProductToSell product)
         {
             ProductsToSell.Add(product);
         }

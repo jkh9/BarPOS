@@ -12,15 +12,15 @@ namespace BarPOS
     [Serializable]
     public class TableProductsList
     {
-        public List<SellProduct> Products { get; set; }
+        public List<ProductToSell> Products { get; set; }
         public int Count { get { return Products.Count; } }
 
-        public SellProduct Get(int index)
+        public ProductToSell Get(int index)
         {
             return Products[index - 1];
         }
 
-        public void Add(SellProduct product)
+        public void Add(ProductToSell product)
         {
             Products.Add(product);
         }
@@ -30,7 +30,7 @@ namespace BarPOS
             Products.RemoveAt(index -1);
         }
 
-        public SellProduct MoveToSelled(int index)
+        public ProductToSell MoveToSelled(int index)
         {
             return Products[index - 1];
         }
