@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBackward = new System.Windows.Forms.Button();
+            this.lblTotalBills = new System.Windows.Forms.Label();
             this.lblTableNumber = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -40,28 +40,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.pnlBillLine = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.lblEmployee = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.pnlBill.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.pnlBillLine.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnForward);
+            this.panel1.Controls.Add(this.btnBackward);
+            this.panel1.Controls.Add(this.lblTotalBills);
             this.panel1.Controls.Add(this.lblTableNumber);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnClose);
@@ -72,44 +68,46 @@
             this.panel1.Size = new System.Drawing.Size(700, 50);
             this.panel1.TabIndex = 6;
             // 
-            // button4
+            // btnForward
             // 
-            this.button4.BackColor = System.Drawing.Color.Chartreuse;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(554, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 40);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "+";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnForward.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnForward.FlatAppearance.BorderSize = 0;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(554, 4);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(40, 40);
+            this.btnForward.TabIndex = 26;
+            this.btnForward.Text = "+";
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
-            // button5
+            // btnBackward
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(511, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 40);
-            this.button5.TabIndex = 27;
-            this.button5.Text = "-";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnBackward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.btnBackward.FlatAppearance.BorderSize = 0;
+            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackward.Location = new System.Drawing.Point(511, 4);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(40, 40);
+            this.btnBackward.TabIndex = 27;
+            this.btnBackward.Text = "-";
+            this.btnBackward.UseVisualStyleBackColor = false;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
-            // label1
+            // lblTotalBills
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(404, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 44);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "001";
+            this.lblTotalBills.AutoSize = true;
+            this.lblTotalBills.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTotalBills.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotalBills.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblTotalBills.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBills.Location = new System.Drawing.Point(404, 2);
+            this.lblTotalBills.Name = "lblTotalBills";
+            this.lblTotalBills.Size = new System.Drawing.Size(83, 44);
+            this.lblTotalBills.TabIndex = 21;
+            this.lblTotalBills.Text = "001";
             // 
             // lblTableNumber
             // 
@@ -188,66 +186,18 @@
             this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(63, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 40);
+            this.label5.Size = new System.Drawing.Size(163, 40);
             this.label5.TabIndex = 10;
-            this.label5.Text = "User:";
+            this.label5.Text = "Employee:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlBill
             // 
             this.pnlBill.AutoScroll = true;
-            this.pnlBill.Controls.Add(this.panel2);
-            this.pnlBill.Location = new System.Drawing.Point(64, 165);
+            this.pnlBill.Location = new System.Drawing.Point(64, 166);
             this.pnlBill.Name = "pnlBill";
             this.pnlBill.Size = new System.Drawing.Size(547, 300);
             this.pnlBill.TabIndex = 11;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(530, 40);
-            this.panel2.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(378, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 40);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "12";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(184, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 40);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "1";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 40);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Burguer";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlBillLine
             // 
@@ -308,19 +258,40 @@
             this.btnAccount.TabIndex = 15;
             this.btnAccount.Text = "Print";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
-            // button3
+            // btnSearch
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(556, 598);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 90);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(556, 598);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(130, 90);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.Location = new System.Drawing.Point(266, 468);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(221, 40);
+            this.lblTotalAmount.TabIndex = 10;
+            this.lblTotalAmount.Text = "0";
+            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblEmployee
+            // 
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.Location = new System.Drawing.Point(236, 86);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Size = new System.Drawing.Size(0, 32);
+            this.lblEmployee.TabIndex = 10;
+            this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AccountingManagmentScreen
             // 
@@ -328,11 +299,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 700);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.pnlBillLine);
             this.Controls.Add(this.pnlBill);
+            this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -340,10 +313,9 @@
             this.Text = "AccoutingManagmentScreen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlBill.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.pnlBillLine.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -354,7 +326,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTableNumber;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotalBills;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -363,13 +335,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Button btnBackward;
+        private System.Windows.Forms.Label lblTotalAmount;
+        private System.Windows.Forms.Label lblEmployee;
     }
 }

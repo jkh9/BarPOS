@@ -49,18 +49,21 @@
     <Compile Include="BillHeader.cs" />
     <Compile Include="BillLine.cs" />
     <Compile Include="BillList.cs" />
+    <Compile Include="ConfigurationClass.cs" />
     <Compile Include="ConfigurationScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConfigurationScreen.Designer.cs">
       <DependentUpon>ConfigurationScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="PayClass.cs" />
     <Compile Include="PayScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PayScreen.Designer.cs">
       <DependentUpon>PayScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="POSSClass.cs" />
     <Compile Include="POSScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +79,7 @@
     <Compile Include="Table.cs" />
     <Compile Include="TableList.cs" />
     <Compile Include="TableProductsList.cs" />
+    <Compile Include="TablesClass.cs" />
     <Compile Include="TablesScreen.cs">
       <SubType>Form</SubType>
     </Compile>

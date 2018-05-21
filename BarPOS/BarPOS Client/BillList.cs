@@ -5,11 +5,11 @@
 // V0.02 15-May-2018 Moisés: Methods completeds
 // V0.03 16-May-2018 Moisés: Get method
 // V0.04 18-May-2018 Moisés: Load and Save method changeds
+// V0.05 21-May-2018 Moisés: Changes in load and save methods
 
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
 
 namespace BarPOS
 {
@@ -21,7 +21,7 @@ namespace BarPOS
 
         public BillList()
         {
-            Load();
+
         }
 
         ~BillList()
@@ -44,13 +44,13 @@ namespace BarPOS
             Bills.RemoveAt(index - 1);
         }
 
-        public void Load()
+        public string Load()
         {
             Bills = new List<Bill>();
 
             if (!(File.Exists(PATH)))
             {
-                MessageBox.Show("Creating the bills file");
+                return ("Creating the bills file");
             }
             else
             {
@@ -129,13 +129,14 @@ namespace BarPOS
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error loading the bills file: "
+                    return ("Error loading the bills file: "
                         + e.Message);
                 }
             }
+            return "";
         }
 
-        public void Save()
+        public string Save()
         {
             try
             {
@@ -150,9 +151,10 @@ namespace BarPOS
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error saving the bills file: "
+                return ("Error saving the bills file: "
                     + e.Message);
             }
+            return "";
         }
     }
 }

@@ -5,12 +5,12 @@
 // V0.02 15-May-2018 Moisés: Load and Save Methods, minor changes, 
 //       added save PATH
 // V0.03 16-May-2018 Moisés: Get method
+// V0.04 21-May-2018 Moisés: Changes in load and save methods
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Windows.Forms;
 
 namespace BarPOS
 {
@@ -22,7 +22,7 @@ namespace BarPOS
 
         public TableList()
         {
-            Load();
+
         }
 
         ~TableList()
@@ -50,12 +50,12 @@ namespace BarPOS
             //TO DO
         }
 
-        public void Load()
+        public string Load()
         {
+            Tables = new List<Table>();
             if (!(File.Exists(PATH)))
             {
-                MessageBox.Show("Creating the tables file");
-                Tables = new List<Table>();
+                return ("Creating the tables file");
             }
             else
             {
@@ -70,13 +70,14 @@ namespace BarPOS
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error loading the tables file: " 
+                    return ("Error loading the tables file: " 
                         + e.Message);
                 }
             }
+            return "";
         }
 
-        public void Save()
+        public string Save()
         {
             try
             {
@@ -89,9 +90,11 @@ namespace BarPOS
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error saving the tables file: " 
+                return ("Error saving the tables file: " 
                     + e.Message);
             }
+
+            return "";
         }
     }
 }

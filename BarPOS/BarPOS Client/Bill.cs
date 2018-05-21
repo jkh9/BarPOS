@@ -17,6 +17,11 @@ namespace BarPOS
         public BillHeader Header { get; set; }
         public double Total { get; set; }
 
+        public Bill()
+        {
+            Lines = new List<BillLine>();
+        }
+
         public void AddLine(BillLine line)
         {
             Lines.Add(line);
@@ -27,8 +32,14 @@ namespace BarPOS
             Lines.RemoveAt(index -1);
         }
 
+        public BillLine GetLine(int index)
+        {
+            return Lines[index - 1];
+        }
+
         public void CalculateTotal()
         {
+            Total = 0;
             for (int i = 0; i < Lines.Count; i++)
             {
                 Total += (Lines[i].Amount * Lines[i].LineProduct.Price);

@@ -10,30 +10,13 @@ namespace BarPOS
 {
     public partial class PayScreen : Form
     {
-        ProductToSellList Products { get; set; }
-        BillList Bills { get; set; }
+        public PayClass Pay { get; set; }
 
         public PayScreen(ProductToSellList products, BillList bills)
         {
-            Products = products;
-            Bills = bills;
+            Pay = new PayClass(products, bills);
 
             InitializeComponent();
-        }
-
-        public void CalculateMoneyToReturn()
-        {
-           //TO DO 
-        }
-
-        public void DoTheBill()
-        {
-            //TO DO
-        }
-
-        public void PrintBill()
-        {
-            //TO DO
         }
 
         //Event to close the actual windows

@@ -69,11 +69,12 @@
     <Compile Include="..\BarPOS Client\UsersList.cs">
       <Link>UsersList.cs</Link>
     </Compile>
-    <Compile Include="AccountingManagmentScreen.cs">
+    <Compile Include="AccountingManagementClass.cs" />
+    <Compile Include="AccountingManagementScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountingManagmentScreen.Designer.cs">
-      <DependentUpon>AccountingManagmentScreen.cs</DependentUpon>
+    <Compile Include="AccountingManagementScreen.Designer.cs">
+      <DependentUpon>AccountingManagementScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminScreen.cs">
       <SubType>Form</SubType>
@@ -81,28 +82,30 @@
     <Compile Include="AdminScreen.Designer.cs">
       <DependentUpon>AdminScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductsManagmentScreen.cs">
+    <Compile Include="ProductManagementClass.cs" />
+    <Compile Include="ProductsManagementScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductsManagmentScreen.Designer.cs">
-      <DependentUpon>ProductsManagmentScreen.cs</DependentUpon>
+    <Compile Include="ProductsManagementScreen.Designer.cs">
+      <DependentUpon>ProductsManagementScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsersManagmentScreen.cs">
+    <Compile Include="UserManagementClass.cs" />
+    <Compile Include="UsersManagementScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsersManagmentScreen.Designer.cs">
-      <DependentUpon>UsersManagmentScreen.cs</DependentUpon>
+    <Compile Include="UsersManagementScreen.Designer.cs">
+      <DependentUpon>UsersManagementScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountingManagmentScreen.resx">
-      <DependentUpon>AccountingManagmentScreen.cs</DependentUpon>
+    <EmbeddedResource Include="AccountingManagementScreen.resx">
+      <DependentUpon>AccountingManagementScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminScreen.resx">
       <DependentUpon>AdminScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductsManagmentScreen.resx">
-      <DependentUpon>ProductsManagmentScreen.cs</DependentUpon>
+    <EmbeddedResource Include="ProductsManagementScreen.resx">
+      <DependentUpon>ProductsManagementScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,8 +116,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UsersManagmentScreen.resx">
-      <DependentUpon>UsersManagmentScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UsersManagementScreen.resx">
+      <DependentUpon>UsersManagementScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

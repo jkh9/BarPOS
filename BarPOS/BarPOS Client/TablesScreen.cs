@@ -5,6 +5,7 @@
 // V0.02 15-May-2018 Moisés: Added POSScreen, drawTable, deleted posScreenList,
 //    tableClick added
 // V0.03 16-May-2018 Moisés: Minor changes, method checklogin
+// V0.04 21-May-2018 Moisés: LoadTables method
 
 using System;
 using System.Drawing;
@@ -14,27 +15,30 @@ namespace BarPOS
 {
     public partial class TableScreen : Form
     {
-        Image image;
-        TableList tables;
-        ProductsList products;
-        BillList bills;
-        UsersList users;
+        public TablesClass Tables { get; set; }
 
         public TableScreen(ProductsList products, BillList bills,
             UsersList users)
         {
-            tables = new TableList();
-            this.products = products;
-            this.bills = bills;
-            this.users = users;
+            Tables = new TablesClass(products, bills, users);
+            LoadTables();
             DrawTables();
             InitializeComponent();
+        }
+
+        public void LoadTables()
+        {
+            string errorMessage = Tables.Tables.Load();
+            if (errorMessage != "")
+            {
+                MessageBox.Show(errorMessage);
+            }
         }
 
         //This method will draw the buttons we use for the tables
         public void DrawTables()
         {
-            for (int i = 1; i <= tables.Count; i++)
+            for (int i = 1; i <= Tables.Count; i++)
             {
                 Button btn = new Button();
                 btn.BackColor = Color.FromArgb(((int)(((byte)(255)))), 
@@ -43,8 +47,8 @@ namespace BarPOS
                 btn.FlatStyle = FlatStyle.Popup;
                 btn.Font = new Font("Arial", 36F, FontStyle.Regular, 
                     GraphicsUnit.Point, ((byte)(0)));
-                btn.Location = new Point(tables.Get(i).X, 
-                    tables.Get(i).Y);
+                btn.Location = new Point(Tables.GetTable(i).X, 
+                    Tables.GetTable(i).Y);
                 btn.Name = "table"+(i);
                 btn.Size = new Size(88, 88);
                 btn.TabIndex = 2;
@@ -61,8 +65,8 @@ namespace BarPOS
         {
             int tableNumber = Convert.ToInt32(((Button)sender).Text);
             
-            POSScreen actual = new POSScreen(products,
-                tables, bills, tableNumber);
+            POSScreen actual = new POSScreen(Tables.Products,
+                Tables.Tables, Tables.Bills, tableNumber);
             actual.StartPosition = FormStartPosition.CenterScreen;
             actual.Show();
         }

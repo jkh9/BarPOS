@@ -1,4 +1,1 @@
-Modificar las clases para separar la parte visual de la logica 
-,los loads y saves devuelven un string de control
-El tema de poner las fotitos
 Enumeración con las categoria: Comida, bebida alcoholica, refrescos

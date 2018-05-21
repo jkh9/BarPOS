@@ -5,11 +5,11 @@
 // V0.02 15-May-2018 Moisés: Methods completeds
 // V0.03 16-May-2018 Moisés: Get method
 // V0.04 18-May-2018 Moisés: Load and Save changeds to txt
+// V0.05 21-May-2018 Moisés: Changes in load and save methods
 
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
 
 namespace BarPOS
 {
@@ -21,17 +21,17 @@ namespace BarPOS
 
         public ProductsList()
         {
-            Load();
+
         }
 
         ~ProductsList()
         {
             Save();
         }
-        
+
         public Product Get(int index)
         {
-            return Products[index -1];
+            return Products[index - 1];
         }
 
         public void Add(Product product)
@@ -44,13 +44,13 @@ namespace BarPOS
             Products.RemoveAt(index - 1);
         }
 
-        public void Load()
+        public string Load()
         {
             Products = new List<Product>();
 
             if (!(File.Exists(PATH)))
             {
-                MessageBox.Show("Creating the products file");
+                return ("Creating the products file");
             }
             else
             {
@@ -84,13 +84,14 @@ namespace BarPOS
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error loading the products file: "
+                    return ("Error loading the products file: "
                         + e.Message);
                 }
             }
+            return "";
         }
 
-        public void Save()
+        public string Save()
         {
             try
             {
@@ -105,9 +106,10 @@ namespace BarPOS
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error saving the products file: "
+                return ("Error saving the products file: "
                     + e.Message);
             }
+            return "";
         }
     }
 }

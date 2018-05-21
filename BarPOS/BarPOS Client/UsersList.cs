@@ -5,11 +5,11 @@
 // V0.02 15-May-2018 Moisés: Methods completeds
 // V0.03 16-May-2018 Moisés: method Remove
 // V0.04 18-May-2018 Moisés: Load and save methods changeds
+// V0.05 21-May-2018 Moisés: Changes in load and save methods
 
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
 
 namespace BarPOS
 {
@@ -18,10 +18,10 @@ namespace BarPOS
         public const string PATH = @"..\..\..\Files\users.txt";
         public List<User> Users { get; set; }
         public int Count { get { return Users.Count; } }
-        
+
         public UsersList()
         {
-            Load();
+
         }
 
         ~UsersList()
@@ -44,13 +44,13 @@ namespace BarPOS
             return Users[index - 1];
         }
 
-        public void Load()
+        public string Load()
         {
             Users = new List<User>();
 
             if (!(File.Exists(PATH)))
             {
-                MessageBox.Show("Creating the users file");
+                return ("Creating the users file");
             }
             else
             {
@@ -76,16 +76,18 @@ namespace BarPOS
                     } while (line != null);
 
                     input.Close();
+
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error loading the users file: "
+                    return ("Error loading the users file: "
                         + e.Message);
                 }
             }
+            return "";
         }
 
-        public void Save()
+        public string Save()
         {
             try
             {
@@ -100,9 +102,11 @@ namespace BarPOS
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error saving the users file: "
+                return ("Error saving the users file: "
                     + e.Message);
             }
+
+            return "";
         }
     }
 }

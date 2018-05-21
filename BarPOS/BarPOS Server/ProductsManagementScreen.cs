@@ -14,13 +14,11 @@ namespace BarPOS
 {
     public partial class ProductsManagmentScreen : Form
     {
-        public int Index { get; set; }
-        public ProductsList Products { get; set; }
+        public ProductManagementClass ProductManagement { get; set; }
 
         public ProductsManagmentScreen(ProductsList products)
         {
-            Products = products;
-            Index = 1;
+            ProductManagement = new ProductManagementClass(products);
 
             InitializeComponent();
             Draw();
@@ -29,7 +27,7 @@ namespace BarPOS
         //Method to draw the actual product
         public void Draw()
         {
-            if (Products.Count < 1)
+            if (ProductManagement.Count < 1)
             {
                 lblProductCode.Text = "000";
 
@@ -42,25 +40,18 @@ namespace BarPOS
             }
             else
             {
-                lblProductCode.Text = Products.Get(Index).Code.ToString("000");
+                Product actualProduct = 
+                    ProductManagement.GetActualProduct();
 
-                txtBuyPrice.Text = Products.Get(Index).BuyPrice + "";
-                txtCategory.Text = Products.Get(Index).Category + "";
-                txtMinimunStock.Text = Products.Get(Index).MinimunStock + "";
-                txtName.Text = Products.Get(Index).Description + "";
-                txtPrice.Text = Products.Get(Index).Price + "";
-                txtStock.Text = Products.Get(Index).Stock + "";
+                lblProductCode.Text = actualProduct.Code.ToString("000");
+                pbImage.ImageLocation = actualProduct.ImagePath;
+                txtBuyPrice.Text = actualProduct.BuyPrice + "";
+                txtCategory.Text = actualProduct.Category + "";
+                txtMinimunStock.Text = actualProduct.MinimunStock + "";
+                txtName.Text = actualProduct.Description + "";
+                txtPrice.Text = actualProduct.Price + "";
+                txtStock.Text = actualProduct.Stock + "";
             }
-        }
-
-        public void Modify()
-        {
-            //TO DO
-        }
-
-        public void Search()
-        {
-            //TO DO
         }
 
         //Event to close the window
@@ -71,13 +62,10 @@ namespace BarPOS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.txtName.Text = "";
-            this.txtPrice.Text = "";
-            this.txtStock.Text = "";
-            this.txtMinimunStock.Text = "";
-            this.txtCategory.Text = "";
-            this.txtBuyPrice.Text = "";
-            this.lblProductCode.Text = (Products.Count+1).ToString("000");
+            this.Controls.Clear();
+            this.InitializeComponent();
+            this.lblProductCode.Text = (ProductManagement.Count+1).
+                ToString("000");
 
             this.btnAdd.Visible = false;
             this.btnDelete.Visible = false;
@@ -97,11 +85,8 @@ namespace BarPOS
             validate.UseVisualStyleBackColor = false;
             validate.Click += new EventHandler(validate_Click);
 
-
             validate.Text = "Confirmar";
             this.Controls.Add(validate);
-
-        
         }
 
         private void validate_Click(object sender, EventArgs e)
@@ -109,15 +94,18 @@ namespace BarPOS
             try
             {
                 Product newProduct = new Product();
+                newProduct.ImagePath = pbImage.ImageLocation;
                 newProduct.BuyPrice = Convert.ToDouble(txtBuyPrice.Text);
                 newProduct.Category = txtCategory.Text;
-                newProduct.Code = Convert.ToInt32((Products.Count + 1).ToString("000"));
+                newProduct.Code = Convert.ToInt32((
+                    ProductManagement.Count + 1).ToString("000"));
                 newProduct.Description = txtName.Text;
-                newProduct.MinimunStock = Convert.ToInt32(txtMinimunStock.Text);
+                newProduct.MinimunStock = 
+                    Convert.ToInt32(txtMinimunStock.Text);
                 newProduct.Price = Convert.ToDouble(txtPrice.Text);
                 newProduct.Stock = Convert.ToInt32(txtStock.Text);
 
-                Products.Add(newProduct);
+                ProductManagement.Add(newProduct);
 
             }
             catch (Exception)
@@ -132,30 +120,35 @@ namespace BarPOS
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
-            if (Index > 1)
-            {
-                Index--;
-                Draw();
-            }
+            ProductManagement.MoveBackward();
+            Draw();
         }
 
         private void btnForward_Click(object sender, EventArgs e)
         {
-            if (Index < Products.Count)
-            {
-                Index++;
-                Draw();
-            }
+            ProductManagement.MoveForward();
+            Draw();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Products.Remove(Index);
-            if (Index > 1)
-            {
-                Index--;
-            }
+            ProductManagement.Remove();
             Draw();
+        }
+
+        private void pbImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog getImage = new OpenFileDialog();
+            getImage.InitialDirectory = "C:\\";
+            getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| *.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
+            if (getImage.ShowDialog() == DialogResult.OK)
+            {
+                this.pbImage.ImageLocation = getImage.FileName;
+            }
+            else
+            {
+                MessageBox.Show("No se selecciono ninguna imagen");
+            }
         }
     }
 }
