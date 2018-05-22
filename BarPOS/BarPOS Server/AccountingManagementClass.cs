@@ -3,6 +3,8 @@
 // Versiones: 
 // V0.01 21-May-2018 Moisés: Basic skeleton, updated from 
 //    AccountingManagementScreen
+// V0.02 22-May-2018 Moisés: Search method implemented
+//    print method deleted and minor changes
 
 namespace BarPOS
 {
@@ -23,9 +25,28 @@ namespace BarPOS
             return Bills.Get(Index);
         }
 
-        public void Search()
+        public bool Search(string text)
         {
-            //TO DO
+            if (text != null)
+            {
+                text = text.ToLower();
+
+                bool found = false;
+
+                for (int i = 1; i <= Count; i++)
+                {
+                    Bill ActualBill = Bills.Get(i);
+
+                    if (ActualBill.ToString().ToLower().Contains(text))
+                    {
+                        ActualBill.Found = true;
+                        found = true;
+                    }
+                }
+                return found;
+            }
+
+            return false;
         }
 
         public void MoveForward()
@@ -33,6 +54,10 @@ namespace BarPOS
             if (Index < Count)
             {
                 Index++;
+            }
+            else
+            {
+                Index = 1;
             }
         }
 
@@ -42,11 +67,10 @@ namespace BarPOS
             {
                 Index--;
             }
-        }
-
-        public void Print()
-        {
-            //TO DO
+            else
+            {
+                Index = Count;
+            }
         }
 
         public void ChangeDate()

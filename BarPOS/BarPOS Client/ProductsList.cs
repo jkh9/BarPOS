@@ -6,6 +6,7 @@
 // V0.03 16-May-2018 Moisés: Get method
 // V0.04 18-May-2018 Moisés: Load and Save changeds to txt
 // V0.05 21-May-2018 Moisés: Changes in load and save methods
+// V0.06 22-May-2018 Moisés: Reeplace method
 
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,8 @@ namespace BarPOS
 {
     public class ProductsList
     {
-        public const string PATH = @"..\..\..\Files\products.txt";
-        public List<Product> Products { get; set; }
+        private const string PATH = @"..\..\..\Files\products.txt";
+        private List<Product> Products;
         public int Count { get { return Products.Count; } }
 
         public ProductsList()
@@ -42,6 +43,11 @@ namespace BarPOS
         public void Remove(int index)
         {
             Products.RemoveAt(index - 1);
+        }
+
+        public void Reeplace(int index, Product newProduct)
+        {
+            Products[index -1] = newProduct;
         }
 
         public string Load()

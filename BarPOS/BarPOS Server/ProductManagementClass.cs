@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 21-May-2018 Moisés: Basic skeleton, updated from 
 //   ProductsManagementScreen
+// V0.02 22-May-2018 Moisés: search ,modify method simplementeds, minor changes
 
 namespace BarPOS
 {
@@ -30,18 +31,39 @@ namespace BarPOS
 
         public void Remove()
         {
-            Products.Remove(Index);
+            if (Count > 0)
+            {
+                Products.Remove(Index);
+            }
             MoveBackward();
         }
 
-        public void Modify()
+        public void Modify(Product newProduct)
         {
-            //TO DO
+            Products.Reeplace(Index,newProduct);
         }
 
-        public void Search()
+        public bool Search(string text)
         {
-            //TO DO
+            if (text != null)
+            {
+                text = text.ToLower();
+
+                bool found = false;
+
+                for (int i = 1; i <= Count; i++)
+                {
+                    Product ActualProduct = Products.Get(i);
+
+                    if (ActualProduct.ToString().ToLower().Contains(text))
+                    {
+                        ActualProduct.Found = true;
+                        found = true;
+                    }
+                }
+                return found;
+            }
+            return false;
         }
 
         public void MoveForward()
@@ -50,6 +72,10 @@ namespace BarPOS
             {
                 Index++;
             }
+            else
+            {
+                Index = 1;
+            }
         }
 
         public void MoveBackward()
@@ -57,6 +83,10 @@ namespace BarPOS
             if (Index > 1)
             {
                 Index--;
+            }
+            else
+            {
+                Index = Count;
             }
         }
     }

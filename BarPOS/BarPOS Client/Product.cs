@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
 // V0.02 18-May-2018 Moisés: Method ToString, image is now ImagePath
+// V0.03 22-May-2018 Moisés: Property found added
 
 using System;
 
@@ -19,11 +20,13 @@ namespace BarPOS
         public int Code { get; set; }
         public string Category { get; set; }
         public double BuyPrice { get; set; }
+        public bool Found { get; set; }
 
         public override string ToString()
         {
             return Description + "·" + Price + "·" + ImagePath + "·" + Stock +
-                "·" + MinimunStock + "·" + Code + "·" + Category + "·" + BuyPrice;
+                "·" + MinimunStock + "·" + Code + "·" + Category + "·" + 
+                BuyPrice;
         }
     }
 }

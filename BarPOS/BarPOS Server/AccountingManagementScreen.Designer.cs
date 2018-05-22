@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountingManagmentScreen));
+            this.pnlTopBar = new System.Windows.Forms.Panel();
             this.btnForward = new System.Windows.Forms.Button();
             this.btnBackward = new System.Windows.Forms.Button();
             this.lblTotalBills = new System.Windows.Forms.Label();
@@ -44,29 +45,34 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblEmployee = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnBackToMainMenu = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlTopBar.SuspendLayout();
             this.pnlBillLine.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTopBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.btnForward);
-            this.panel1.Controls.Add(this.btnBackward);
-            this.panel1.Controls.Add(this.lblTotalBills);
-            this.panel1.Controls.Add(this.lblTableNumber);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 50);
-            this.panel1.TabIndex = 6;
+            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlTopBar.Controls.Add(this.btnForward);
+            this.pnlTopBar.Controls.Add(this.btnBackward);
+            this.pnlTopBar.Controls.Add(this.lblTotalBills);
+            this.pnlTopBar.Controls.Add(this.lblTableNumber);
+            this.pnlTopBar.Controls.Add(this.button2);
+            this.pnlTopBar.Controls.Add(this.btnClose);
+            this.pnlTopBar.Controls.Add(this.label3);
+            this.pnlTopBar.Controls.Add(this.label2);
+            this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBar.Name = "pnlTopBar";
+            this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
+            this.pnlTopBar.TabIndex = 6;
             // 
             // btnForward
             // 
@@ -174,19 +180,19 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(63, 468);
+            this.label4.Location = new System.Drawing.Point(323, 484);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 40);
+            this.label4.Size = new System.Drawing.Size(164, 40);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Total amount:";
+            this.label4.Text = "Total Price";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(63, 83);
+            this.label5.Location = new System.Drawing.Point(63, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 40);
+            this.label5.Size = new System.Drawing.Size(166, 40);
             this.label5.TabIndex = 10;
             this.label5.Text = "Employee:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -194,7 +200,7 @@
             // pnlBill
             // 
             this.pnlBill.AutoScroll = true;
-            this.pnlBill.Location = new System.Drawing.Point(64, 166);
+            this.pnlBill.Location = new System.Drawing.Point(64, 181);
             this.pnlBill.Name = "pnlBill";
             this.pnlBill.Size = new System.Drawing.Size(547, 300);
             this.pnlBill.TabIndex = 11;
@@ -204,8 +210,9 @@
             this.pnlBillLine.BackColor = System.Drawing.Color.Black;
             this.pnlBillLine.Controls.Add(this.label8);
             this.pnlBillLine.Controls.Add(this.label7);
+            this.pnlBillLine.Controls.Add(this.label1);
             this.pnlBillLine.Controls.Add(this.label6);
-            this.pnlBillLine.Location = new System.Drawing.Point(64, 126);
+            this.pnlBillLine.Location = new System.Drawing.Point(64, 141);
             this.pnlBillLine.Name = "pnlBillLine";
             this.pnlBillLine.Size = new System.Drawing.Size(530, 40);
             this.pnlBillLine.TabIndex = 0;
@@ -215,11 +222,11 @@
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(378, 0);
+            this.label8.Location = new System.Drawing.Point(410, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 40);
+            this.label8.Size = new System.Drawing.Size(120, 40);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Total";
+            this.label8.Text = "Subtotal";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -227,11 +234,11 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(184, 0);
+            this.label7.Location = new System.Drawing.Point(308, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 40);
+            this.label7.Size = new System.Drawing.Size(83, 40);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Amount";
+            this.label7.Text = "Units";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -246,23 +253,23 @@
             this.label6.Text = "Product";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAccount
+            // btnPrint
             // 
-            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAccount.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Location = new System.Drawing.Point(13, 598);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(130, 90);
-            this.btnAccount.TabIndex = 15;
-            this.btnAccount.Text = "Print";
-            this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(13, 598);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(130, 90);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSearch.BackColor = System.Drawing.Color.Gold;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -272,26 +279,83 @@
             this.btnSearch.TabIndex = 15;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // lblTotalAmount
+            // lblTotalPrice
             // 
-            this.lblTotalAmount.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(266, 468);
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(221, 40);
-            this.lblTotalAmount.TabIndex = 10;
-            this.lblTotalAmount.Text = "0";
-            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(479, 488);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(30, 32);
+            this.lblTotalPrice.TabIndex = 10;
+            this.lblTotalPrice.Text = "0";
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.Location = new System.Drawing.Point(236, 86);
+            this.lblEmployee.Location = new System.Drawing.Point(220, 101);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(0, 32);
             this.lblEmployee.TabIndex = 10;
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(579, 539);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(94, 40);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnBackToMainMenu
+            // 
+            this.btnBackToMainMenu.BackColor = System.Drawing.Color.Silver;
+            this.btnBackToMainMenu.FlatAppearance.BorderSize = 0;
+            this.btnBackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackToMainMenu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMainMenu.Location = new System.Drawing.Point(0, 49);
+            this.btnBackToMainMenu.Name = "btnBackToMainMenu";
+            this.btnBackToMainMenu.Size = new System.Drawing.Size(129, 46);
+            this.btnBackToMainMenu.TabIndex = 28;
+            this.btnBackToMainMenu.Text = "Back to main";
+            this.btnBackToMainMenu.UseVisualStyleBackColor = false;
+            this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(172, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 40);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Price";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AccountingManagmentScreen
             // 
@@ -299,20 +363,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 700);
+            this.Controls.Add(this.btnBackToMainMenu);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnAccount);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.pnlBillLine);
             this.Controls.Add(this.pnlBill);
             this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblTotalAmount);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountingManagmentScreen";
             this.Text = "AccoutingManagmentScreen";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTopBar.ResumeLayout(false);
+            this.pnlTopBar.PerformLayout();
             this.pnlBillLine.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,7 +387,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTableNumber;
@@ -335,11 +401,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnBackward;
-        private System.Windows.Forms.Label lblTotalAmount;
+        private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label lblEmployee;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnBackToMainMenu;
+        private System.Windows.Forms.Label label1;
     }
 }

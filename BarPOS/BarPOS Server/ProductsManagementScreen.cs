@@ -14,7 +14,8 @@ namespace BarPOS
 {
     public partial class ProductsManagmentScreen : Form
     {
-        public ProductManagementClass ProductManagement { get; set; }
+        private ProductManagementClass ProductManagement;
+        private bool DrawFounds;
 
         public ProductsManagmentScreen(ProductsList products)
         {
@@ -29,64 +30,52 @@ namespace BarPOS
         {
             if (ProductManagement.Count < 1)
             {
+                Controls.Clear();
+                InitializeComponent();
                 lblProductCode.Text = "000";
-
-                txtBuyPrice.Text = "";
-                txtCategory.Text = "";
-                txtMinimunStock.Text = "";
-                txtName.Text = "";
-                txtPrice.Text = "";
-                txtStock.Text = "";
             }
             else
             {
-                Product actualProduct = 
+                Product actualProduct =
                     ProductManagement.GetActualProduct();
 
-                lblProductCode.Text = actualProduct.Code.ToString("000");
-                pbImage.ImageLocation = actualProduct.ImagePath;
-                txtBuyPrice.Text = actualProduct.BuyPrice + "";
-                txtCategory.Text = actualProduct.Category + "";
-                txtMinimunStock.Text = actualProduct.MinimunStock + "";
-                txtName.Text = actualProduct.Description + "";
-                txtPrice.Text = actualProduct.Price + "";
-                txtStock.Text = actualProduct.Stock + "";
+                if (DrawFounds && actualProduct.Found || !DrawFounds)
+                {
+                    lblProductCode.Text = actualProduct.Code.ToString("000");
+                    pbImage.ImageLocation = actualProduct.ImagePath;
+                    txtBuyPrice.Text = actualProduct.BuyPrice + "";
+                    txtCategory.Text = actualProduct.Category + "";
+                    txtMinimunStock.Text = actualProduct.MinimunStock + "";
+                    txtName.Text = actualProduct.Description + "";
+                    txtPrice.Text = actualProduct.Price + "";
+                    txtStock.Text = actualProduct.Stock + "";
+                }
+                else
+                {
+                    ProductManagement.MoveForward();
+                    Draw();
+                }
             }
         }
-
+        
         //Event to close the window
         private void btnClose_Click(object sender, System.EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.Controls.Clear();
             this.InitializeComponent();
-            this.lblProductCode.Text = (ProductManagement.Count+1).
+            this.lblProductCode.Text = (ProductManagement.Count + 1).
                 ToString("000");
 
             this.btnAdd.Visible = false;
             this.btnDelete.Visible = false;
             this.btnModify.Visible = false;
             this.btnSearch.Visible = false;
-
-            Button validate = new Button();
-            validate.Location = new Point(295, 598);
-            validate.FlatAppearance.BorderSize = 0;
-            validate.FlatStyle = FlatStyle.Popup;
-            validate.Font = new Font("Arial", 20.25F, 
-                FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            validate.Name = "btnAdd";
-            validate.Size = new Size(160, 90);
-            validate.TabIndex = 31;
-            validate.Text = "Add";
-            validate.UseVisualStyleBackColor = false;
-            validate.Click += new EventHandler(validate_Click);
-
-            validate.Text = "Confirmar";
-            this.Controls.Add(validate);
+            this.btnValidate.Visible = true;
         }
 
         private void validate_Click(object sender, EventArgs e)
@@ -100,7 +89,7 @@ namespace BarPOS
                 newProduct.Code = Convert.ToInt32((
                     ProductManagement.Count + 1).ToString("000"));
                 newProduct.Description = txtName.Text;
-                newProduct.MinimunStock = 
+                newProduct.MinimunStock =
                     Convert.ToInt32(txtMinimunStock.Text);
                 newProduct.Price = Convert.ToDouble(txtPrice.Text);
                 newProduct.Stock = Convert.ToInt32(txtStock.Text);
@@ -140,7 +129,8 @@ namespace BarPOS
         {
             OpenFileDialog getImage = new OpenFileDialog();
             getImage.InitialDirectory = "C:\\";
-            getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| *.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
+            getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| " +
+                "*.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
             if (getImage.ShowDialog() == DialogResult.OK)
             {
                 this.pbImage.ImageLocation = getImage.FileName;
@@ -149,6 +139,74 @@ namespace BarPOS
             {
                 MessageBox.Show("No se selecciono ninguna imagen");
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchScreen searchScreen = new SearchScreen();
+            searchScreen.StartPosition = FormStartPosition.CenterParent;
+            searchScreen.ShowDialog();
+            if (ProductManagement.Search(searchScreen.TextToSearch))
+            {
+                DrawFounds = true;
+                Draw();
+                pnlTopBar.BackColor = Color.Gold;
+                this.btnBack.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No results found");
+            }
+        }
+
+        private void btnBack_Click(object sender, System.EventArgs e)
+        {
+            this.btnBack.Visible = false;
+            DrawFounds = false;
+            pnlTopBar.BackColor = Color.Gainsboro;
+
+            //restarting the found attribute
+            for (int i = 1; i <= ProductManagement.Count; i++)
+            {
+                ProductManagement.Products.Get(i).Found = false;
+            }
+        }
+
+        private void btnValidate_Click(object sender, EventArgs e)
+        {
+            btnValidate.Visible = false;
+        }
+
+        private void btnBackToMainMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Product newProduct = new Product();
+                newProduct.ImagePath = pbImage.ImageLocation;
+                newProduct.BuyPrice = Convert.ToDouble(txtBuyPrice.Text);
+                newProduct.Category = txtCategory.Text;
+                newProduct.Code = Convert.ToInt32(lblProductCode.Text);
+                newProduct.Description = txtName.Text;
+                newProduct.MinimunStock =
+                    Convert.ToInt32(txtMinimunStock.Text);
+                newProduct.Price = Convert.ToDouble(txtPrice.Text);
+                newProduct.Stock = Convert.ToInt32(txtStock.Text);
+
+                ProductManagement.Modify(newProduct);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error guardando el producto");
+            }
+
+            this.Controls.Clear();
+            InitializeComponent();
+            Draw();
         }
     }
 }

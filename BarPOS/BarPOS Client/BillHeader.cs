@@ -38,7 +38,8 @@ namespace BarPOS
 
         public override string ToString()
         {
-            return Table + "·" + Number + "·" + Date + "=" + Employee.ToString();
+            return Table + "·" + Number + "·" + Date + "=" + 
+                Employee.ToString();
         }
     }
 }

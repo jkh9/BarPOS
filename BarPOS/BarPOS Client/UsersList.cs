@@ -15,8 +15,8 @@ namespace BarPOS
 {
     public class UsersList
     {
-        public const string PATH = @"..\..\..\Files\users.txt";
-        public List<User> Users { get; set; }
+        private const string PATH = @"..\..\..\Files\users.txt";
+        private List<User> Users;
         public int Count { get { return Users.Count; } }
 
         public UsersList()
@@ -37,6 +37,11 @@ namespace BarPOS
         public void Remove(int index)
         {
             Users.RemoveAt(index - 1);
+        }
+
+        public void Reeplace(int index, User newUser)
+        {
+           Users[index - 1] = newUser;
         }
 
         public User Get(int index)

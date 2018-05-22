@@ -47,3 +47,4 @@ C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Server\obj\Debug\BarPOS Serve
 C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.csproj.CoreCompileInputs.cache
 C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.exe
 C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Server\obj\Debug\BarPOS Server.pdb
+C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Server\obj\Debug\BarPOS.SearchScreen.resources

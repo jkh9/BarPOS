@@ -42,14 +42,13 @@
             this.btnUsers.FlatAppearance.BorderSize = 0;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsers.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.Location = new System.Drawing.Point(172, 399);
+            this.btnUsers.Location = new System.Drawing.Point(172, 491);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(323, 93);
             this.btnUsers.TabIndex = 1;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
-
             // 
             // btnProducts
             // 
@@ -57,14 +56,13 @@
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProducts.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducts.Location = new System.Drawing.Point(172, 247);
+            this.btnProducts.Location = new System.Drawing.Point(172, 276);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(323, 93);
             this.btnProducts.TabIndex = 2;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
-
             // 
             // btnAccount
             // 

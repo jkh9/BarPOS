@@ -1,4 +1,7 @@
-﻿namespace BarPOS
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace BarPOS
 {
     partial class ProductsManagmentScreen
     {
@@ -28,7 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTopBar = new System.Windows.Forms.Panel();
             this.btnForward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnBackward = new System.Windows.Forms.Button();
@@ -51,22 +54,25 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.btnValidate = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnBackToMainMenu = new System.Windows.Forms.Button();
+            this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTopBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.btnForward);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnBackward);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblProductCode);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 50);
-            this.panel1.TabIndex = 16;
+            this.pnlTopBar.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlTopBar.Controls.Add(this.btnForward);
+            this.pnlTopBar.Controls.Add(this.btnClose);
+            this.pnlTopBar.Controls.Add(this.btnBackward);
+            this.pnlTopBar.Controls.Add(this.label3);
+            this.pnlTopBar.Controls.Add(this.lblProductCode);
+            this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBar.Name = "pnlTopBar";
+            this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
+            this.pnlTopBar.TabIndex = 16;
             // 
             // btnForward
             // 
@@ -273,7 +279,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSearch.BackColor = System.Drawing.Color.Gold;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,6 +289,7 @@
             this.btnSearch.TabIndex = 30;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
@@ -324,6 +331,50 @@
             this.btnModify.TabIndex = 33;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // btnValidate
+            // 
+            this.btnValidate.FlatAppearance.BorderSize = 0;
+            this.btnValidate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnValidate.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidate.Location = new System.Drawing.Point(295, 598);
+            this.btnValidate.Name = "btnValidate";
+            this.btnValidate.Size = new System.Drawing.Size(160, 90);
+            this.btnValidate.TabIndex = 31;
+            this.btnValidate.Text = "Add";
+            this.btnValidate.UseVisualStyleBackColor = false;
+            this.btnValidate.Visible = false;
+            this.btnValidate.Click += new System.EventHandler(this.validate_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(594, 552);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(94, 40);
+            this.btnBack.TabIndex = 34;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnBackToMainMenu
+            // 
+            this.btnBackToMainMenu.BackColor = System.Drawing.Color.Silver;
+            this.btnBackToMainMenu.FlatAppearance.BorderSize = 0;
+            this.btnBackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackToMainMenu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMainMenu.Location = new System.Drawing.Point(0, 49);
+            this.btnBackToMainMenu.Name = "btnBackToMainMenu";
+            this.btnBackToMainMenu.Size = new System.Drawing.Size(129, 46);
+            this.btnBackToMainMenu.TabIndex = 35;
+            this.btnBackToMainMenu.Text = "Back to main";
+            this.btnBackToMainMenu.UseVisualStyleBackColor = false;
+            this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
             // ProductsManagmentScreen
             // 
@@ -331,7 +382,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 700);
+            this.Controls.Add(this.btnBackToMainMenu);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
@@ -348,12 +402,12 @@
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductsManagmentScreen";
             this.Text = "ProductManagmentScreen";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTopBar.ResumeLayout(false);
+            this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -362,7 +416,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnBackward;
@@ -385,5 +439,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnValidate;
+        private Button btnBack;
+        private Button btnBackToMainMenu;
     }
 }

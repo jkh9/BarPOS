@@ -17,7 +17,7 @@ namespace BarPOS
     public class TableList
     {
         private const string PATH = "tables.dat";
-        public List<Table> Tables { get; set; }
+        private List<Table> Tables;
         public int Count { get { return Tables.Count; } }
 
         public TableList()

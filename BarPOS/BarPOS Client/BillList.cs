@@ -15,8 +15,8 @@ namespace BarPOS
 {
     public class BillList
     {
-        public const string PATH = @"..\..\..\Files\bills.txt";
-        public List<Bill> Bills { get; set; }
+        private const string PATH = @"..\..\..\Files\bills.txt";
+        private List<Bill> Bills;
         public int Count { get { return Bills.Count; } }
 
         public BillList()
@@ -71,24 +71,33 @@ namespace BarPOS
                             string[] billLines = parts[0].Split('$');
                             for (int i = 0; i < billLines.Length; i++)
                             {
-                                string[] billLineParts = billLines[i].Split('=');
+                                string[] billLineParts = 
+                                    billLines[i].Split('=');
                                 //Product
-                                string[] productsParts = billLineParts[0].Split('·');
+                                string[] productsParts = 
+                                    billLineParts[0].Split('·');
                                 Product product = new Product();
 
                                 product.Description = productsParts[0];
-                                product.Price = Convert.ToDouble(productsParts[1]);
+                                product.Price = 
+                                    Convert.ToDouble(productsParts[1]);
                                 product.ImagePath = productsParts[2];
-                                product.Stock = Convert.ToInt32(productsParts[3]);
-                                product.MinimunStock = Convert.ToInt32(productsParts[4]);
-                                product.Code = Convert.ToInt32(productsParts[5]);
+                                product.Stock = 
+                                    Convert.ToInt32(productsParts[3]);
+                                product.MinimunStock = 
+                                    Convert.ToInt32(productsParts[4]);
+                                product.Code = 
+                                    Convert.ToInt32(productsParts[5]);
                                 product.Category = productsParts[6];
-                                product.BuyPrice = Convert.ToDouble(productsParts[7]);
+                                product.BuyPrice = 
+                                    Convert.ToDouble(productsParts[7]);
 
                                 //amount
-                                int amount = Convert.ToInt32(billLineParts[1]);
+                                int amount = 
+                                    Convert.ToInt32(billLineParts[1]);
 
-                                BillLine billLine = new BillLine(product, amount);
+                                BillLine billLine = 
+                                    new BillLine(product, amount);
                                 bill.AddLine(billLine);
                             }
 
