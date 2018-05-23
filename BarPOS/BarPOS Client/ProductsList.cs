@@ -50,6 +50,22 @@ namespace BarPOS
             Products[index -1] = newProduct;
         }
 
+        public string[] GetCategories()
+        {
+            List<string> categories = new List<string>();
+
+            for (int i = 0; i < Count; i++)
+            {
+                string category = Products[i].Category;
+                if (!categories.Contains(category))
+                {
+                    categories.Add(category);
+                }
+            }
+
+            return categories.ToArray();
+        }
+
         public string Load()
         {
             Products = new List<Product>();
