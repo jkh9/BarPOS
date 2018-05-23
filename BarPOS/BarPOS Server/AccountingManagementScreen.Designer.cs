@@ -77,7 +77,7 @@
             // 
             // btnForward
             // 
-            this.btnForward.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnForward.BackColor = System.Drawing.Color.White;
             this.btnForward.FlatAppearance.BorderSize = 0;
             this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,13 +85,13 @@
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(40, 40);
             this.btnForward.TabIndex = 26;
-            this.btnForward.Text = "+";
+            this.btnForward.Text = "→";
             this.btnForward.UseVisualStyleBackColor = false;
             this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
             // btnBackward
             // 
-            this.btnBackward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.btnBackward.BackColor = System.Drawing.Color.White;
             this.btnBackward.FlatAppearance.BorderSize = 0;
             this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,7 +99,7 @@
             this.btnBackward.Name = "btnBackward";
             this.btnBackward.Size = new System.Drawing.Size(40, 40);
             this.btnBackward.TabIndex = 27;
-            this.btnBackward.Text = "-";
+            this.btnBackward.Text = "←";
             this.btnBackward.UseVisualStyleBackColor = false;
             this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
@@ -360,13 +360,13 @@
             // 
             // mc
             // 
-            this.mc.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.mc.Location = new System.Drawing.Point(-1, -9);
+            this.mc.Location = new System.Drawing.Point(0, 0);
             this.mc.Name = "mc";
-            this.mc.ShowToday = false;
-            this.mc.TabIndex = 29;
+            this.mc.TabIndex = 0;
+            this.mc.TodayDate = new System.DateTime(2018, 5, 23, 0, 0, 0, 0);
+            this.mc.TrailingForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.mc.Visible = false;
-            this.mc.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mc_DateChanged);
+            this.mc.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mc_DateSelected);
             // 
             // AccountingManagmentScreen
             // 

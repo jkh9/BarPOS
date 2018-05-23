@@ -6,8 +6,8 @@
 // V0.03 22-May-2018 Moisés: DrawFounds property added
 //    changes in the draw method for drawing the bills founds when search
 //    print method implemented
+// V0.04 23-May-2018 Moisés: Method to show a calendar and change the date
 
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,15 +31,21 @@ namespace BarPOS
             {
                 Controls.Clear();
                 InitializeComponent();
+
+                this.mc.SelectionRange = new SelectionRange
+                    (AccountingManagement.Date,
+                    AccountingManagement.Date);
+                this.mc.TodayDate = AccountingManagement.Date;
+                btnDay.Text = this.mc.TodayDate.ToString("dd/MM/yyyy");
             }
             else
             {
                 this.pnlBill.Controls.Clear();
 
+                btnDay.Text = this.mc.TodayDate.ToString("dd/MM/yyyy");
+
                 Bill actualBill =
                         AccountingManagement.GetActualBill();
-
-                btnDay.Text = DateTime.Today.ToString("dd/MM/yyyy");
                 lblTableNumber.Text = 
                     AccountingManagement.Index.ToString("000");
                 lblTotalBills.Text = 
@@ -205,10 +211,19 @@ namespace BarPOS
             this.mc.Visible = true;
         }
 
-        private void mc_DateChanged(object sender, DateRangeEventArgs e)
+        private void mc_DateSelected(object sender, DateRangeEventArgs e)
         {
+            AccountingManagement.ChangeDate(mc.SelectionRange.Start);
+            if (AccountingManagement.Count == 0)
+            {
+                MessageBox.Show("No data found");
+            }
+            else
+            {
+                this.mc.TodayDate = AccountingManagement.Date;
+                Draw();
+            }
             this.mc.Visible = false;
-            this.btnDay.Text = mc.SelectionRange.Start.ToString("dd/MM/yyyy");
         }
     }
 }

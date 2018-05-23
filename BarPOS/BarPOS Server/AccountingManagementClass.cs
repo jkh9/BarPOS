@@ -5,6 +5,11 @@
 //    AccountingManagementScreen
 // V0.02 22-May-2018 Moisés: Search method implemented
 //    print method deleted and minor changes
+// V0.03 23-May-2018 Moisés: DateTime property added
+
+
+using System;
+using System.Collections.Generic;
 
 namespace BarPOS
 {
@@ -12,18 +17,22 @@ namespace BarPOS
     {
         public int Index { get; set; }
         public BillList Bills { get; set; }
-        public int Count { get { return Bills.Count; } }
+        public Bill[] DateBills { get; set; }
+        public int Count { get { return DateBills.Length; } }
+        public DateTime Date { get; set; }
         public bool DrawFounds { get; set; }
 
         public AccountingManagementClass(BillList bills)
         {
             Bills = bills;
             Index = 1;
+            Date = DateTime.Today;
+            doDateBills();
         }
         
         public Bill GetActualBill()
         {
-            return Bills.Get(Index);
+            return DateBills[Index - 1];
         }
 
         public bool Search(string text)
@@ -111,10 +120,26 @@ namespace BarPOS
             }
         }
 
-
-        public void ChangeDate()
+        private void doDateBills()
         {
-            //TO DO
+            List<Bill> bills = new List<Bill>();
+
+            for (int i = 1; i <=  Bills.Count; i++)
+            {
+                if (Date.ToString("dd/MM/yyyy") == 
+                    Bills.Get(i).Header.Date.ToString("dd/MM/yyyy"))
+                {
+                    bills.Add(Bills.Get(i));
+                }
+            }
+
+            DateBills = bills.ToArray();
+        }
+
+        public void ChangeDate(DateTime date)
+        {
+            Date = date;
+            doDateBills();
         }
     }
 }
