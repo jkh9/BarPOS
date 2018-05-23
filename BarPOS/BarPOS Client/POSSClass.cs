@@ -8,20 +8,22 @@ namespace BarPOS
 {
     public class POSSClass
     {
-        public ProductsList Products { get; set; }
-        public TableList Tables { get; set; }
-        public ProductToSellList ProductsToSell { get; set; }
+        public ProductsList Products { get; }
+        public TableList Tables { get; }
+        public ProductToSellList ProductsToSell { get; }
         public BillList Bills { get; set; }
         public int Index { get; set; }
         public int Count { get { return Tables.Count; } }
+        public User Employee { get; set; }
 
         public POSSClass(ProductsList products, TableList tables,
-            BillList bills, int index)
+            BillList bills, int index, User employee)
         {
             Bills = bills;
             Products = products;
             Tables = tables;
             Index = index;
+            Employee = employee;
         }
 
         public void TableUp()

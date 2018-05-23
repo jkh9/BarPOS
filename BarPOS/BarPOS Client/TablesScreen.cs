@@ -16,11 +16,12 @@ namespace BarPOS
     public partial class TableScreen : Form
     {
         public TablesClass Tables { get; set; }
+        POSScreen actual;
 
         public TableScreen(ProductsList products, BillList bills,
-            UsersList users)
+            User employee)
         {
-            Tables = new TablesClass(products, bills, users);
+            Tables = new TablesClass(products, bills, employee);
             LoadTables();
             DrawTables();
             InitializeComponent();
@@ -65,8 +66,8 @@ namespace BarPOS
         {
             int tableNumber = Convert.ToInt32(((Button)sender).Text);
             
-            POSScreen actual = new POSScreen(Tables.Products,
-                Tables.Tables, Tables.Bills, tableNumber);
+            actual = new POSScreen(Tables.Products,
+                Tables.Tables, Tables.Bills, tableNumber, Tables.Employee);
             actual.StartPosition = FormStartPosition.CenterScreen;
             actual.Show();
         }

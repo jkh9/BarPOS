@@ -49,6 +49,18 @@ namespace BarPOS
             return Users[index - 1];
         }
 
+        public User GetUserByCode(int code)
+        {
+            for (int i = 1; i <= Count; i++)
+            {
+                if (Get(i).Code == code)
+                {
+                    return Get(i);
+                }
+            }
+            return null;
+        }
+
         public string Load()
         {
             Users = new List<User>();

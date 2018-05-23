@@ -16,19 +16,21 @@ namespace BarPOS
     public partial class POSScreen : Form
     {
         public POSSClass POS { get; set; }
+        PayScreen PayScreen;
 
         public POSScreen(ProductsList products, TableList tables,
-            BillList bills, int index)
+            BillList bills, int index, User employee)
         {
-            POS = new POSSClass(products, tables, bills, index);
-
+            POS = new POSSClass(products, tables, bills, index,employee);
             InitializeComponent();
-            this.lblTableNumber.Text = POS.Index.ToString();
+            
+            DrawProducts();
         }
 
         private void DrawProducts()
         {
-            //TO DO
+            this.lblTableNumber.Text = POS.Index.ToString();
+            this.lblWorker.Text = POS.Employee.Code.ToString("000");
         }
 
         private void btnBack_Click(object sender, System.EventArgs e)
@@ -39,8 +41,7 @@ namespace BarPOS
         //Event to open the payScreen
         private void btnPay_Click(object sender, System.EventArgs e)
         {
-            PayScreen PayScreen = new PayScreen(
-                POS.ProductsToSell,POS.Bills);
+            PayScreen = new PayScreen(POS.ProductsToSell, POS.Bills);
             PayScreen.StartPosition = FormStartPosition.CenterScreen;
             PayScreen.Show();
         }
@@ -72,6 +73,17 @@ namespace BarPOS
         {
             picHelp.Visible = false;
             btnExitHelp.Visible = false;
+        }
+
+        private void lblWorker_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblUserName.Visible = true;
+            lblUserName.Text = POS.Employee.Name;
+        }
+
+        private void lblWorker_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblUserName.Visible = false;
         }
     }
 }

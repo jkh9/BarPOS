@@ -12,16 +12,16 @@ namespace BarPOS
         public TableList Tables { get; set; }
         public ProductsList Products { get; set; }
         public BillList Bills { get; set; }
-        public UsersList Users { get; set; }
         public int Count { get { return Tables.Count; } }
+        public User Employee { get; set; }
 
         public TablesClass(ProductsList products, BillList bills,
-            UsersList users)
+            User employee)
         {
             Tables = new TableList();
             Products = products;
             Bills = bills;
-            Users = users;
+            Employee = employee;
         }
 
         public Table GetTable(int index)

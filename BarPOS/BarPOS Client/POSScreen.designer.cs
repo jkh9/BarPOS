@@ -87,6 +87,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
+            this.lblW = new System.Windows.Forms.Label();
             this.pnlPayProducts = new System.Windows.Forms.Panel();
             this.pnlPayProduct = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -117,6 +118,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.picHelp = new System.Windows.Forms.PictureBox();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.pnlProducts.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlPayProducts.SuspendLayout();
@@ -690,6 +692,7 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.lblWorker);
+            this.panel4.Controls.Add(this.lblW);
             this.panel4.Location = new System.Drawing.Point(24, 23);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(977, 50);
@@ -790,11 +793,25 @@
             this.lblWorker.AutoSize = true;
             this.lblWorker.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblWorker.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWorker.Location = new System.Drawing.Point(13, 3);
+            this.lblWorker.Location = new System.Drawing.Point(184, 3);
             this.lblWorker.Name = "lblWorker";
-            this.lblWorker.Size = new System.Drawing.Size(139, 42);
+            this.lblWorker.Size = new System.Drawing.Size(81, 42);
             this.lblWorker.TabIndex = 18;
-            this.lblWorker.Text = "Worker";
+            this.lblWorker.Text = "000";
+            this.lblWorker.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblWorker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblWorker_MouseDown);
+            this.lblWorker.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblWorker_MouseUp);
+            // 
+            // lblW
+            // 
+            this.lblW.AutoSize = true;
+            this.lblW.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblW.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblW.Location = new System.Drawing.Point(2, 3);
+            this.lblW.Name = "lblW";
+            this.lblW.Size = new System.Drawing.Size(180, 42);
+            this.lblW.TabIndex = 18;
+            this.lblW.Text = "Employee";
             // 
             // pnlPayProducts
             // 
@@ -1168,12 +1185,27 @@
             this.picHelp.TabStop = false;
             this.picHelp.Visible = false;
             // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.BackColor = System.Drawing.Color.White;
+            this.lblUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUserName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblUserName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(185, -1);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(121, 29);
+            this.lblUserName.TabIndex = 21;
+            this.lblUserName.Text = "Employee";
+            this.lblUserName.Visible = false;
+            // 
             // POSScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnExitHelp);
             this.Controls.Add(this.pnlPayProducts);
             this.Controls.Add(this.panel1);
@@ -1200,6 +1232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1261,7 +1294,7 @@
         private System.Windows.Forms.Label lblBoxNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblWorker;
+        private System.Windows.Forms.Label lblW;
         private System.Windows.Forms.Panel pnlPayProducts;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblVA;
@@ -1293,5 +1326,7 @@
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.PictureBox picHelp;
         private System.Windows.Forms.Button btnExitHelp;
+        private System.Windows.Forms.Label lblWorker;
+        private System.Windows.Forms.Label lblUserName;
     }
 }
