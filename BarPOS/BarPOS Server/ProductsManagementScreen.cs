@@ -15,7 +15,6 @@ namespace BarPOS
     public partial class ProductsManagmentScreen : Form
     {
         private ProductManagementClass ProductManagement;
-        private bool DrawFounds;
 
         public ProductsManagmentScreen(ProductsList products)
         {
@@ -37,24 +36,25 @@ namespace BarPOS
             else
             {
                 Product actualProduct =
-                    ProductManagement.GetActualProduct();
+                ProductManagement.GetActualProduct();
 
-                if (DrawFounds && actualProduct.Found || !DrawFounds)
-                {
-                    lblProductCode.Text = actualProduct.Code.ToString("000");
-                    pbImage.ImageLocation = actualProduct.ImagePath;
-                    txtBuyPrice.Text = actualProduct.BuyPrice + "";
-                    txtCategory.Text = actualProduct.Category + "";
-                    txtMinimunStock.Text = actualProduct.MinimunStock + "";
-                    txtName.Text = actualProduct.Description + "";
-                    txtPrice.Text = actualProduct.Price + "";
-                    txtStock.Text = actualProduct.Stock + "";
-                }
-                else
-                {
-                    ProductManagement.MoveForward();
-                    Draw();
-                }
+                lblProductCode.Text = actualProduct.Code.ToString("000");
+                pbImage.ImageLocation = actualProduct.ImagePath;
+                txtBuyPrice.Text = actualProduct.BuyPrice + "";
+                txtCategory.Text = actualProduct.Category + "";
+                txtMinimunStock.Text = actualProduct.MinimunStock + "";
+                txtName.Text = actualProduct.Description + "";
+                txtPrice.Text = actualProduct.Price + "";
+                txtStock.Text = actualProduct.Stock + "";
+            }
+        }
+
+        public void Save()
+        {
+            string errorCode = ProductManagement.Save();
+            if (errorCode != "")
+            {
+                MessageBox.Show(errorCode);
             }
         }
         
@@ -71,6 +71,8 @@ namespace BarPOS
             this.lblProductCode.Text = (ProductManagement.Count + 1).
                 ToString("000");
 
+            this.btnForward.Visible = false;
+            this.btnBackward.Visible = false;
             this.btnAdd.Visible = false;
             this.btnDelete.Visible = false;
             this.btnModify.Visible = false;
@@ -95,7 +97,7 @@ namespace BarPOS
                 newProduct.Stock = Convert.ToInt32(txtStock.Text);
 
                 ProductManagement.Add(newProduct);
-
+                Save();
             }
             catch (Exception)
             {
@@ -122,13 +124,14 @@ namespace BarPOS
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ProductManagement.Remove();
+            Save();
             Draw();
         }
 
         private void pbImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog getImage = new OpenFileDialog();
-            getImage.InitialDirectory = "C:\\";
+            getImage.InitialDirectory = Application.StartupPath + @"..\imgs\";
             getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| " +
                 "*.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
             if (getImage.ShowDialog() == DialogResult.OK)
@@ -148,7 +151,6 @@ namespace BarPOS
             searchScreen.ShowDialog();
             if (ProductManagement.Search(searchScreen.TextToSearch))
             {
-                DrawFounds = true;
                 Draw();
                 pnlTopBar.BackColor = Color.Gold;
                 this.btnBack.Visible = true;
@@ -162,7 +164,7 @@ namespace BarPOS
         private void btnBack_Click(object sender, System.EventArgs e)
         {
             this.btnBack.Visible = false;
-            DrawFounds = false;
+            ProductManagement.DrawFounds = false;
             pnlTopBar.BackColor = Color.Gainsboro;
 
             //restarting the found attribute
@@ -170,11 +172,6 @@ namespace BarPOS
             {
                 ProductManagement.Products.Get(i).Found = false;
             }
-        }
-
-        private void btnValidate_Click(object sender, EventArgs e)
-        {
-            btnValidate.Visible = false;
         }
 
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
@@ -198,6 +195,7 @@ namespace BarPOS
                 newProduct.Stock = Convert.ToInt32(txtStock.Text);
 
                 ProductManagement.Modify(newProduct);
+                Save();
             }
             catch (Exception)
             {

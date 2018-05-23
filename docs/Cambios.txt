@@ -1,2 +1,3 @@
 Enumeración con las categoria: Comida, bebida alcoholica, refrescos
 
+Modificar mientras está en la search screen

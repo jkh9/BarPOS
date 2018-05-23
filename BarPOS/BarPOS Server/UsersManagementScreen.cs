@@ -13,7 +13,6 @@ namespace BarPOS
     public partial class UsersManagmentScreen : Form
     {
         private UserManagementClass UserManagement;
-        private bool DrawFounds;
 
         public UsersManagmentScreen(UsersList users)
         {
@@ -34,19 +33,20 @@ namespace BarPOS
             else
             {
                 User actualUser =
-                    UserManagement.GetActualProduct();
+                    UserManagement.GetActualUser();
 
-                if (DrawFounds && actualUser.Found || !DrawFounds)
-                {
-                    lblUserCode.Text = actualUser.Code.ToString("000");
-                    pbImage.ImageLocation = actualUser.ImagePath;
-                    txtName.Text = actualUser.Name;
-                }
-                else
-                {
-                    UserManagement.MoveForward();
-                    Draw();
-                }
+                lblUserCode.Text = actualUser.Code.ToString("000");
+                pbImage.ImageLocation = actualUser.ImagePath;
+                txtName.Text = actualUser.Name;
+            }
+        }
+
+        public void Save()
+        {
+            string errorCode = UserManagement.Save();
+            if (errorCode != "")
+            {
+                MessageBox.Show(errorCode);
             }
         }
 
@@ -63,6 +63,8 @@ namespace BarPOS
             this.lblUserCode.Text = (UserManagement.Count + 1).
                 ToString("000");
 
+            this.btnForward.Visible = false;
+            this.btnBackward.Visible = false;
             this.btnAdd.Visible = false;
             this.btnDelete.Visible = false;
             this.btnModify.Visible = false;
@@ -85,13 +87,14 @@ namespace BarPOS
         private void btnDelete_Click(object sender, EventArgs e)
         {
             UserManagement.Remove();
+            Save();
             Draw();
         }
 
         private void pbImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog getImage = new OpenFileDialog();
-            getImage.InitialDirectory = "C:\\";
+            getImage.InitialDirectory = Application.StartupPath + @"..\..\..\imgs\";
             getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| " +
                 "*.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
             if (getImage.ShowDialog() == DialogResult.OK)
@@ -111,7 +114,6 @@ namespace BarPOS
             searchScreen.ShowDialog();
             if (UserManagement.Search(searchScreen.TextToSearch))
             {
-                DrawFounds = true;
                 Draw();
                 pnlTopBar.BackColor = Color.Gold;
                 this.btnBack.Visible = true;
@@ -125,7 +127,7 @@ namespace BarPOS
         private void btnBack_Click(object sender, System.EventArgs e)
         {
             this.btnBack.Visible = false;
-            DrawFounds = false;
+            UserManagement.DrawFounds = false;
             pnlTopBar.BackColor = Color.Gainsboro;
 
             //restarting the found attribute
@@ -146,6 +148,7 @@ namespace BarPOS
 
                 UserManagement.Add(newUser);
 
+                Save();
             }
             catch (Exception)
             {
@@ -172,6 +175,8 @@ namespace BarPOS
                 newUser.Name = txtName.Text;
 
                 UserManagement.Modify(newUser);
+
+                Save();
             }
             catch (Exception)
             {

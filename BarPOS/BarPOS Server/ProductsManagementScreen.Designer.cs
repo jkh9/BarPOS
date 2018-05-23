@@ -163,11 +163,12 @@ namespace BarPOS
             // 
             // pbImage
             // 
+            this.pbImage.BackColor = System.Drawing.Color.White;
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbImage.Location = new System.Drawing.Point(245, 66);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(180, 140);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImage.TabIndex = 21;
             this.pbImage.TabStop = false;
             this.pbImage.Click += new System.EventHandler(this.pbImage_Click);
@@ -274,7 +275,7 @@ namespace BarPOS
             this.txtBuyPrice.Location = new System.Drawing.Point(313, 492);
             this.txtBuyPrice.Name = "txtBuyPrice";
             this.txtBuyPrice.Size = new System.Drawing.Size(288, 32);
-            this.txtBuyPrice.TabIndex = 29;
+            this.txtBuyPrice.TabIndex = 30;
             this.txtBuyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnSearch
@@ -286,7 +287,7 @@ namespace BarPOS
             this.btnSearch.Location = new System.Drawing.Point(562, 598);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 90);
-            this.btnSearch.TabIndex = 30;
+            this.btnSearch.TabIndex = 31;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

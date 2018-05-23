@@ -12,6 +12,7 @@ namespace BarPOS
         public int Index { get; set; }
         public ProductsList Products { get; set; }
         public int Count { get { return Products.Count; } }
+        public bool DrawFounds { get; set; }
 
         public ProductManagementClass(ProductsList products)
         {
@@ -27,6 +28,7 @@ namespace BarPOS
         public void Add(Product product)
         {
             Products.Add(product);
+            Index = Count;
         }
 
         public void Remove()
@@ -59,8 +61,15 @@ namespace BarPOS
                     {
                         ActualProduct.Found = true;
                         found = true;
+                        DrawFounds = true;
                     }
                 }
+
+                if (!GetActualProduct().Found)
+                {
+                    MoveForward();
+                }
+
                 return found;
             }
             return false;
@@ -76,6 +85,22 @@ namespace BarPOS
             {
                 Index = 1;
             }
+
+            if (DrawFounds && !Products.Get(Index).Found)
+            {
+                do
+                {
+                    if (Index < Count)
+                    {
+                        Index++;
+                    }
+                    else
+                    {
+                        Index = 1;
+                    }
+                } while (!Products.Get(Index).Found);
+            }
+            
         }
 
         public void MoveBackward()
@@ -88,6 +113,26 @@ namespace BarPOS
             {
                 Index = Count;
             }
+
+            if (DrawFounds && !Products.Get(Index).Found)
+            {
+                do
+                {
+                    if (Index > 1)
+                    {
+                        Index--;
+                    }
+                    else
+                    {
+                        Index = Count;
+                    }
+                } while (!Products.Get(Index).Found);
+            }
+        }
+
+        public string Save()
+        {
+            return Products.Save();
         }
     }
 }

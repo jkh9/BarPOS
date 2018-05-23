@@ -56,7 +56,7 @@
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProducts.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducts.Location = new System.Drawing.Point(172, 276);
+            this.btnProducts.Location = new System.Drawing.Point(172, 286);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(323, 93);
             this.btnProducts.TabIndex = 2;

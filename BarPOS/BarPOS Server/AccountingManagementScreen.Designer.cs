@@ -34,7 +34,7 @@
             this.btnBackward = new System.Windows.Forms.Button();
             this.lblTotalBills = new System.Windows.Forms.Label();
             this.lblTableNumber = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDay = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.pnlBillLine = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.mc = new System.Windows.Forms.MonthCalendar();
             this.pnlTopBar.SuspendLayout();
             this.pnlBillLine.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             this.pnlTopBar.Controls.Add(this.btnBackward);
             this.pnlTopBar.Controls.Add(this.lblTotalBills);
             this.pnlTopBar.Controls.Add(this.lblTableNumber);
-            this.pnlTopBar.Controls.Add(this.button2);
+            this.pnlTopBar.Controls.Add(this.btnDay);
             this.pnlTopBar.Controls.Add(this.btnClose);
             this.pnlTopBar.Controls.Add(this.label3);
             this.pnlTopBar.Controls.Add(this.label2);
@@ -128,18 +129,18 @@
             this.lblTableNumber.TabIndex = 21;
             this.lblTableNumber.Text = "001";
             // 
-            // button2
+            // btnDay
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 40);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "12/05/2018";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDay.BackColor = System.Drawing.Color.Transparent;
+            this.btnDay.FlatAppearance.BorderSize = 0;
+            this.btnDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDay.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDay.Location = new System.Drawing.Point(3, 5);
+            this.btnDay.Name = "btnDay";
+            this.btnDay.Size = new System.Drawing.Size(171, 40);
+            this.btnDay.TabIndex = 23;
+            this.btnDay.UseVisualStyleBackColor = false;
+            this.btnDay.Click += new System.EventHandler(this.btnDay_Click);
             // 
             // btnClose
             // 
@@ -240,6 +241,18 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Units";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(172, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 40);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Price";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -345,17 +358,15 @@
             this.btnBackToMainMenu.UseVisualStyleBackColor = false;
             this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
-            // label1
+            // mc
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 40);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Price";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mc.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.mc.Location = new System.Drawing.Point(-1, -9);
+            this.mc.Name = "mc";
+            this.mc.ShowToday = false;
+            this.mc.TabIndex = 29;
+            this.mc.Visible = false;
+            this.mc.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mc_DateChanged);
             // 
             // AccountingManagmentScreen
             // 
@@ -363,6 +374,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 700);
+            this.Controls.Add(this.mc);
             this.Controls.Add(this.btnBackToMainMenu);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSearch);
@@ -391,7 +403,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTableNumber;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDay;
         private System.Windows.Forms.Label lblTotalBills;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -412,5 +424,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MonthCalendar mc;
     }
 }

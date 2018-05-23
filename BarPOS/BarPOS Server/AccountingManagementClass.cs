@@ -13,6 +13,7 @@ namespace BarPOS
         public int Index { get; set; }
         public BillList Bills { get; set; }
         public int Count { get { return Bills.Count; } }
+        public bool DrawFounds { get; set; }
 
         public AccountingManagementClass(BillList bills)
         {
@@ -41,6 +42,12 @@ namespace BarPOS
                     {
                         ActualBill.Found = true;
                         found = true;
+                        DrawFounds = true;
+                    }
+
+                    if (!GetActualBill().Found)
+                    {
+                        MoveForward();
                     }
                 }
                 return found;
@@ -59,6 +66,22 @@ namespace BarPOS
             {
                 Index = 1;
             }
+
+            if (DrawFounds && !Bills.Get(Index).Found)
+            {
+                do
+                {
+                    if (Index < Count)
+                    {
+                        Index++;
+                    }
+                    else
+                    {
+                        Index = 1;
+                    }
+                } while (!Bills.Get(Index).Found);
+            }
+
         }
 
         public void MoveBackward()
@@ -71,7 +94,23 @@ namespace BarPOS
             {
                 Index = Count;
             }
+
+            if (DrawFounds && !Bills.Get(Index).Found)
+            {
+                do
+                {
+                    if (Index > 1)
+                    {
+                        Index--;
+                    }
+                    else
+                    {
+                        Index = Count;
+                    }
+                } while (!Bills.Get(Index).Found);
+            }
         }
+
 
         public void ChangeDate()
         {

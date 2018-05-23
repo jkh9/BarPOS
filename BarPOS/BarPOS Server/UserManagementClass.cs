@@ -10,6 +10,7 @@ namespace BarPOS
         public int Index { get; set; }
         public UsersList Users { get; set; }
         public int Count { get { return Users.Count; } }
+        public bool DrawFounds { get; set; }
 
         public UserManagementClass(UsersList users)
         {
@@ -17,7 +18,7 @@ namespace BarPOS
             Index = 1;
         }
 
-        public User GetActualProduct()
+        public User GetActualUser()
         {
             return Users.Get(Index);
         }
@@ -25,6 +26,7 @@ namespace BarPOS
         public void Add(User user)
         {
             Users.Add(user);
+            Index = Count;
         }
 
         public void Remove()
@@ -57,6 +59,12 @@ namespace BarPOS
                     {
                         actualUser.Found = true;
                         found = true;
+                        DrawFounds = true;
+                    }
+
+                    if (!GetActualUser().Found)
+                    {
+                        MoveForward();
                     }
                 }
                 return found;
@@ -74,6 +82,22 @@ namespace BarPOS
             {
                 Index = 1;
             }
+
+            if (DrawFounds && !Users.Get(Index).Found)
+            {
+                do
+                {
+                    if (Index < Count)
+                    {
+                        Index++;
+                    }
+                    else
+                    {
+                        Index = 1;
+                    }
+                } while (!Users.Get(Index).Found);
+            }
+
         }
 
         public void MoveBackward()
@@ -86,6 +110,26 @@ namespace BarPOS
             {
                 Index = Count;
             }
+
+            if (DrawFounds && !Users.Get(Index).Found)
+            {
+                do
+                {
+                    if (Index > 1)
+                    {
+                        Index--;
+                    }
+                    else
+                    {
+                        Index = Count;
+                    }
+                } while (!Users.Get(Index).Found);
+            }
+        }
+
+        public string Save()
+        {
+            return Users.Save();
         }
     }
 }
