@@ -56,6 +56,12 @@
     <Compile Include="ConfigurationScreen.Designer.cs">
       <DependentUpon>ConfigurationScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogInScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInScreen.Designer.cs">
+      <DependentUpon>LogInScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayClass.cs" />
     <Compile Include="PayScreen.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,9 @@
     <Compile Include="UsersList.cs" />
     <EmbeddedResource Include="ConfigurationScreen.resx">
       <DependentUpon>ConfigurationScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInScreen.resx">
+      <DependentUpon>LogInScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayScreen.resx">
       <DependentUpon>PayScreen.cs</DependentUpon>

@@ -15,6 +15,10 @@ namespace BarPOS
         public BillList Bills { get; set; }
         public ProductsList Products { get; set; }
 
+        AccountingManagmentScreen accountingScreen;
+        UsersManagmentScreen usersScreen;
+        ProductsManagmentScreen productsScreen;
+
         public AdminScreen()
         {
             this.Users = new UsersList();
@@ -48,7 +52,7 @@ namespace BarPOS
         //Event to open the accouting screen
         private void btnAccount_Click(object sender, System.EventArgs e)
         {
-            AccountingManagmentScreen accountingScreen = 
+            accountingScreen = 
                 new AccountingManagmentScreen(Bills);
             accountingScreen.StartPosition = FormStartPosition.CenterScreen;
             accountingScreen.Show();
@@ -57,7 +61,7 @@ namespace BarPOS
         //Event to open the users screen
         private void btnUsers_Click(object sender, System.EventArgs e)
         {
-            UsersManagmentScreen usersScreen = new
+            usersScreen = new
                 UsersManagmentScreen(Users);
             usersScreen.StartPosition = FormStartPosition.CenterScreen;
             usersScreen.Show();
@@ -66,7 +70,7 @@ namespace BarPOS
         //Event to open the products screen
         private void btnProducts_Click(object sender, System.EventArgs e)
         {
-            ProductsManagmentScreen productsScreen = new
+            productsScreen = new
                 ProductsManagmentScreen(Products);
             productsScreen.StartPosition = FormStartPosition.CenterScreen;
             productsScreen.Show();

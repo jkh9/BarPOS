@@ -32,9 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.pnlTopBar = new System.Windows.Forms.Panel();
-            this.btnForward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnBackward = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblUserCode = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnValidate = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBackward = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.pnlTopBar.SuspendLayout();
             this.SuspendLayout();
@@ -94,20 +94,6 @@
             this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
             this.pnlTopBar.TabIndex = 15;
             // 
-            // btnForward
-            // 
-            this.btnForward.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnForward.FlatAppearance.BorderSize = 0;
-            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForward.Location = new System.Drawing.Point(476, 4);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(40, 40);
-            this.btnForward.TabIndex = 23;
-            this.btnForward.Text = "+";
-            this.btnForward.UseVisualStyleBackColor = false;
-            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Firebrick;
@@ -121,20 +107,6 @@
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnBackward
-            // 
-            this.btnBackward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.btnBackward.FlatAppearance.BorderSize = 0;
-            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackward.Location = new System.Drawing.Point(433, 4);
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(40, 40);
-            this.btnBackward.TabIndex = 24;
-            this.btnBackward.Text = "-";
-            this.btnBackward.UseVisualStyleBackColor = false;
-            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // label3
             // 
@@ -259,6 +231,34 @@
             this.btnValidate.Visible = false;
             this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
             // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.White;
+            this.btnForward.FlatAppearance.BorderSize = 0;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(469, 5);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(40, 40);
+            this.btnForward.TabIndex = 39;
+            this.btnForward.Text = "→";
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBackward
+            // 
+            this.btnBackward.BackColor = System.Drawing.Color.White;
+            this.btnBackward.FlatAppearance.BorderSize = 0;
+            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackward.Location = new System.Drawing.Point(426, 5);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(40, 40);
+            this.btnBackward.TabIndex = 40;
+            this.btnBackward.Text = "←";
+            this.btnBackward.UseVisualStyleBackColor = false;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
+            // 
             // UsersManagmentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,9 +293,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Panel pnlTopBar;
-        private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnBackward;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblUserCode;
         private System.Windows.Forms.Button btnSearch;
@@ -305,5 +303,7 @@
         private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnValidate;
+        private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Button btnBackward;
     }
 }

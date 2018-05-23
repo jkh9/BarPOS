@@ -32,9 +32,7 @@ namespace BarPOS
         private void InitializeComponent()
         {
             this.pnlTopBar = new System.Windows.Forms.Panel();
-            this.btnForward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnBackward = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblProductCode = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -57,6 +55,8 @@ namespace BarPOS
             this.btnValidate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBackward = new System.Windows.Forms.Button();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
@@ -65,28 +65,14 @@ namespace BarPOS
             // 
             this.pnlTopBar.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlTopBar.Controls.Add(this.btnForward);
-            this.pnlTopBar.Controls.Add(this.btnClose);
             this.pnlTopBar.Controls.Add(this.btnBackward);
+            this.pnlTopBar.Controls.Add(this.btnClose);
             this.pnlTopBar.Controls.Add(this.label3);
             this.pnlTopBar.Controls.Add(this.lblProductCode);
             this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBar.Name = "pnlTopBar";
             this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
             this.pnlTopBar.TabIndex = 16;
-            // 
-            // btnForward
-            // 
-            this.btnForward.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnForward.FlatAppearance.BorderSize = 0;
-            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForward.Location = new System.Drawing.Point(477, 4);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(40, 40);
-            this.btnForward.TabIndex = 23;
-            this.btnForward.Text = "+";
-            this.btnForward.UseVisualStyleBackColor = false;
-            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
             // btnClose
             // 
@@ -101,20 +87,6 @@ namespace BarPOS
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnBackward
-            // 
-            this.btnBackward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.btnBackward.FlatAppearance.BorderSize = 0;
-            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackward.Location = new System.Drawing.Point(432, 4);
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(40, 40);
-            this.btnBackward.TabIndex = 24;
-            this.btnBackward.Text = "-";
-            this.btnBackward.UseVisualStyleBackColor = false;
-            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // label3
             // 
@@ -377,6 +349,34 @@ namespace BarPOS
             this.btnBackToMainMenu.UseVisualStyleBackColor = false;
             this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.White;
+            this.btnForward.FlatAppearance.BorderSize = 0;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(469, 5);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(40, 40);
+            this.btnForward.TabIndex = 36;
+            this.btnForward.Text = "→";
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBackward
+            // 
+            this.btnBackward.BackColor = System.Drawing.Color.White;
+            this.btnBackward.FlatAppearance.BorderSize = 0;
+            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackward.Location = new System.Drawing.Point(426, 5);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(40, 40);
+            this.btnBackward.TabIndex = 37;
+            this.btnBackward.Text = "←";
+            this.btnBackward.UseVisualStyleBackColor = false;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
+            // 
             // ProductsManagmentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,9 +418,7 @@ namespace BarPOS
         #endregion
 
         private System.Windows.Forms.Panel pnlTopBar;
-        private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnBackward;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblProductCode;
         private System.Windows.Forms.TextBox txtName;
@@ -443,5 +441,7 @@ namespace BarPOS
         private System.Windows.Forms.Button btnValidate;
         private Button btnBack;
         private Button btnBackToMainMenu;
+        private Button btnForward;
+        private Button btnBackward;
     }
 }
