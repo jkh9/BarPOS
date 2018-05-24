@@ -3,6 +3,7 @@
 // Versiones: 
 // V0.01 21-May-2018 Moisés: Basic skeleton, updated from 
 //    POSScreen
+// V0.02 24-May-2018 Moisés: Changed moveToTable method
 
 namespace BarPOS
 {
@@ -10,7 +11,7 @@ namespace BarPOS
     {
         public ProductsList Products { get; }
         public TableList Tables { get; }
-        public ProductToSellList ProductsToSell { get; }
+        public ProductToSellList ProductsToSell { get; set; }
         public BillList Bills { get; set; }
         public int Index { get; set; }
         public int Count { get { return Tables.Count; } }
@@ -19,6 +20,7 @@ namespace BarPOS
         public POSSClass(ProductsList products, TableList tables,
             BillList bills, int index, User employee)
         {
+            ProductsToSell = new ProductToSellList();
             Bills = bills;
             Products = products;
             Tables = tables;
@@ -56,10 +58,22 @@ namespace BarPOS
             } while (!Tables.Get(Index).InUse);
         }
 
-        public Product MoveToTable(int index)
+        public void MoveToTable(ProductToSell product)
         {
-            return Products.Get(index);
+            if (Tables.Get(Index).Products.Contains(product))
+            {
+                Tables.Get(Index).Products.Get(
+                    Tables.Get(Index).Products.IndexOf(product)).Amount++;
+            }
+            else
+            {
+                Tables.Get(Index).Products.Add(product);
+            }
         }
 
+        public TableProductsList GetTableProducts()
+        {
+            return Tables.Get(Index).Products;
+        }
     }
 }

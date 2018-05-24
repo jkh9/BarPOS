@@ -13,6 +13,11 @@ namespace BarPOS
         public List<ProductToSell> ProductsToSell { get; set; }
         public int Count { get { return ProductsToSell.Count; } }
 
+        public ProductToSellList()
+        {
+            ProductsToSell = new List<ProductToSell>();
+        }
+
         public ProductToSell Get(int index)
         {
             return ProductsToSell[index - 1];
