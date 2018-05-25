@@ -28,16 +28,20 @@ namespace BarPOS
             {
                 Controls.Clear();
                 InitializeComponent();
-                lblUserCode.Text = "000";
+                lblUserIndex.Text = "0/0";
             }
             else
             {
                 User actualUser =
                     UserManagement.GetActualUser();
 
-                lblUserCode.Text = actualUser.Code.ToString("000");
+                lblUserIndex.Text =
+                    UserManagement.Index + "/" + UserManagement.Count;
+
+                txtCode.Text = actualUser.Code.ToString("000");
                 pbImage.ImageLocation = actualUser.ImagePath;
                 txtName.Text = actualUser.Name;
+                txtPassword.Text = actualUser.Pass;
             }
         }
 
@@ -60,7 +64,7 @@ namespace BarPOS
         {
             this.Controls.Clear();
             this.InitializeComponent();
-            this.lblUserCode.Text = (UserManagement.Count + 1).
+            this.txtCode.Text = (UserManagement.GetActualUser().Code + 1).
                 ToString("000");
 
             this.btnForward.Visible = false;
@@ -139,12 +143,23 @@ namespace BarPOS
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
+            addUser();
+        }
+
+        private void btnBackToMainMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void addUser()
+        {
             try
             {
                 User newUser = new User();
                 newUser.ImagePath = pbImage.ImageLocation;
-                newUser.Code = Convert.ToInt32(lblUserCode.Text);
+                newUser.Code = Convert.ToInt32(txtCode.Text);
                 newUser.Name = txtName.Text;
+                newUser.Pass = txtPassword.Text;
 
                 UserManagement.Add(newUser);
 
@@ -160,19 +175,15 @@ namespace BarPOS
             Draw();
         }
 
-        private void btnBackToMainMenu_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnModify_Click(object sender, EventArgs e)
+        private void updateUser()
         {
             try
             {
                 User newUser = new User();
                 newUser.ImagePath = pbImage.ImageLocation;
-                newUser.Code = Convert.ToInt32(lblUserCode.Text);
+                newUser.Code = Convert.ToInt32(txtCode.Text);
                 newUser.Name = txtName.Text;
+                newUser.Pass = txtPassword.Text;
 
                 UserManagement.Modify(newUser);
 
@@ -183,9 +194,29 @@ namespace BarPOS
                 MessageBox.Show("Error guardando el usuario");
             }
 
-            this.Controls.Clear();
+            Controls.Clear();
             InitializeComponent();
             Draw();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            updateUser();
+        }
+
+        private void any_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (btnModify.Visible)
+                {
+                    updateUser();
+                }
+                else
+                {
+                    addUser();
+                }
+            }
         }
     }
 }

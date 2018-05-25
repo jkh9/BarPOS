@@ -27,6 +27,7 @@ namespace BarPOS
             try
             {
                 int code = Convert.ToInt32(txtCode.Text);
+                string pass = txtPass.Text;
 
                 LogedUser = users.GetUserByCode(code);
 
@@ -34,10 +35,14 @@ namespace BarPOS
                 {
                     MessageBox.Show("User not found");
                 }
-                else
+                else if (LogedUser.Pass == pass)
                 {
                     Login = true;
                 }
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Wrong data");
             }
             catch (Exception er)
             {

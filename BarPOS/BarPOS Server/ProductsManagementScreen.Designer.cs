@@ -32,9 +32,10 @@ namespace BarPOS
         private void InitializeComponent()
         {
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBackward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblProductCode = new System.Windows.Forms.Label();
+            this.Prodc = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbImage = new System.Windows.Forms.PictureBox();
@@ -55,8 +56,9 @@ namespace BarPOS
             this.btnValidate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
-            this.btnForward = new System.Windows.Forms.Button();
-            this.btnBackward = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblIndex = new System.Windows.Forms.Label();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +66,43 @@ namespace BarPOS
             // pnlTopBar
             // 
             this.pnlTopBar.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlTopBar.Controls.Add(this.lblIndex);
             this.pnlTopBar.Controls.Add(this.btnForward);
             this.pnlTopBar.Controls.Add(this.btnBackward);
             this.pnlTopBar.Controls.Add(this.btnClose);
-            this.pnlTopBar.Controls.Add(this.label3);
-            this.pnlTopBar.Controls.Add(this.lblProductCode);
+            this.pnlTopBar.Controls.Add(this.Prodc);
             this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBar.Name = "pnlTopBar";
             this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
             this.pnlTopBar.TabIndex = 16;
+            // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.White;
+            this.btnForward.FlatAppearance.BorderSize = 0;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(469, 5);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(40, 40);
+            this.btnForward.TabIndex = 36;
+            this.btnForward.Text = "→";
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBackward
+            // 
+            this.btnBackward.BackColor = System.Drawing.Color.White;
+            this.btnBackward.FlatAppearance.BorderSize = 0;
+            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackward.Location = new System.Drawing.Point(426, 5);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(40, 40);
+            this.btnBackward.TabIndex = 37;
+            this.btnBackward.Text = "←";
+            this.btnBackward.UseVisualStyleBackColor = false;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // btnClose
             // 
@@ -88,36 +118,23 @@ namespace BarPOS
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label3
+            // Prodc
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(79, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 42);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Product code";
-            // 
-            // lblProductCode
-            // 
-            this.lblProductCode.AutoSize = true;
-            this.lblProductCode.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblProductCode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblProductCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblProductCode.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductCode.Location = new System.Drawing.Point(326, 3);
-            this.lblProductCode.Name = "lblProductCode";
-            this.lblProductCode.Size = new System.Drawing.Size(83, 44);
-            this.lblProductCode.TabIndex = 21;
-            this.lblProductCode.Text = "000";
+            this.Prodc.AutoSize = true;
+            this.Prodc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Prodc.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Prodc.Location = new System.Drawing.Point(156, 4);
+            this.Prodc.Name = "Prodc";
+            this.Prodc.Size = new System.Drawing.Size(147, 42);
+            this.Prodc.TabIndex = 22;
+            this.Prodc.Text = "Product";
             // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Control;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(313, 232);
+            this.txtName.Location = new System.Drawing.Point(313, 227);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(288, 32);
             this.txtName.TabIndex = 20;
@@ -126,7 +143,7 @@ namespace BarPOS
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 234);
+            this.label1.Location = new System.Drawing.Point(80, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 40);
             this.label1.TabIndex = 19;
@@ -150,7 +167,7 @@ namespace BarPOS
             this.txtPrice.BackColor = System.Drawing.SystemColors.Control;
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrice.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(313, 284);
+            this.txtPrice.Location = new System.Drawing.Point(313, 274);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(288, 32);
             this.txtPrice.TabIndex = 23;
@@ -159,7 +176,7 @@ namespace BarPOS
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 286);
+            this.label2.Location = new System.Drawing.Point(80, 271);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 40);
             this.label2.TabIndex = 22;
@@ -171,7 +188,7 @@ namespace BarPOS
             this.txtStock.BackColor = System.Drawing.SystemColors.Control;
             this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStock.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStock.Location = new System.Drawing.Point(313, 336);
+            this.txtStock.Location = new System.Drawing.Point(313, 321);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(288, 32);
             this.txtStock.TabIndex = 25;
@@ -180,7 +197,7 @@ namespace BarPOS
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(80, 338);
+            this.label4.Location = new System.Drawing.Point(80, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 40);
             this.label4.TabIndex = 24;
@@ -192,7 +209,7 @@ namespace BarPOS
             this.txtMinimunStock.BackColor = System.Drawing.SystemColors.Control;
             this.txtMinimunStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMinimunStock.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinimunStock.Location = new System.Drawing.Point(313, 388);
+            this.txtMinimunStock.Location = new System.Drawing.Point(313, 368);
             this.txtMinimunStock.Name = "txtMinimunStock";
             this.txtMinimunStock.Size = new System.Drawing.Size(288, 32);
             this.txtMinimunStock.TabIndex = 27;
@@ -201,7 +218,7 @@ namespace BarPOS
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(80, 390);
+            this.label5.Location = new System.Drawing.Point(80, 365);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(221, 40);
             this.label5.TabIndex = 26;
@@ -213,7 +230,7 @@ namespace BarPOS
             this.txtCategory.BackColor = System.Drawing.SystemColors.Control;
             this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCategory.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Location = new System.Drawing.Point(313, 440);
+            this.txtCategory.Location = new System.Drawing.Point(313, 415);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(288, 32);
             this.txtCategory.TabIndex = 29;
@@ -222,7 +239,7 @@ namespace BarPOS
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(80, 442);
+            this.label6.Location = new System.Drawing.Point(80, 412);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 40);
             this.label6.TabIndex = 28;
@@ -232,7 +249,7 @@ namespace BarPOS
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(80, 494);
+            this.label7.Location = new System.Drawing.Point(80, 459);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 40);
             this.label7.TabIndex = 28;
@@ -244,7 +261,7 @@ namespace BarPOS
             this.txtBuyPrice.BackColor = System.Drawing.SystemColors.Control;
             this.txtBuyPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuyPrice.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuyPrice.Location = new System.Drawing.Point(313, 492);
+            this.txtBuyPrice.Location = new System.Drawing.Point(313, 462);
             this.txtBuyPrice.Name = "txtBuyPrice";
             this.txtBuyPrice.Size = new System.Drawing.Size(288, 32);
             this.txtBuyPrice.TabIndex = 30;
@@ -326,7 +343,7 @@ namespace BarPOS
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(594, 552);
+            this.btnBack.Location = new System.Drawing.Point(594, 553);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(94, 40);
             this.btnBack.TabIndex = 34;
@@ -349,33 +366,39 @@ namespace BarPOS
             this.btnBackToMainMenu.UseVisualStyleBackColor = false;
             this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
-            // btnForward
+            // label8
             // 
-            this.btnForward.BackColor = System.Drawing.Color.White;
-            this.btnForward.FlatAppearance.BorderSize = 0;
-            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnForward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForward.Location = new System.Drawing.Point(469, 5);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(40, 40);
-            this.btnForward.TabIndex = 36;
-            this.btnForward.Text = "→";
-            this.btnForward.UseVisualStyleBackColor = false;
-            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            this.label8.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(80, 506);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(158, 40);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Code:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnBackward
+            // txtCode
             // 
-            this.btnBackward.BackColor = System.Drawing.Color.White;
-            this.btnBackward.FlatAppearance.BorderSize = 0;
-            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBackward.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackward.Location = new System.Drawing.Point(426, 5);
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(40, 40);
-            this.btnBackward.TabIndex = 37;
-            this.btnBackward.Text = "←";
-            this.btnBackward.UseVisualStyleBackColor = false;
-            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
+            this.txtCode.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Location = new System.Drawing.Point(313, 509);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(288, 32);
+            this.txtCode.TabIndex = 30;
+            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblIndex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIndex.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblIndex.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndex.Location = new System.Drawing.Point(300, 3);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(72, 44);
+            this.lblIndex.TabIndex = 42;
+            this.lblIndex.Text = "1/2";
             // 
             // ProductsManagmentScreen
             // 
@@ -390,7 +413,9 @@ namespace BarPOS
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtBuyPrice);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -419,8 +444,7 @@ namespace BarPOS
 
         private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblProductCode;
+        private System.Windows.Forms.Label Prodc;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbImage;
@@ -443,5 +467,8 @@ namespace BarPOS
         private Button btnBackToMainMenu;
         private Button btnForward;
         private Button btnBackward;
+        private Label label8;
+        private TextBox txtCode;
+        private Label lblIndex;
     }
 }

@@ -31,12 +31,14 @@
             this.btnLogIn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogIn
             // 
             this.btnLogIn.Font = new System.Drawing.Font("Arial", 21.75F);
-            this.btnLogIn.Location = new System.Drawing.Point(40, 143);
+            this.btnLogIn.Location = new System.Drawing.Point(88, 143);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(165, 63);
             this.btnLogIn.TabIndex = 0;
@@ -47,7 +49,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 20);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 35);
             this.label1.TabIndex = 1;
@@ -57,19 +59,41 @@
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("Arial", 21.75F);
-            this.txtCode.Location = new System.Drawing.Point(40, 81);
+            this.txtCode.Location = new System.Drawing.Point(169, 13);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(165, 41);
+            this.txtCode.Size = new System.Drawing.Size(148, 41);
             this.txtCode.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 35);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "User Pass";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Arial", 21.75F);
+            this.txtPass.Location = new System.Drawing.Point(169, 68);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(148, 41);
+            this.txtPass.TabIndex = 2;
             // 
             // LogInScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 218);
+            this.ClientSize = new System.Drawing.Size(329, 218);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogIn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LogInScreen";
             this.Text = "LogInScreen";
             this.ResumeLayout(false);
@@ -82,5 +106,7 @@
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPass;
     }
 }

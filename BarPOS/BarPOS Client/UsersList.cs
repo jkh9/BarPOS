@@ -6,6 +6,7 @@
 // V0.03 16-May-2018 Moisés: method Remove
 // V0.04 18-May-2018 Moisés: Load and save methods changeds
 // V0.05 21-May-2018 Moisés: Changes in load and save methods
+// V0.06 25-May-2018 Moisés: GetUserByCode method
 
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,7 @@ namespace BarPOS
                             user.Name = parts[0];
                             user.Code = Convert.ToInt32(parts[1]);
                             user.ImagePath = parts[2];
+                            user.Pass = parts[3];
                             this.Add(user);
                         }
                     } while (line != null);

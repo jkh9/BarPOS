@@ -31,14 +31,17 @@ namespace BarPOS
             {
                 Controls.Clear();
                 InitializeComponent();
-                lblProductCode.Text = "000";
+                lblIndex.Text = "0/0";
             }
             else
             {
                 Product actualProduct =
                 ProductManagement.GetActualProduct();
 
-                lblProductCode.Text = actualProduct.Code.ToString("000");
+                lblIndex.Text =
+                    ProductManagement.Index + "/" + ProductManagement.Count;
+
+                txtCode.Text = actualProduct.Code.ToString("000");
                 pbImage.ImageLocation = actualProduct.ImagePath;
                 txtBuyPrice.Text = actualProduct.BuyPrice + "";
                 txtCategory.Text = actualProduct.Category + "";
@@ -68,7 +71,7 @@ namespace BarPOS
         {
             this.Controls.Clear();
             this.InitializeComponent();
-            this.lblProductCode.Text = (ProductManagement.Count + 1).
+            this.txtCode.Text = (ProductManagement.Count + 1).
                 ToString("000");
 
             this.btnForward.Visible = false;
@@ -187,7 +190,7 @@ namespace BarPOS
                 newProduct.ImagePath = pbImage.ImageLocation;
                 newProduct.BuyPrice = Convert.ToDouble(txtBuyPrice.Text);
                 newProduct.Category = txtCategory.Text;
-                newProduct.Code = Convert.ToInt32(lblProductCode.Text);
+                newProduct.Code = Convert.ToInt32(txtCode.Text);
                 newProduct.Description = txtName.Text;
                 newProduct.MinimunStock =
                     Convert.ToInt32(txtMinimunStock.Text);
