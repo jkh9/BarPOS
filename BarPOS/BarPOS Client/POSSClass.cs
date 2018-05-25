@@ -26,6 +26,7 @@ namespace BarPOS
             Tables = tables;
             Index = index;
             Employee = employee;
+            Tables.Get(Index).InUse = true;
         }
 
         public void TableUp()
@@ -62,8 +63,7 @@ namespace BarPOS
         {
             if (Tables.Get(Index).Products.Contains(product))
             {
-                Tables.Get(Index).Products.Get(
-                    Tables.Get(Index).Products.IndexOf(product)).Amount++;
+                Tables.Get(Index).Products.Get(product).Amount++;
             }
             else
             {
@@ -74,6 +74,23 @@ namespace BarPOS
         public TableProductsList GetTableProducts()
         {
             return Tables.Get(Index).Products;
+        }
+
+        public void AddProduct(ProductToSell product)
+        {
+            Tables.Get(Index).Products.Get(product).Amount++;
+        }
+
+        public void SubstractProduct(ProductToSell product)
+        {
+            if (Tables.Get(Index).Products.Get(product).Amount < 2)
+            {
+                Tables.Get(Index).Products.Remove(product);
+            }
+            else
+            {
+                Tables.Get(Index).Products.Get(product).Amount--;
+            }
         }
     }
 }

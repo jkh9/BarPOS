@@ -66,10 +66,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.picHelp = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picHelp = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.pnlPayProducts.SuspendLayout();
             this.pnlPayProduct.SuspendLayout();
@@ -562,16 +562,6 @@
             this.label15.Text = "10";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 80);
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
@@ -586,17 +576,6 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // picHelp
-            // 
-            this.picHelp.BackColor = System.Drawing.Color.Transparent;
-            this.picHelp.Image = global::BarPOS.Properties.Resources.picHelp;
-            this.picHelp.Location = new System.Drawing.Point(46, 79);
-            this.picHelp.Name = "picHelp";
-            this.picHelp.Size = new System.Drawing.Size(877, 606);
-            this.picHelp.TabIndex = 86;
-            this.picHelp.TabStop = false;
-            this.picHelp.Visible = false;
-            // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
@@ -610,6 +589,29 @@
             this.lblUserName.TabIndex = 21;
             this.lblUserName.Text = "Employee";
             this.lblUserName.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::BarPOS.Properties.Resources.Coronita;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picHelp
+            // 
+            this.picHelp.BackColor = System.Drawing.Color.Transparent;
+            this.picHelp.Image = global::BarPOS.Properties.Resources.picHelp;
+            this.picHelp.Location = new System.Drawing.Point(46, 79);
+            this.picHelp.Name = "picHelp";
+            this.picHelp.Size = new System.Drawing.Size(877, 606);
+            this.picHelp.TabIndex = 86;
+            this.picHelp.TabStop = false;
+            this.picHelp.Visible = false;
             // 
             // POSScreen
             // 

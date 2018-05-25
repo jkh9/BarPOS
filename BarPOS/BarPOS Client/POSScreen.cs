@@ -10,8 +10,9 @@
 //      on the screen with its different options that will be made later.
 // V0.05 23-May-2018 Moisés: Added the Draw method for the categories
 //      and products
-// V0.06 25-May-2018 Moisés: Started the Draw method for the tableProducts
+// V0.06 24-May-2018 Moisés: Started the Draw method for the tableProducts
 //      and click methods 
+// V0.07 25-May-2018 Moisés: Changes in order to show the product table 
 
 using System;
 using System.Windows.Forms;
@@ -196,11 +197,13 @@ namespace BarPOS
                     15.75F, System.Drawing.FontStyle.Regular, 
                     System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 btnSubstract.Location = new System.Drawing.Point(56, 110);
-                btnSubstract.Name = "btnSubstract";
+                btnSubstract.Name = "btnSubstract "+i;
                 btnSubstract.Size = new System.Drawing.Size(33, 33);
                 btnSubstract.TabIndex = 80;
                 btnSubstract.Text = "-";
                 btnSubstract.UseVisualStyleBackColor = false;
+                btnSubstract.Click +=
+                            new System.EventHandler(btnSubstract_Click);
                 // 
                 // btnAdd
                 // 
@@ -214,11 +217,13 @@ namespace BarPOS
                     15.75F, System.Drawing.FontStyle.Regular, 
                     System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 btnAdd.Location = new System.Drawing.Point(56, 78);
-                btnAdd.Name = "btnAdd";
+                btnAdd.Name = "btnAdd "+i;
                 btnAdd.Size = new System.Drawing.Size(33, 33);
                 btnAdd.TabIndex = 81;
                 btnAdd.Text = "+";
                 btnAdd.UseVisualStyleBackColor = false;
+                btnAdd.Click +=
+                            new System.EventHandler(btnAdd_Click);
                 // 
                 // lblAmount
                 // 
@@ -247,7 +252,9 @@ namespace BarPOS
                 pbImage.Size = new System.Drawing.Size(90, 80);
                 pbImage.TabIndex = 79;
                 pbImage.TabStop = false;
-                pbImage.ImageLocation = actualProduct.ActualProduct.ImagePath;
+                pbImage.Image = System.Drawing.Image.FromFile(
+                    actualProduct.ActualProduct.ImagePath);
+                pbImage.SizeMode = PictureBoxSizeMode.Zoom;
                 // 
                 //Panel container
                 // 
@@ -258,10 +265,12 @@ namespace BarPOS
                 tableProduct.Controls.Add(lblAmount);
                 tableProduct.Controls.Add(pbImage);
                 tableProduct.Location =
-                    new System.Drawing.Point(0 * (i + 90), 0);
+                    new System.Drawing.Point(0 + ((i-1) * 90), 0);
                 tableProduct.Name = "pnl " + i;
                 tableProduct.Size = new System.Drawing.Size(90, 145);
                 tableProduct.TabIndex = 85;
+
+                pnlTableProducts.Controls.Add(tableProduct);
             }
         }
 
@@ -340,6 +349,30 @@ namespace BarPOS
             product.Amount = 1;
 
             POS.MoveToTable(product);
+            DrawTableProducts();
+        }
+
+        private void btnSubstract_Click(object sender, System.EventArgs e)
+        {
+            int index = Convert.ToInt32(
+                ((Button)sender).Name.Split()[1]);
+
+            ProductToSell product = new ProductToSell();
+            product.ActualProduct = POS.Products.Get(index);
+
+            POS.SubstractProduct(product);
+            DrawTableProducts();
+        }
+
+        private void btnAdd_Click(object sender, System.EventArgs e)
+        {
+            int index = Convert.ToInt32(
+                ((Button)sender).Name.Split()[1]);
+
+            ProductToSell product = new ProductToSell();
+            product.ActualProduct = POS.Products.Get(index);
+
+            POS.AddProduct(product);
             DrawTableProducts();
         }
     }

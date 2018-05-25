@@ -96,5 +96,13 @@ namespace BarPOS
 
             return "";
         }
+
+        public void ClearTableProducts()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                Tables[i].Products = new TableProductsList();
+            }
+        }
     }
 }

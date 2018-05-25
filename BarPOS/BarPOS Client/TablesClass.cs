@@ -28,5 +28,18 @@ namespace BarPOS
         {
             return Tables.Get(index);
         }
+
+        public void RefreshTablesInUse()
+        {
+            for (int i = 1; i <= Count; i++)
+            {
+                if (Tables.Get(i).Products.Count == 0)
+                {
+                    Tables.Get(i).InUse = false;
+                }
+            }
+            Tables.Save();
+        }
+
     }
 }

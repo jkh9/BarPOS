@@ -69,7 +69,8 @@ namespace BarPOS
             actual = new POSScreen(Tables.Products,
                 Tables.Tables, Tables.Bills, tableNumber, Tables.Employee);
             actual.StartPosition = FormStartPosition.CenterScreen;
-            actual.Show();
+            actual.ShowDialog();
+            Tables.RefreshTablesInUse();
         }
 
         //Event for open the configurationScreen
