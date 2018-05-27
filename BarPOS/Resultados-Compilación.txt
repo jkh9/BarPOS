@@ -1,3 +1,0 @@
-﻿1>------ Operación Compilar iniciada: proyecto: BarPOS Client, configuración: Debug Any CPU ------
-1>  BarPOS Client -> C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.exe
-========== Compilar: 1 correctos, 0 incorrectos, 0 actualizados, 0 omitidos ==========
