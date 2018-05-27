@@ -120,8 +120,15 @@ namespace BarPOS
                             product.Name = "lbl "+ productIndex;
                             product.Size = new System.Drawing.Size(90, 70);
                             product.TabIndex = 57;
-                            product.BackgroundImage =
+                            try
+                            {
+                                product.BackgroundImage =
                                 System.Drawing.Image.FromFile(actualProduct.ImagePath);
+                            }
+                            catch (Exception)
+                            {
+                                product.Text = actualProduct.Description;
+                            }
                             product.BackgroundImageLayout = ImageLayout.Stretch;
                             product.UseVisualStyleBackColor = true;
                             product.Click +=
@@ -242,19 +249,26 @@ namespace BarPOS
                 lblAmount.TextAlign = 
                     System.Drawing.ContentAlignment.MiddleRight;
                 // 
-                // pbImage
+                // btnImage
                 // 
-                PictureBox pbImage = new PictureBox();
+                Button pbImage = new Button();
                 pbImage.BackColor = System.Drawing.Color.White;
-                pbImage.BorderStyle = BorderStyle.Fixed3D;
                 pbImage.Location = new System.Drawing.Point(-2, -2);
                 pbImage.Name = "pbImage";
-                pbImage.Size = new System.Drawing.Size(90, 80);
+                pbImage.Size = new System.Drawing.Size(100, 80);
                 pbImage.TabIndex = 79;
                 pbImage.TabStop = false;
-                pbImage.Image = System.Drawing.Image.FromFile(
+                try
+                {
+                    pbImage.Image = System.Drawing.Image.FromFile(
                     actualProduct.ActualProduct.ImagePath);
-                pbImage.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+                catch (Exception)
+                {
+                    pbImage.Text = actualProduct.ActualProduct.Description;
+                }
+                pbImage.BackgroundImageLayout = ImageLayout.Stretch;
+
                 // 
                 //Panel container
                 // 
