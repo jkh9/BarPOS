@@ -63,3 +63,4 @@ C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Clien
 C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.exe
 C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.pdb
 C:\Users\jkh9L\Desktop\Proyectos GitHub\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.LogInScreen.resources
+C:\Users\jkh9L\Desktop\Github\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.LogInScreen.resources
