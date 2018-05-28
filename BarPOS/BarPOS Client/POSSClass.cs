@@ -4,6 +4,8 @@
 // V0.01 21-May-2018 Moisés: Basic skeleton, updated from 
 //    POSScreen
 // V0.02 24-May-2018 Moisés: Changed moveToTable method
+// V0.03 28-May-2018 Moisés: Methods to add, substract, move to 
+//   the ProductsToSell
 
 namespace BarPOS
 {
@@ -59,16 +61,13 @@ namespace BarPOS
             } while (!Tables.Get(Index).InUse);
         }
 
-        public void MoveToTable(ProductToSell product)
+        public void MoveToTableProducts(ProductToSell product)
         {
-            if (Tables.Get(Index).Products.Contains(product))
-            {
-                Tables.Get(Index).Products.Get(product).Amount++;
-            }
-            else
+            if (!Tables.Get(Index).Products.Contains(product))
             {
                 Tables.Get(Index).Products.Add(product);
             }
+            Tables.Get(Index).Products.Get(product).Amount++;
         }
 
         public TableProductsList GetTableProducts()
@@ -76,12 +75,12 @@ namespace BarPOS
             return Tables.Get(Index).Products;
         }
 
-        public void AddProduct(ProductToSell product)
+        public void AddTableProduct(ProductToSell product)
         {
             Tables.Get(Index).Products.Get(product).Amount++;
         }
 
-        public void SubstractProduct(ProductToSell product)
+        public void SubstractTableProduct(ProductToSell product)
         {
             if (Tables.Get(Index).Products.Get(product).Amount < 2)
             {
@@ -90,6 +89,38 @@ namespace BarPOS
             else
             {
                 Tables.Get(Index).Products.Get(product).Amount--;
+            }
+        }
+
+        public void MoveToProductsToSell(ProductToSell product)
+        {
+            if (!ProductsToSell.Contains(product))
+            {
+                ProductsToSell.Add(product);
+            }
+            ProductsToSell.Get(product).Amount++;
+            SubstractTableProduct(product);
+        }
+
+        public ProductToSellList GetProductsToSell()
+        {
+            return ProductsToSell;
+        }
+
+        public void AddProductToSell(ProductToSell product)
+        {
+            ProductsToSell.Get(product).Amount++;
+        }
+
+        public void SubstractPayProduct(ProductToSell product)
+        {
+            if (ProductsToSell.Get(product).Amount < 2)
+            {
+                ProductsToSell.Remove(product);
+            }
+            else
+            {
+                ProductsToSell.Get(product).Amount--;
             }
         }
     }

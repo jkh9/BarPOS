@@ -13,6 +13,8 @@
 // V0.06 24-May-2018 Moisés: Started the Draw method for the tableProducts
 //      and click methods 
 // V0.07 25-May-2018 Moisés: Changes in order to show the product table 
+// V0.08 28-May-2018 Moisés: Methods in order to show the productsToSell,
+//      add, substract
 
 using System;
 using System.Windows.Forms;
@@ -32,6 +34,7 @@ namespace BarPOS
 
             DrawCategories();
             DrawTableProducts();
+            DrawProductsToPay();
         }
 
         private void DrawCategories()
@@ -129,7 +132,7 @@ namespace BarPOS
                             {
                                 product.Text = actualProduct.Description;
                             }
-                            product.BackgroundImageLayout = ImageLayout.Stretch;
+                            product.BackgroundImageLayout = ImageLayout.Zoom;
                             product.UseVisualStyleBackColor = true;
                             product.Click +=
                             new System.EventHandler(product_Click);
@@ -254,20 +257,22 @@ namespace BarPOS
                 Button pbImage = new Button();
                 pbImage.BackColor = System.Drawing.Color.White;
                 pbImage.Location = new System.Drawing.Point(-2, -2);
-                pbImage.Name = "pbImage";
+                pbImage.Name = "pbImage "+i;
                 pbImage.Size = new System.Drawing.Size(100, 80);
                 pbImage.TabIndex = 79;
                 pbImage.TabStop = false;
                 try
                 {
-                    pbImage.Image = System.Drawing.Image.FromFile(
+                    pbImage.BackgroundImage = System.Drawing.Image.FromFile(
                     actualProduct.ActualProduct.ImagePath);
                 }
                 catch (Exception)
                 {
                     pbImage.Text = actualProduct.ActualProduct.Description;
                 }
-                pbImage.BackgroundImageLayout = ImageLayout.Stretch;
+                pbImage.BackgroundImageLayout = ImageLayout.Zoom;
+                pbImage.Click +=
+                            new System.EventHandler(btnTableProduct_Click);
 
                 // 
                 //Panel container
@@ -285,6 +290,97 @@ namespace BarPOS
                 tableProduct.TabIndex = 85;
 
                 pnlTableProducts.Controls.Add(tableProduct);
+            }
+        }
+
+        private void DrawProductsToPay()
+        {
+            pnlProductsToSell.Controls.Clear();
+            this.lblWorker.Text = POS.Employee.Code.ToString("000");
+            this.lblTableNumber.Text = POS.Index.ToString();
+
+            ProductToSellList products = POS.GetProductsToSell();
+            products.CalculeTotal();
+            double subtotal = products.Total;
+            this.lblSubtotal.Text = subtotal.ToString("0.00");
+            double iva = products.Total * 0.21;
+            this.lblVA.Text = iva.ToString("0.00");
+            this.lblTotal.Text = (iva + subtotal).ToString("0.00");
+
+            for (int i = 1; i <= products.Count; i++)
+            {
+                ProductToSell product = products.Get(i);
+                // 
+                // lblDescription
+                // 
+                Label lblDescription = new Label();
+                lblDescription.BackColor = System.Drawing.Color.White;
+                lblDescription.BorderStyle = BorderStyle.FixedSingle;
+                lblDescription.FlatStyle = FlatStyle.Popup;
+                lblDescription.Font = new System.Drawing.Font("Arial", 9.75F, 
+                    System.Drawing.FontStyle.Regular, 
+                    System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                lblDescription.Location = new System.Drawing.Point(-3, 0);
+                lblDescription.Name = "label "+i;
+                lblDescription.Size = new System.Drawing.Size(138, 33);
+                lblDescription.TabIndex = 51;
+                lblDescription.Text = product.ActualProduct.Description;
+                lblDescription.TextAlign = 
+                    System.Drawing.ContentAlignment.MiddleCenter;
+                lblDescription.Click +=
+                            new EventHandler(pnlProductToSell_Click);
+                // 
+                // lblPrice
+                // 
+                Label lblPrice = new Label();
+                lblPrice.BackColor = System.Drawing.Color.White;
+                lblPrice.BorderStyle = BorderStyle.FixedSingle;
+                lblPrice.FlatStyle = FlatStyle.Popup;
+                lblPrice.Font = new System.Drawing.Font("Arial", 9.75F);
+                lblPrice.Location = new System.Drawing.Point(135, 0);
+                lblPrice.Name = "label "+i;
+                lblPrice.Size = new System.Drawing.Size(85, 33);
+                lblPrice.TabIndex = 52;
+                lblPrice.Text = product.ActualProduct.Price.ToString();
+                lblPrice.TextAlign = 
+                    System.Drawing.ContentAlignment.MiddleCenter;
+                lblPrice.Click +=
+                            new EventHandler(pnlProductToSell_Click);
+                // 
+                // lblAmount
+                // 
+                Label lblAmount = new Label();
+                lblAmount.BackColor = System.Drawing.Color.White;
+                lblAmount.BorderStyle = BorderStyle.FixedSingle;
+                lblAmount.FlatStyle = FlatStyle.Popup;
+                lblAmount.Font = new System.Drawing.Font("Arial", 9.75F);
+                lblAmount.Location = new System.Drawing.Point(220, 0);
+                lblAmount.Name = "label "+i;
+                lblAmount.Size = new System.Drawing.Size(108, 33);
+                lblAmount.TabIndex = 50;
+                lblAmount.Text = product.Amount.ToString();
+                lblAmount.TextAlign = 
+                    System.Drawing.ContentAlignment.MiddleCenter;
+                lblAmount.Click +=
+                            new EventHandler(pnlProductToSell_Click);
+                // 
+                // pnlProductToSell
+                //
+                Panel pnlProductToSell = new Panel();
+                pnlProductToSell.BackColor = System.Drawing.Color.DimGray;
+                pnlProductToSell.BorderStyle = BorderStyle.Fixed3D;
+                pnlProductToSell.Controls.Add(lblAmount);
+                pnlProductToSell.Controls.Add(lblPrice);
+                pnlProductToSell.Controls.Add(lblDescription);
+                pnlProductToSell.ForeColor = System.Drawing.Color.Black;
+                pnlProductToSell.Location = 
+                    new System.Drawing.Point(0, 0 +((i-1)*33));
+                pnlProductToSell.Name = "pnlPayProduct";
+                pnlProductToSell.Size = new System.Drawing.Size(330, 33);
+                pnlProductToSell.TabIndex = 53;
+                
+
+                pnlProductsToSell.Controls.Add(pnlProductToSell);
             }
         }
 
@@ -360,9 +456,8 @@ namespace BarPOS
 
             ProductToSell product = new ProductToSell();
             product.ActualProduct = POS.Products.Get(index);
-            product.Amount = 1;
 
-            POS.MoveToTable(product);
+            POS.MoveToTableProducts(product);
             DrawTableProducts();
         }
 
@@ -371,10 +466,12 @@ namespace BarPOS
             int index = Convert.ToInt32(
                 ((Button)sender).Name.Split()[1]);
 
-            ProductToSell product = new ProductToSell();
-            product.ActualProduct = POS.Products.Get(index);
+            TableProductsList Products = POS.GetTableProducts();
 
-            POS.SubstractProduct(product);
+            ProductToSell product = new ProductToSell();
+            product.ActualProduct = Products.Get(index).ActualProduct;
+
+            POS.SubstractTableProduct(product);
             DrawTableProducts();
         }
 
@@ -383,10 +480,45 @@ namespace BarPOS
             int index = Convert.ToInt32(
                 ((Button)sender).Name.Split()[1]);
 
-            ProductToSell product = new ProductToSell();
-            product.ActualProduct = POS.Products.Get(index);
+            TableProductsList Products = POS.GetTableProducts();
 
-            POS.AddProduct(product);
+            ProductToSell product = new ProductToSell();
+            product.ActualProduct = Products.Get(index).ActualProduct;
+
+            POS.AddTableProduct(product);
+            DrawTableProducts();
+        }
+
+        private void btnTableProduct_Click(object sender, System.EventArgs e)
+        {
+            int index = Convert.ToInt32(
+                ((Button)sender).Name.Split()[1]);
+
+            TableProductsList Products = POS.GetTableProducts();
+
+            ProductToSell product = new ProductToSell();
+            product.ActualProduct = Products.Get(index).ActualProduct;
+
+            POS.MoveToProductsToSell(product);
+
+            DrawProductsToPay();
+            DrawTableProducts();
+        }
+
+        private void pnlProductToSell_Click(object sender, System.EventArgs e)
+        {
+            int index = Convert.ToInt32(
+                ((Label)sender).Name.Split()[1]);
+
+            ProductToSellList Products = POS.GetProductsToSell();
+
+            ProductToSell product = new ProductToSell();
+            product.ActualProduct = Products.Get(index).ActualProduct;
+
+            POS.MoveToTableProducts(product);
+            POS.SubstractPayProduct(product);
+
+            DrawProductsToPay();
             DrawTableProducts();
         }
     }

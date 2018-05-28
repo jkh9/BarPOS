@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.lblW = new System.Windows.Forms.Label();
-            this.pnlPayProducts = new System.Windows.Forms.Panel();
+            this.pnlProductsToSell = new System.Windows.Forms.Panel();
             this.pnlPayProduct = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,12 +66,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
-            this.pnlPayProducts.SuspendLayout();
+            this.pnlProductsToSell.SuspendLayout();
             this.pnlPayProduct.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -226,19 +226,18 @@
             // 
             // pnlPayProducts
             // 
-            this.pnlPayProducts.AutoScroll = true;
-            this.pnlPayProducts.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPayProducts.Controls.Add(this.pnlPayProduct);
-            this.pnlPayProducts.Location = new System.Drawing.Point(671, 130);
-            this.pnlPayProducts.Name = "pnlPayProducts";
-            this.pnlPayProducts.Size = new System.Drawing.Size(348, 283);
-            this.pnlPayProducts.TabIndex = 59;
+            this.pnlProductsToSell.AutoScroll = true;
+            this.pnlProductsToSell.BackColor = System.Drawing.Color.Transparent;
+            this.pnlProductsToSell.Controls.Add(this.pnlPayProduct);
+            this.pnlProductsToSell.Location = new System.Drawing.Point(671, 130);
+            this.pnlProductsToSell.Name = "pnlPayProducts";
+            this.pnlProductsToSell.Size = new System.Drawing.Size(348, 283);
+            this.pnlProductsToSell.TabIndex = 59;
             // 
             // pnlPayProduct
             // 
             this.pnlPayProduct.BackColor = System.Drawing.Color.DimGray;
             this.pnlPayProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlPayProduct.Controls.Add(this.panel3);
             this.pnlPayProduct.Controls.Add(this.label10);
             this.pnlPayProduct.Controls.Add(this.label11);
             this.pnlPayProduct.Controls.Add(this.label9);
@@ -247,19 +246,6 @@
             this.pnlPayProduct.Name = "pnlPayProduct";
             this.pnlPayProduct.Size = new System.Drawing.Size(330, 33);
             this.pnlPayProduct.TabIndex = 53;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(-2, -2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(330, 33);
-            this.panel3.TabIndex = 54;
             // 
             // label12
             // 
@@ -299,45 +285,7 @@
             this.label14.TabIndex = 50;
             this.label14.Text = " 2";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(-3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 33);
-            this.label10.TabIndex = 51;
-            this.label10.Text = " Hamburguesita";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label11.Location = new System.Drawing.Point(135, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 33);
-            this.label11.TabIndex = 52;
-            this.label11.Text = " 12,5";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label9.Location = new System.Drawing.Point(220, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 33);
-            this.label9.TabIndex = 50;
-            this.label9.Text = " 2";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            
             // 
             // btnExitHelp
             // 
@@ -562,6 +510,18 @@
             this.label15.Text = "10";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::BarPOS.Properties.Resources.Coronita;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
@@ -590,18 +550,6 @@
             this.lblUserName.Text = "Employee";
             this.lblUserName.Visible = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::BarPOS.Properties.Resources.Coronita;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
             // picHelp
             // 
             this.picHelp.BackColor = System.Drawing.Color.Transparent;
@@ -621,7 +569,7 @@
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnExitHelp);
-            this.Controls.Add(this.pnlPayProducts);
+            this.Controls.Add(this.pnlProductsToSell);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnBack);
@@ -634,7 +582,7 @@
             this.Text = "POSScreen";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.pnlPayProducts.ResumeLayout(false);
+            this.pnlProductsToSell.ResumeLayout(false);
             this.pnlPayProduct.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -659,7 +607,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblW;
-        private System.Windows.Forms.Panel pnlPayProducts;
+        private System.Windows.Forms.Panel pnlProductsToSell;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblVA;
         private System.Windows.Forms.Label lblTotal;
