@@ -1,4 +1,4 @@
-// Bar POS, class BillList
+    // Bar POS, class BillList
 
 // Versiones: 
 // V0.01 14-May-2018 Moisés: Basic skeleton
@@ -6,6 +6,7 @@
 // V0.03 16-May-2018 Moisés: Get method
 // V0.04 18-May-2018 Moisés: Load and Save method changeds
 // V0.05 21-May-2018 Moisés: Changes in load and save methods
+// V0.06 28-May-2018 Moisés: Changes in the file path
 
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,8 @@ namespace BarPOS
 {
     public class BillList
     {
-        private const string PATH = @"..\..\..\Files\bills.txt";
+        private const string PATH = 
+            @"..\..\..\BarPOS Server\bin\Debug\bills.txt";
         private List<Bill> Bills;
         public int Count { get { return Bills.Count; } }
 

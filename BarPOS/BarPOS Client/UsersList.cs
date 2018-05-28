@@ -7,6 +7,7 @@
 // V0.04 18-May-2018 Moisés: Load and save methods changeds
 // V0.05 21-May-2018 Moisés: Changes in load and save methods
 // V0.06 25-May-2018 Moisés: GetUserByCode method
+// V0.06 28-May-2018 Moisés: Changes in the file path
 
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace BarPOS
 {
     public class UsersList
     {
-        private const string PATH = @"..\..\..\Files\users.txt";
+        private const string PATH =
+            @"..\..\..\BarPOS Server\bin\Debug\users.txt";
         private List<User> Users;
         public int Count { get { return Users.Count; } }
 

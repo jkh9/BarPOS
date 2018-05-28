@@ -7,6 +7,7 @@
 // V0.04 18-May-2018 Moisés: Load and Save changeds to txt
 // V0.05 21-May-2018 Moisés: Changes in load and save methods
 // V0.06 22-May-2018 Moisés: Reeplace method
+// V0.06 28-May-2018 Moisés: Changes in the file path
 
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace BarPOS
 {
     public class ProductsList
     {
-        private const string PATH = @"..\..\..\Files\products.txt";
+        private const string PATH = 
+            @"..\..\..\BarPOS Server\bin\Debug\products.txt";
         private List<Product> Products;
         public int Count { get { return Products.Count; } }
 
