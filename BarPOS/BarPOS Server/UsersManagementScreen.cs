@@ -6,6 +6,7 @@
 
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BarPOS
@@ -78,12 +79,14 @@ namespace BarPOS
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
+            updateUser();
             UserManagement.MoveBackward();
             Draw();
         }
 
         private void btnForward_Click(object sender, EventArgs e)
         {
+            updateUser();
             UserManagement.MoveForward();
             Draw();
         }
@@ -98,12 +101,25 @@ namespace BarPOS
         private void pbImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog getImage = new OpenFileDialog();
-            getImage.InitialDirectory = Application.StartupPath + @"..\..\..\imgs\";
+            getImage.InitialDirectory = Application.StartupPath + @"\imgs\";
             getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| " +
                 "*.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
             if (getImage.ShowDialog() == DialogResult.OK)
             {
-                this.pbImage.ImageLocation = getImage.FileName;
+                string fileName = getImage.FileName.Substring(
+                                        getImage.FileName.LastIndexOf('\\'));
+
+                string sourceFile = getImage.FileName;
+                string destFile = 
+                    Application.StartupPath + @"\imgs\" + fileName;
+
+                if (!File.Exists(destFile))
+                {
+                    File.Copy(sourceFile, destFile, true);
+                }
+
+                this.pbImage.ImageLocation = Application.StartupPath
+                    + "\\imgs\\" + fileName;
             }
             else
             {

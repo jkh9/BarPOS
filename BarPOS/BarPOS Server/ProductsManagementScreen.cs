@@ -8,6 +8,7 @@
 
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BarPOS
@@ -83,7 +84,7 @@ namespace BarPOS
             this.btnValidate.Visible = true;
         }
 
-        private void validate_Click(object sender, EventArgs e)
+        private void add()
         {
             try
             {
@@ -112,14 +113,21 @@ namespace BarPOS
             Draw();
         }
 
+        private void validate_Click(object sender, EventArgs e)
+        {
+            add();
+        }
+
         private void btnBackward_Click(object sender, EventArgs e)
         {
+            modify();
             ProductManagement.MoveBackward();
             Draw();
         }
 
         private void btnForward_Click(object sender, EventArgs e)
         {
+            modify();
             ProductManagement.MoveForward();
             Draw();
         }
@@ -134,12 +142,25 @@ namespace BarPOS
         private void pbImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog getImage = new OpenFileDialog();
-            getImage.InitialDirectory = Application.StartupPath + @"..\imgs\";
+            getImage.InitialDirectory = Application.StartupPath + @"\imgs\";
             getImage.Filter = "Archivos de Imagen (*.jpg)(*.jpeg)(*.png)| " +
                 "*.jpg;*.jpeg;*.png; | All files(*.*) | *.* ";
             if (getImage.ShowDialog() == DialogResult.OK)
             {
-                this.pbImage.ImageLocation = getImage.FileName;
+                string fileName = getImage.FileName.Substring(
+                                        getImage.FileName.LastIndexOf('\\'));
+
+                string sourceFile = getImage.FileName;
+                string destFile =
+                    Application.StartupPath + @"\imgs\" + fileName;
+
+                if (!File.Exists(destFile))
+                {
+                    File.Copy(sourceFile, destFile, true);
+                }
+
+                this.pbImage.ImageLocation = Application.StartupPath
+                    + "\\imgs\\" + fileName;
             }
             else
             {
@@ -184,6 +205,11 @@ namespace BarPOS
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            modify();
+        }
+
+        private void modify()
+        {
             try
             {
                 Product newProduct = new Product();
@@ -208,6 +234,21 @@ namespace BarPOS
             this.Controls.Clear();
             InitializeComponent();
             Draw();
+        }
+
+        private void any_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (btnModify.Visible)
+                {
+                    modify();
+                }
+                else
+                {
+                    add();
+                }
+            }
         }
     }
 }

@@ -32,6 +32,7 @@ namespace BarPOS
         private void InitializeComponent()
         {
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.lblIndex = new System.Windows.Forms.Label();
             this.btnForward = new System.Windows.Forms.Button();
             this.btnBackward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@ namespace BarPOS
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
-            this.lblIndex = new System.Windows.Forms.Label();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,19 @@ namespace BarPOS
             this.pnlTopBar.Name = "pnlTopBar";
             this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
             this.pnlTopBar.TabIndex = 16;
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblIndex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIndex.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblIndex.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndex.Location = new System.Drawing.Point(300, 3);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(72, 44);
+            this.lblIndex.TabIndex = 42;
+            this.lblIndex.Text = "1/2";
             // 
             // btnForward
             // 
@@ -139,6 +152,7 @@ namespace BarPOS
             this.txtName.Size = new System.Drawing.Size(288, 32);
             this.txtName.TabIndex = 20;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // label1
             // 
@@ -172,6 +186,7 @@ namespace BarPOS
             this.txtPrice.Size = new System.Drawing.Size(288, 32);
             this.txtPrice.TabIndex = 23;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // label2
             // 
@@ -193,6 +208,7 @@ namespace BarPOS
             this.txtStock.Size = new System.Drawing.Size(288, 32);
             this.txtStock.TabIndex = 25;
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // label4
             // 
@@ -214,6 +230,7 @@ namespace BarPOS
             this.txtMinimunStock.Size = new System.Drawing.Size(288, 32);
             this.txtMinimunStock.TabIndex = 27;
             this.txtMinimunStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMinimunStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // label5
             // 
@@ -235,6 +252,7 @@ namespace BarPOS
             this.txtCategory.Size = new System.Drawing.Size(288, 32);
             this.txtCategory.TabIndex = 29;
             this.txtCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // label6
             // 
@@ -266,6 +284,7 @@ namespace BarPOS
             this.txtBuyPrice.Size = new System.Drawing.Size(288, 32);
             this.txtBuyPrice.TabIndex = 30;
             this.txtBuyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBuyPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // btnSearch
             // 
@@ -386,19 +405,7 @@ namespace BarPOS
             this.txtCode.Size = new System.Drawing.Size(288, 32);
             this.txtCode.TabIndex = 30;
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblIndex
-            // 
-            this.lblIndex.AutoSize = true;
-            this.lblIndex.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblIndex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblIndex.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblIndex.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIndex.Location = new System.Drawing.Point(300, 3);
-            this.lblIndex.Name = "lblIndex";
-            this.lblIndex.Size = new System.Drawing.Size(72, 44);
-            this.lblIndex.TabIndex = 42;
-            this.lblIndex.Text = "1/2";
+            this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
             // ProductsManagmentScreen
             // 
