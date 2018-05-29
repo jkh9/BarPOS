@@ -18,6 +18,7 @@ namespace BarPOS
         public int Index { get; set; }
         public int Count { get { return Tables.Count; } }
         public User Employee { get; set; }
+        public double Total { get; set; }
 
         public POSSClass(ProductsList products, TableList tables,
             BillList bills, int index, User employee)

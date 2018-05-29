@@ -300,12 +300,12 @@ namespace BarPOS
             this.lblTableNumber.Text = POS.Index.ToString();
 
             ProductToSellList products = POS.GetProductsToSell();
-            products.CalculeTotal();
-            double subtotal = products.Total;
+            double subtotal = products.CalculeTotal();
             this.lblSubtotal.Text = subtotal.ToString("0.00");
-            double iva = products.Total * 0.21;
+            double iva = subtotal * 0.21;
+            POS.Total = subtotal + iva;
             this.lblVA.Text = iva.ToString("0.00");
-            this.lblTotal.Text = (iva + subtotal).ToString("0.00");
+            this.lblTotal.Text = POS.Total.ToString("0.00");
 
             for (int i = 1; i <= products.Count; i++)
             {
@@ -392,7 +392,8 @@ namespace BarPOS
         //Event to open the payScreen
         private void btnPay_Click(object sender, System.EventArgs e)
         {
-            PayScreen = new PayScreen(POS.ProductsToSell, POS.Bills);
+            PayScreen = new PayScreen(POS.ProductsToSell, POS.Bills,
+                POS.Employee,POS.Index,POS.Total);
             PayScreen.StartPosition = FormStartPosition.CenterScreen;
             PayScreen.Show();
         }

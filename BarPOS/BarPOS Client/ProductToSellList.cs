@@ -13,7 +13,6 @@ namespace BarPOS
     {
         public List<ProductToSell> ProductsToSell { get; set; }
         public int Count { get { return ProductsToSell.Count; } }
-        public double Total { get; set; }
 
         public ProductToSellList()
         {
@@ -71,15 +70,17 @@ namespace BarPOS
             ProductsToSell.RemoveAt(IndexOf(product));
         }
 
-        public void CalculeTotal()
+        public double CalculeTotal()
         {
-            Total = 0;
+            double total = 0;
 
             for (int i = 0; i < Count; i++)
             {
-                Total += ProductsToSell[i].ActualProduct.Price *
+                total += ProductsToSell[i].ActualProduct.Price *
                     ProductsToSell[i].Amount;
             }
+
+            return total;
         }
     }
 }
