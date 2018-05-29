@@ -13,14 +13,12 @@ using System.Collections.Generic;
 
 namespace BarPOS
 {
-    public class AccountingManagementClass
+    public class AccountingManagementClass : Management
     {
-        public int Index { get; set; }
         public BillList Bills { get; set; }
         public Bill[] DateBills { get; set; }
         public int Count { get { return DateBills.Length; } }
         public DateTime Date { get; set; }
-        public bool DrawFounds { get; set; }
 
         public AccountingManagementClass(BillList bills)
         {

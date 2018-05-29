@@ -7,12 +7,10 @@
 
 namespace BarPOS
 {
-    public class ProductManagementClass
+    public class ProductManagementClass : Management
     {
-        public int Index { get; set; }
         public ProductsList Products { get; set; }
         public int Count { get { return Products.Count; } }
-        public bool DrawFounds { get; set; }
 
         public ProductManagementClass(ProductsList products)
         {
@@ -100,7 +98,6 @@ namespace BarPOS
                     }
                 } while (!Products.Get(Index).Found);
             }
-            
         }
 
         public void MoveBackward()

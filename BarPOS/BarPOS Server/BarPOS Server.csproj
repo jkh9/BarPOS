@@ -82,6 +82,7 @@
     <Compile Include="AdminScreen.Designer.cs">
       <DependentUpon>AdminScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Management.cs" />
     <Compile Include="ProductManagementClass.cs" />
     <Compile Include="ProductsManagementScreen.cs">
       <SubType>Form</SubType>

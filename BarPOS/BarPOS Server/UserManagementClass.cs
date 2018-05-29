@@ -5,12 +5,11 @@
 
 namespace BarPOS
 {
-    public class UserManagementClass
+    public class UserManagementClass : Management
     {
-        public int Index { get; set; }
         public UsersList Users { get; set; }
         public int Count { get { return Users.Count; } }
-        public bool DrawFounds { get; set; }
+        
 
         public UserManagementClass(UsersList users)
         {
