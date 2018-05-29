@@ -127,9 +127,11 @@ namespace BarPOS
                             billHeader.Date = Convert.ToDateTime(date);
 
                             //Total
-                            int total = Convert.ToInt32(parts[2]);
+                            bill.Total = Convert.ToInt32(parts[2]);
+                            bill.SubTotal = Convert.ToInt32(parts[3]);
+                            bill.MoneyGiven = Convert.ToInt32(parts[4]);
+                            bill.Change = Convert.ToInt32(parts[5]);
 
-                            bill.Total = total;
                             bill.Header = billHeader;
 
                             this.Add(bill);

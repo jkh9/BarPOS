@@ -17,8 +17,11 @@ namespace BarPOS
         private List<BillLine> Lines;
         public int LinesCount { get { return Lines.Count; } }
         public BillHeader Header { get; set; }
+        public double SubTotal { get; set; }
         public double Total { get; set; }
         public bool Found { get; set; }
+        public double MoneyGiven { get; set; }
+        public double Change { get; set; }
 
         public Bill()
         {
@@ -42,10 +45,10 @@ namespace BarPOS
 
         public void CalculateTotal()
         {
-            Total = 0;
+            SubTotal = 0;
             for (int i = 0; i < Lines.Count; i++)
             {
-                Total += (Lines[i].Amount * Lines[i].LineProduct.Price);
+                SubTotal += (Lines[i].Amount * Lines[i].LineProduct.Price);
             }
         }
 
@@ -61,12 +64,13 @@ namespace BarPOS
             image.Add(new string('-', 45));
             for (int i = 0; i < Lines.Count; i++)
             {
-                image.Add(Lines[i].LineProduct.Description + "    " +
+                image.Add(Lines[i].LineProduct.Description.Trim() + "    " +
                     Lines[i].Amount + "   " + Lines[i].Total);
             }
             image.Add(new string('-', 45));
             image.Add("Total: " + Total);
-
+            image.Add("Given: " + MoneyGiven);
+            image.Add("Change: " + Change);
             return image.ToArray();
         }
 
@@ -81,6 +85,9 @@ namespace BarPOS
 
             bill += "|" + Header.ToString();
             bill += "|" + Total;
+            bill += "|" + SubTotal;
+            bill += "|" + MoneyGiven;
+            bill += "|" + Change;
             return bill;
         }
     }
