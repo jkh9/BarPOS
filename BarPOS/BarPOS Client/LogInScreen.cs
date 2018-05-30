@@ -38,6 +38,7 @@ namespace BarPOS
                 else if (LogedUser.Pass == pass)
                 {
                     Login = true;
+                    LogedUser.LoginTime = DateTime.Now;
                 }
             }
             catch (System.FormatException)

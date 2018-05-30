@@ -7,6 +7,7 @@
 // V0.04 23-May-2018 Moisés: Methods to LogIn and LogOut implementeds
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BarPOS
@@ -80,6 +81,8 @@ namespace BarPOS
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            LogInScreen.LogedUser.LogoutTime = DateTime.Now;
+            PrintDailyAccounts();
             Configuration.LogOutUser();
             lblLogin.Text = "Login Required!!!!";
             btnLogIn.Enabled = true;
@@ -99,6 +102,22 @@ namespace BarPOS
         {
             picHelp.Visible = false;
             btnExitHelp.Visible = false;
+        }
+
+        public void PrintDailyAccounts()
+        {
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.ShowDialog();
+        }
+
+        private void printDocument_PrintPage(object sender,
+            System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            double total = Configuration.CalculateTotalWon(
+                LogInScreen.LogedUser);
+            e.Graphics.DrawString("Total earned: "+total, new
+                    Font("Times new Roman", 40, FontStyle.Regular),
+                    Brushes.Black, new PointF(0, 0));
         }
     }
 }

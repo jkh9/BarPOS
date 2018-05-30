@@ -19,6 +19,8 @@ namespace BarPOS
         public string ImagePath { get; set; }
         public string Pass { get; set; }
         public bool Found { get; set; }
+        public DateTime LoginTime { get; set; }
+        public DateTime LogoutTime { get; set; }
 
         public override string ToString()
         {

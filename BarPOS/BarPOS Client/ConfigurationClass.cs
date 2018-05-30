@@ -4,6 +4,8 @@
 // V0.01 21-May-2018 Moisés: Basic skeleton, updated from 
 //    ConfigurationScreen
 
+using System;
+
 namespace BarPOS
 {
     public class ConfigurationClass
@@ -31,14 +33,25 @@ namespace BarPOS
             LogIn = false;
         }
 
-        public void PrintDailyAccounts()
+        public double CalculateTotalWon(User actualUser)
         {
-            //TO DO
-        }
+            double totalMoney = 0;
 
-        public void OpenTheDrawer()
-        {
-            //TO DO
+            for (int i = 1; i <= Bills.Count; i++)
+            {
+                User newUser = Users.GetUserByCode(Bills.Get(i).Header.
+                    Employee.Code);
+                DateTime newDate = Bills.Get(i).Header.Date;
+
+                if (newUser == actualUser &&
+                    newDate > newUser.LoginTime &&
+                    newDate < newUser.LogoutTime)
+                {
+                    totalMoney += Bills.Get(i).Total;
+                }
+            }
+
+            return totalMoney;
         }
     }
 }

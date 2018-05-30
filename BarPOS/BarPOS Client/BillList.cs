@@ -120,17 +120,17 @@ namespace BarPOS
                             employee.Name = userParts[0];
                             employee.Code = Convert.ToInt32(userParts[1]);
                             employee.ImagePath = userParts[2];
-
+                            employee.Pass = userParts[3];
 
                             BillHeader billHeader =
                                 new BillHeader(number, employee, table);
                             billHeader.Date = Convert.ToDateTime(date);
 
                             //Total
-                            bill.Total = Convert.ToInt32(parts[2]);
-                            bill.SubTotal = Convert.ToInt32(parts[3]);
-                            bill.MoneyGiven = Convert.ToInt32(parts[4]);
-                            bill.Change = Convert.ToInt32(parts[5]);
+                            bill.Total = Convert.ToDouble(parts[2]);
+                            bill.SubTotal = Convert.ToDouble(parts[3]);
+                            bill.MoneyGiven = Convert.ToDouble(parts[4]);
+                            bill.Change = Convert.ToDouble(parts[5]);
 
                             bill.Header = billHeader;
 
