@@ -82,5 +82,10 @@ namespace BarPOS
 
             return total;
         }
+
+        public void Clear()
+        {
+            ProductsToSell.Clear();
+        }
     }
 }

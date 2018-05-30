@@ -71,7 +71,7 @@ namespace BarPOS
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = false;
-            this.btnPay.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btn1
             // 
@@ -349,7 +349,7 @@ namespace BarPOS
             // 
             this.lblGiven.BackColor = System.Drawing.Color.Transparent;
             this.lblGiven.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGiven.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblGiven.ForeColor = System.Drawing.Color.Black;
             this.lblGiven.Location = new System.Drawing.Point(135, 80);
             this.lblGiven.Name = "lblGiven";
             this.lblGiven.Size = new System.Drawing.Size(178, 43);

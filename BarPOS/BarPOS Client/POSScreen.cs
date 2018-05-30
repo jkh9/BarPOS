@@ -392,10 +392,15 @@ namespace BarPOS
         //Event to open the payScreen
         private void btnPay_Click(object sender, System.EventArgs e)
         {
-            PayScreen = new PayScreen(POS.ProductsToSell, POS.Bills,
-                POS.Employee,POS.Index,POS.Total);
-            PayScreen.StartPosition = FormStartPosition.CenterScreen;
-            PayScreen.Show();
+            if (POS.ProductsToSell.Count > 0)
+            {
+                PayScreen = new PayScreen(POS.ProductsToSell, POS.Bills,
+                POS.Employee, POS.Index, POS.Total);
+                PayScreen.StartPosition = FormStartPosition.CenterScreen;
+                PayScreen.ShowDialog();
+                POS.ProductsToSell.Clear();
+                DrawProductsToPay();
+            }
         }
 
         //Event to move to next table taking care of the tables in use

@@ -4,6 +4,8 @@
 // V0.01 21-May-2018 Moisés: Basic skeleton, updated from 
 //    PayScreen
 
+using System;
+
 namespace BarPOS
 {
     public class PayClass
@@ -28,9 +30,11 @@ namespace BarPOS
             ActualBill.Total = total;
         }
 
-        public void CalculateMoneyToReturn()
+        public string CalculateMoneyToReturn(string strTotal, string strGiven)
         {
-            //TO DO 
+            double total = Convert.ToDouble(strTotal);
+            double given = Convert.ToDouble(strGiven);
+            return (given - total).ToString("0.##");
         }
 
         private void doTheBill()

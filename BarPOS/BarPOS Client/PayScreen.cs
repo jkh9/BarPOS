@@ -25,7 +25,7 @@ namespace BarPOS
 
         private void Draw()
         {
-            lblTotal.Text = Pay.Total.ToString();
+            lblTotal.Text = Pay.Total.ToString("0.##");
             lblChange.Text = 0.ToString();
             lblGiven.Text = 0.ToString();
         }
@@ -36,13 +36,17 @@ namespace BarPOS
             this.Close();
         }
 
-        private void btnPrint_Click(object sender, System.EventArgs e)
+        private void btnPay_Click(object sender, System.EventArgs e)
         {
-            Pay.ActualBill.MoneyGiven = Convert.ToDouble(lblGiven.Text);
-            Pay.ActualBill.Change = Convert.ToDouble(lblChange.Text);
-            printPreviewDialog.Document = printDocument;
-            printPreviewDialog.ShowDialog();
-            this.Close();
+            double change = Convert.ToDouble(lblChange.Text);
+            if (change >= 0)
+            {
+                Pay.ActualBill.MoneyGiven = Convert.ToDouble(lblGiven.Text);
+                Pay.ActualBill.Change = Convert.ToDouble(lblChange.Text);
+                printPreviewDialog.Document = printDocument;
+                printPreviewDialog.ShowDialog();
+                Pay.Bills.Add(Pay.ActualBill);
+            }
         }
 
         private void printDocument_PrintPage(object sender,
@@ -54,6 +58,21 @@ namespace BarPOS
                 e.Graphics.DrawString(lines[i], new
                     Font("Times new Roman", 40, FontStyle.Regular),
                     Brushes.Black, new PointF(0, (0 + (i * 50))));
+            }
+        }
+
+        private void drawChangeText()
+        {
+            lblChange.Text = Pay.CalculateMoneyToReturn(lblTotal.Text,
+                lblGiven.Text);
+
+            if (Convert.ToDouble(lblChange.Text) < 0)
+            {
+                lblChange.ForeColor = Color.Firebrick;
+            }
+            else
+            {
+                lblChange.ForeColor = Color.ForestGreen;
             }
         }
 
@@ -73,8 +92,10 @@ namespace BarPOS
             }
             else
             {
-                lblGiven.Text = lblGiven.Text + number.ToString("0");
+                lblGiven.Text = lblGiven.Text + number.ToString("0.##");
             }
+
+            drawChangeText();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -88,7 +109,7 @@ namespace BarPOS
                 lblGiven.Text = lblGiven.Text.Substring(0,
                     lblGiven.Text.Length - 1);
             }
-
+            drawChangeText();
         }
 
         private void btnComa_Click(object sender, EventArgs e)
@@ -97,7 +118,7 @@ namespace BarPOS
             {
                 lblGiven.Text = lblGiven.Text + ",";
             }
+            drawChangeText();
         }
-
     }
 }
