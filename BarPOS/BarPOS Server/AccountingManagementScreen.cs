@@ -53,6 +53,8 @@ namespace BarPOS
 
                 actualBill.CalculateTotal();
                 lblTotalPrice.Text = actualBill.Total.ToString()+"€";
+                lblMoneyGiven.Text = actualBill.MoneyGiven.ToString() + "€";
+                lblChange.Text = actualBill.Change.ToString() + "€";
                 lblEmployee.Text = actualBill.Header.Employee.Name;
 
                 for (int i = 1; i <= actualBill.LinesCount; i++)

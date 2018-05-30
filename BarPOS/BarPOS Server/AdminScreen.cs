@@ -50,30 +50,35 @@ namespace BarPOS
         }
 
         //Event to open the accouting screen
-        private void btnAccount_Click(object sender, System.EventArgs e)
+        private void btn_Click(object sender, System.EventArgs e)
         {
-            accountingScreen = 
-                new AccountingManagmentScreen(Bills);
-            accountingScreen.StartPosition = FormStartPosition.CenterScreen;
-            accountingScreen.Show();
-        }
-
-        //Event to open the users screen
-        private void btnUsers_Click(object sender, System.EventArgs e)
-        {
-            usersScreen = new
-                UsersManagmentScreen(Users);
-            usersScreen.StartPosition = FormStartPosition.CenterScreen;
-            usersScreen.Show();
-        }
-
-        //Event to open the products screen
-        private void btnProducts_Click(object sender, System.EventArgs e)
-        {
-            productsScreen = new
-                ProductsManagmentScreen(Products);
-            productsScreen.StartPosition = FormStartPosition.CenterScreen;
-            productsScreen.Show();
+            switch (((Button)sender).Name)
+            {
+                case "btnUsers":
+                    usersScreen = new
+                        UsersManagmentScreen(Users);
+                    usersScreen.StartPosition = 
+                        FormStartPosition.CenterScreen;
+                    usersScreen.Show();
+                    break;
+                case "btnProducts":
+                    productsScreen = new
+                        ProductsManagmentScreen(Products);
+                    productsScreen.StartPosition = 
+                        FormStartPosition.CenterScreen;
+                    productsScreen.Show();
+                    break;
+                case "btnAccount":
+                    accountingScreen =
+                        new AccountingManagmentScreen(Bills);
+                    accountingScreen.StartPosition = 
+                        FormStartPosition.CenterScreen;
+                    accountingScreen.Show();
+                    break;
+                default:
+                    break;
+            }
+            
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)

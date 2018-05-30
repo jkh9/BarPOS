@@ -55,6 +55,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.mc = new System.Windows.Forms.MonthCalendar();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblMoneyGiven = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblChange = new System.Windows.Forms.Label();
             this.pnlTopBar.SuspendLayout();
             this.pnlBillLine.SuspendLayout();
             this.SuspendLayout();
@@ -181,11 +185,11 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(323, 484);
+            this.label4.Location = new System.Drawing.Point(236, 484);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 40);
+            this.label4.Size = new System.Drawing.Size(179, 40);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Total Price";
+            this.label4.Text = "Total Price:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -298,7 +302,7 @@
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(479, 488);
+            this.lblTotalPrice.Location = new System.Drawing.Point(407, 488);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(30, 32);
             this.lblTotalPrice.TabIndex = 10;
@@ -368,6 +372,48 @@
             this.mc.Visible = false;
             this.mc.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mc_DateSelected);
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(213, 524);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(202, 40);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Money Given:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblMoneyGiven
+            // 
+            this.lblMoneyGiven.AutoSize = true;
+            this.lblMoneyGiven.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoneyGiven.Location = new System.Drawing.Point(407, 528);
+            this.lblMoneyGiven.Name = "lblMoneyGiven";
+            this.lblMoneyGiven.Size = new System.Drawing.Size(30, 32);
+            this.lblMoneyGiven.TabIndex = 10;
+            this.lblMoneyGiven.Text = "0";
+            this.lblMoneyGiven.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(284, 560);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 40);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Change:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblChange
+            // 
+            this.lblChange.AutoSize = true;
+            this.lblChange.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChange.Location = new System.Drawing.Point(407, 564);
+            this.lblChange.Name = "lblChange";
+            this.lblChange.Size = new System.Drawing.Size(30, 32);
+            this.lblChange.TabIndex = 10;
+            this.lblChange.Text = "0";
+            this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // AccountingManagmentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,7 +429,11 @@
             this.Controls.Add(this.pnlBill);
             this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblChange);
+            this.Controls.Add(this.lblMoneyGiven);
             this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pnlTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -425,5 +475,9 @@
         private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MonthCalendar mc;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblMoneyGiven;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblChange;
     }
 }

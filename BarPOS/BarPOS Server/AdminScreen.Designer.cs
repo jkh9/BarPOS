@@ -48,7 +48,7 @@
             this.btnUsers.TabIndex = 1;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            this.btnUsers.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnProducts
             // 
@@ -62,7 +62,7 @@
             this.btnProducts.TabIndex = 2;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
-            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
+            this.btnProducts.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnAccount
             // 
@@ -76,7 +76,7 @@
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "Account";
             this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            this.btnAccount.Click += new System.EventHandler(this.btn_Click);
             // 
             // panel1
             // 
