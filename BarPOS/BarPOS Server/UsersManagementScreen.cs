@@ -14,12 +14,50 @@ namespace BarPOS
     public partial class UsersManagmentScreen : Form
     {
         private UserManagementClass UserManagement;
+        private SearchScreen searchScreen;
+        Languajes languaje;
 
-        public UsersManagmentScreen(UsersList users)
+        public UsersManagmentScreen(UsersList users, Languajes languaje)
         {
             UserManagement = new UserManagementClass(users);
+            searchScreen = new SearchScreen(languaje);
             InitializeComponent();
             Draw();
+            this.languaje = languaje;
+            drawTexts();
+        }
+
+        private void drawTexts()
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    lblUser.Text = "Usuario";
+                    btnBackToMainMenu.Text = "Volver al menu";
+                    btnBack.Text = "Volver";
+                    btnModify.Text = "Modificar";
+                    btnDelete.Text = "Borrar";
+                    btnAdd.Text = "Añadir";
+                    btnValidate.Text = "Añadir";
+                    btnSearch.Text = "Buscar";
+                    lblPassword.Text = "Contraseña:";
+                    lblCode.Text = "Código:";
+                    lblName.Text = "Nombre:";
+                    break;
+                case Languajes.English:
+                    lblUser.Text = "User";
+                    btnBackToMainMenu.Text = "Back to main";
+                    btnBack.Text = "Back";
+                    btnModify.Text = "Modify";
+                    btnDelete.Text = "Delete";
+                    btnAdd.Text = "Add";
+                    btnValidate.Text = "Add";
+                    btnSearch.Text = "Search";
+                    lblPassword.Text = "Password:";
+                    lblCode.Text = "Code:";
+                    lblName.Text = "Name:";
+                    break;
+            }
         }
 
         //Method to draw the actual product
@@ -44,6 +82,7 @@ namespace BarPOS
                 txtName.Text = actualUser.Name;
                 txtPassword.Text = actualUser.Pass;
             }
+            drawTexts();
         }
 
         public void Save()
@@ -129,7 +168,6 @@ namespace BarPOS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchScreen searchScreen = new SearchScreen();
             searchScreen.StartPosition = FormStartPosition.CenterParent;
             searchScreen.ShowDialog();
             if (UserManagement.Search(searchScreen.TextToSearch))

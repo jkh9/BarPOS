@@ -14,12 +14,30 @@ namespace BarPOS
         public bool Login { get; set; }
         UsersList users;
 
-        public LogInScreen(UsersList users)
+        public LogInScreen(UsersList users, Languajes languaje)
         {
             LogedUser = new User();
             Login = false;
             this.users = users;
             InitializeComponent();
+            draw(languaje);
+        }
+
+        private void draw(Languajes languaje)
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    lblUserCode.Text = "Codigo";
+                    lblUserPass.Text = "Contraseña";
+                    btnLogIn.Text = "Acceder";
+                    break;
+                case Languajes.English:
+                    lblUserCode.Text = "Code";
+                    lblUserPass.Text = "Password";
+                    btnLogIn.Text = "LogIn";
+                    break;
+            }
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -52,7 +70,5 @@ namespace BarPOS
 
             this.Close();
         }
-
-        
     }
 }

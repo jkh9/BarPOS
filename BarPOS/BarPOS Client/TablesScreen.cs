@@ -17,14 +17,48 @@ namespace BarPOS
     {
         public TablesClass Tables { get; set; }
         POSScreen actual;
+        bool edit;
+        Languajes languaje;
 
         public TableScreen(ProductsList products, BillList bills,
-            User employee)
+            User employee, Languajes languaje)
         {
             Tables = new TablesClass(products, bills, employee);
             LoadTables();
             DrawTables();
             InitializeComponent();
+            edit = false;
+            this.languaje = languaje;
+            drawTexts();
+        }
+
+        private void drawTexts()
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    btnConfiguration.Text = "Configuracion";
+                    if (edit)
+                    {
+                        btnEdit.Text = "Activar edición";
+                    }
+                    else
+                    {
+                        btnEdit.Text = "Apagar edición";
+                    }
+                    break;
+                case Languajes.English:
+                    btnConfiguration.Text = "Configuration";
+                    if (edit)
+                    {
+                        btnEdit.Text = "EditModeON";
+                    }
+                    else
+                    {
+                        btnEdit.Text = "EditModeOff";
+                    }
+                    break;
+            }
         }
 
         public void LoadTables()
@@ -56,21 +90,49 @@ namespace BarPOS
                 btn.Text = (i).ToString();
                 btn.UseVisualStyleBackColor = false;
                 btn.Click += new EventHandler(this.table_Click);
+                //btn.MouseDown += new MouseEventHandler(this.btnPrint_MouseDown);
+                //btn.MouseUp += new MouseEventHandler(this.btnPrint_MouseUp);
+                //btn.MouseMove += new MouseEventHandler(this.btnPrint_MouseMove);
 
                 this.Controls.Add(btn);
             }
         }
 
+        public void DrawTable(int index)
+        {
+                Button btn = new Button();
+                btn.BackColor = Color.FromArgb(((int)(((byte)(255)))),
+                    ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+                btn.FlatAppearance.BorderSize = 0;
+                btn.FlatStyle = FlatStyle.Popup;
+                btn.Font = new Font("Arial", 36F, FontStyle.Regular,
+                    GraphicsUnit.Point, ((byte)(0)));
+                btn.Location = new Point(Tables.GetTable(index).X,
+                    Tables.GetTable(index).Y);
+                btn.Name = "table" + (index);
+                btn.Size = new Size(88, 88);
+                btn.TabIndex = 2;
+                btn.Text = (index).ToString();
+                btn.UseVisualStyleBackColor = false;
+                btn.Click += new EventHandler(this.table_Click);
+
+                this.Controls.Add(btn);
+        }
+
         //Event for open the POSScreen when we click on a table
         private void table_Click(object sender, System.EventArgs e)
         {
-            int tableNumber = Convert.ToInt32(((Button)sender).Text);
-            
-            actual = new POSScreen(Tables.Products,
-                Tables.Tables, Tables.Bills, tableNumber, Tables.Employee);
-            actual.StartPosition = FormStartPosition.CenterScreen;
-            actual.ShowDialog();
-            Tables.RefreshTablesInUse();
+            if (!edit)
+            {
+                int tableNumber = Convert.ToInt32(((Button)sender).Text);
+
+                actual = new POSScreen(Tables.Products,
+                    Tables.Tables, Tables.Bills, tableNumber, Tables.Employee,
+                    languaje);
+                actual.StartPosition = FormStartPosition.CenterScreen;
+                actual.ShowDialog();
+                Tables.RefreshTablesInUse();
+            }
         }
 
         //Event for open the configurationScreen
@@ -78,5 +140,60 @@ namespace BarPOS
         {
             this.Close();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (!edit)
+            {
+                edit = true;
+                btnEdit.BackColor = Color.Red;
+            }
+            else
+            {
+                edit = false;
+                btnEdit.BackColor = SystemColors.Control;
+            }
+            drawTexts();
+        }
+
+        /*
+        public int X, Y;
+        public bool Movimiento;
+
+        private void btnPrint_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (edit)
+            {
+                X = e.X;
+                Y = e.Y;
+                if (e.Button == MouseButtons.Left)
+                {
+                    Movimiento = true;
+                }
+            }
+        }
+
+        private void btnPrint_MouseMove(object sender, MouseEventArgs e)
+        {
+            int tableNumber = Convert.ToInt32(((Button)sender).Text);
+
+            if (Movimiento)
+            {
+                Table actual = Tables.Tables.Get(tableNumber);
+
+                Tables.Tables.ChangePosition(e.X + actual.X - X,
+                    e.Y + actual.Y - Y, tableNumber);
+                DrawTable(tableNumber);
+            }
+        }
+
+        private void btnPrint_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (edit)
+            {
+                Movimiento = false;
+            }
+        }
+        */
     }
 }

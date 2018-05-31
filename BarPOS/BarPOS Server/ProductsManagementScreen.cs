@@ -16,13 +16,58 @@ namespace BarPOS
     public partial class ProductsManagmentScreen : Form
     {
         private ProductManagementClass ProductManagement;
+        private SearchScreen searchScreen;
+        Languajes languaje;
 
-        public ProductsManagmentScreen(ProductsList products)
+        public ProductsManagmentScreen(ProductsList products, Languajes languaje)
         {
             ProductManagement = new ProductManagementClass(products);
-
+            searchScreen = new SearchScreen(languaje);
             InitializeComponent();
             Draw();
+            this.languaje = languaje;
+            drawTexts();
+        }
+
+        private void drawTexts()
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    btnBackToMainMenu.Text = "Volver al menu";
+                    lblDescription.Text = "Descripción:";
+                    lblPrice.Text = "Precio:";
+                    lblStock.Text = "Stock:";
+                    lblMinimunStock.Text = "Stock mínimo:";
+                    lblCategory.Text = "Categoría:";
+                    lblBuyPrice.Text = "Precio compra:";
+                    lblCode.Text = "Codigo:";
+                    btnBack.Text = "Volver";
+                    btnModify.Text = "Modificar";
+                    btnDelete.Text = "Borrar";
+                    btnAdd.Text = "Añadir";
+                    btnValidate.Text = "Añadir";
+                    btnSearch.Text = "Buscar";
+                    lblProduct.Text = "Producto";
+                    break;
+                case Languajes.English:
+                    btnBackToMainMenu.Text = "Back to main";
+                    lblDescription.Text = "Description:";
+                    lblPrice.Text = "Price:";
+                    lblStock.Text = "Stock:";
+                    lblMinimunStock.Text = "Minimun Stock:";
+                    lblCategory.Text = "Category:";
+                    lblBuyPrice.Text = "Buy Price:";
+                    lblCode.Text = "Code:";
+                    btnBack.Text = "Back";
+                    btnModify.Text = "Modify";
+                    btnDelete.Text = "Delete";
+                    btnAdd.Text = "Add";
+                    btnValidate.Text = "Add";
+                    btnSearch.Text = "Search";
+                    lblProduct.Text = "Product";
+                    break;
+            }
         }
 
         //Method to draw the actual product
@@ -51,6 +96,7 @@ namespace BarPOS
                 txtPrice.Text = actualProduct.Price + "";
                 txtStock.Text = actualProduct.Stock + "";
             }
+            drawTexts();
         }
 
         public void Save()
@@ -170,7 +216,6 @@ namespace BarPOS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchScreen searchScreen = new SearchScreen();
             searchScreen.StartPosition = FormStartPosition.CenterParent;
             searchScreen.ShowDialog();
             if (ProductManagement.Search(searchScreen.TextToSearch))

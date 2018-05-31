@@ -35,19 +35,19 @@
             this.btnTableDown = new System.Windows.Forms.Button();
             this.lblTableNumber = new System.Windows.Forms.Label();
             this.lblBoxNumber = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblBox = new System.Windows.Forms.Label();
+            this.lblTableText = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
-            this.lblW = new System.Windows.Forms.Label();
+            this.lblEmployeeText = new System.Windows.Forms.Label();
             this.pnlProductsToSell = new System.Windows.Forms.Panel();
             this.pnlPayProduct = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnExitHelp = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblVA = new System.Windows.Forms.Label();
@@ -58,9 +58,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
             this.pnlTableProducts = new System.Windows.Forms.Panel();
             this.pnlTableProduct = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,7 +73,6 @@
             this.panel4.SuspendLayout();
             this.pnlProductsToSell.SuspendLayout();
             this.pnlPayProduct.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlTableProducts.SuspendLayout();
@@ -100,10 +99,10 @@
             this.panel4.Controls.Add(this.btnTableDown);
             this.panel4.Controls.Add(this.lblTableNumber);
             this.panel4.Controls.Add(this.lblBoxNumber);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.lblBox);
+            this.panel4.Controls.Add(this.lblTableText);
             this.panel4.Controls.Add(this.lblWorker);
-            this.panel4.Controls.Add(this.lblW);
+            this.panel4.Controls.Add(this.lblEmployeeText);
             this.panel4.Location = new System.Drawing.Point(24, 23);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(977, 50);
@@ -177,27 +176,28 @@
             this.lblBoxNumber.TabIndex = 15;
             this.lblBoxNumber.Text = "1";
             // 
-            // label2
+            // lblBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(308, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 42);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Box nº";
+            this.lblBox.AutoSize = true;
+            this.lblBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblBox.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBox.Location = new System.Drawing.Point(308, 3);
+            this.lblBox.Name = "lblBox";
+            this.lblBox.Size = new System.Drawing.Size(126, 42);
+            this.lblBox.TabIndex = 16;
+            this.lblBox.Text = "Box nº";
             // 
-            // label3
+            // lblTableText
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(656, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 42);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Table nº";
+            this.lblTableText.AutoSize = true;
+            this.lblTableText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblTableText.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableText.Location = new System.Drawing.Point(656, 3);
+            this.lblTableText.Name = "lblTableText";
+            this.lblTableText.Size = new System.Drawing.Size(150, 42);
+            this.lblTableText.TabIndex = 17;
+            this.lblTableText.Text = "Table nº";
+            this.lblTableText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblWorker
             // 
@@ -213,24 +213,24 @@
             this.lblWorker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblWorker_MouseDown);
             this.lblWorker.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblWorker_MouseUp);
             // 
-            // lblW
+            // lblEmployeeText
             // 
-            this.lblW.AutoSize = true;
-            this.lblW.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblW.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblW.Location = new System.Drawing.Point(2, 3);
-            this.lblW.Name = "lblW";
-            this.lblW.Size = new System.Drawing.Size(180, 42);
-            this.lblW.TabIndex = 18;
-            this.lblW.Text = "Employee";
+            this.lblEmployeeText.AutoSize = true;
+            this.lblEmployeeText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblEmployeeText.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeText.Location = new System.Drawing.Point(2, 3);
+            this.lblEmployeeText.Name = "lblEmployeeText";
+            this.lblEmployeeText.Size = new System.Drawing.Size(180, 42);
+            this.lblEmployeeText.TabIndex = 18;
+            this.lblEmployeeText.Text = "Employee";
             // 
-            // pnlPayProducts
+            // pnlProductsToSell
             // 
             this.pnlProductsToSell.AutoScroll = true;
             this.pnlProductsToSell.BackColor = System.Drawing.Color.Transparent;
             this.pnlProductsToSell.Controls.Add(this.pnlPayProduct);
             this.pnlProductsToSell.Location = new System.Drawing.Point(671, 130);
-            this.pnlProductsToSell.Name = "pnlPayProducts";
+            this.pnlProductsToSell.Name = "pnlProductsToSell";
             this.pnlProductsToSell.Size = new System.Drawing.Size(348, 283);
             this.pnlProductsToSell.TabIndex = 59;
             // 
@@ -246,6 +246,34 @@
             this.pnlPayProduct.Name = "pnlPayProduct";
             this.pnlPayProduct.Size = new System.Drawing.Size(330, 33);
             this.pnlPayProduct.TabIndex = 53;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 23);
+            this.label10.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 23);
+            this.label11.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 23);
+            this.label9.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 0;
             // 
             // label12
             // 
@@ -285,7 +313,6 @@
             this.label14.TabIndex = 50;
             this.label14.Text = " 2";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // btnExitHelp
             // 
@@ -357,9 +384,9 @@
             this.btnPay.FlatAppearance.BorderSize = 0;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPay.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(74, 182);
+            this.btnPay.Location = new System.Drawing.Point(18, 182);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(169, 100);
+            this.btnPay.Size = new System.Drawing.Size(302, 100);
             this.btnPay.TabIndex = 6;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = false;
@@ -402,52 +429,52 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblDescription);
+            this.panel1.Controls.Add(this.lblPrice);
+            this.panel1.Controls.Add(this.lblAmount);
             this.panel1.Location = new System.Drawing.Point(671, 96);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(330, 37);
             this.panel1.TabIndex = 59;
             // 
-            // label4
+            // lblDescription
             // 
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 33);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "Description";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDescription.BackColor = System.Drawing.Color.White;
+            this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDescription.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblDescription.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(0, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(135, 33);
+            this.lblDescription.TabIndex = 51;
+            this.lblDescription.Text = "Description";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblPrice
             // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(135, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 33);
-            this.label5.TabIndex = 52;
-            this.label5.Text = "Price";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrice.BackColor = System.Drawing.Color.White;
+            this.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPrice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblPrice.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(135, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(85, 33);
+            this.lblPrice.TabIndex = 52;
+            this.lblPrice.Text = "Price";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblAmount
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(220, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 33);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Amount";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAmount.BackColor = System.Drawing.Color.White;
+            this.lblAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAmount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblAmount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(220, 0);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(108, 33);
+            this.lblAmount.TabIndex = 50;
+            this.lblAmount.Text = "Amount";
+            this.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlTableProducts
             // 
@@ -528,9 +555,9 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(954, 698);
+            this.btnBack.Location = new System.Drawing.Point(941, 698);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(70, 70);
+            this.btnBack.Size = new System.Drawing.Size(83, 70);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -584,7 +611,6 @@
             this.panel4.PerformLayout();
             this.pnlProductsToSell.ResumeLayout(false);
             this.pnlPayProduct.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -604,9 +630,9 @@
         private System.Windows.Forms.Button btnTableDown;
         private System.Windows.Forms.Label lblTableNumber;
         private System.Windows.Forms.Label lblBoxNumber;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblW;
+        private System.Windows.Forms.Label lblBox;
+        private System.Windows.Forms.Label lblTableText;
+        private System.Windows.Forms.Label lblEmployeeText;
         private System.Windows.Forms.Panel pnlProductsToSell;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblVA;
@@ -621,9 +647,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;

@@ -30,6 +30,7 @@
         {
             this.picTables = new System.Windows.Forms.PictureBox();
             this.btnConfiguration = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picTables)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,13 +51,27 @@
             this.btnConfiguration.FlatAppearance.BorderSize = 0;
             this.btnConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfiguration.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguration.Location = new System.Drawing.Point(914, 698);
+            this.btnConfiguration.Location = new System.Drawing.Point(898, 698);
             this.btnConfiguration.Name = "btnConfiguration";
-            this.btnConfiguration.Size = new System.Drawing.Size(110, 70);
+            this.btnConfiguration.Size = new System.Drawing.Size(126, 70);
             this.btnConfiguration.TabIndex = 1;
             this.btnConfiguration.Text = "Configuration";
             this.btnConfiguration.UseVisualStyleBackColor = false;
             this.btnConfiguration.Click += new System.EventHandler(this.btnConfiguration_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(0, 698);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(132, 70);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "EditModeON";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // TableScreen
             // 
@@ -64,6 +79,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnConfiguration);
             this.Controls.Add(this.picTables);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -77,6 +93,7 @@
 
         private System.Windows.Forms.PictureBox picTables;
         private System.Windows.Forms.Button btnConfiguration;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 

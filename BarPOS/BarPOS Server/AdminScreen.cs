@@ -5,6 +5,7 @@
 // V0.02 16-May-2018 Moisés: Events to open the different windows
 // V0.03 21-May-2018 Moisés: Loader method
 
+using System;
 using System.Windows.Forms;
 
 namespace BarPOS
@@ -18,6 +19,7 @@ namespace BarPOS
         AccountingManagmentScreen accountingScreen;
         UsersManagmentScreen usersScreen;
         ProductsManagmentScreen productsScreen;
+        Languajes languaje;
 
         public AdminScreen()
         {
@@ -27,6 +29,24 @@ namespace BarPOS
 
             LoadComponents();
             InitializeComponent();
+            languaje = Languajes.English;
+        }
+
+        private void drawTexts()
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    btnAccount.Text = "Facturas";
+                    btnProducts.Text = "Productos";
+                    btnUsers.Text = "Usuarios";
+                    break;
+                case Languajes.English:
+                    btnAccount.Text = "Accounts";
+                    btnProducts.Text = "Products";
+                    btnUsers.Text = "Users";
+                    break;
+            }
         }
 
         //Method to check if everything loads correctly
@@ -56,21 +76,21 @@ namespace BarPOS
             {
                 case "btnUsers":
                     usersScreen = new
-                        UsersManagmentScreen(Users);
+                        UsersManagmentScreen(Users, languaje);
                     usersScreen.StartPosition = 
                         FormStartPosition.CenterScreen;
                     usersScreen.Show();
                     break;
                 case "btnProducts":
                     productsScreen = new
-                        ProductsManagmentScreen(Products);
+                        ProductsManagmentScreen(Products, languaje);
                     productsScreen.StartPosition = 
                         FormStartPosition.CenterScreen;
                     productsScreen.Show();
                     break;
                 case "btnAccount":
                     accountingScreen =
-                        new AccountingManagmentScreen(Bills);
+                        new AccountingManagmentScreen(Bills, languaje);
                     accountingScreen.StartPosition = 
                         FormStartPosition.CenterScreen;
                     accountingScreen.Show();
@@ -84,6 +104,18 @@ namespace BarPOS
         private void btnClose_Click(object sender, System.EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEnglish_Click(object sender, System.EventArgs e)
+        {
+            this.languaje = Languajes.English;
+            drawTexts();
+        }
+
+        private void btnSpanish_Click(object sender, System.EventArgs e)
+        {
+            this.languaje = Languajes.Castellano;
+            drawTexts();
         }
     }
 }

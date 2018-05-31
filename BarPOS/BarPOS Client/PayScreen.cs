@@ -13,14 +13,17 @@ namespace BarPOS
     public partial class PayScreen : Form
     {
         public PayClass Pay { get; set; }
+        public bool Paid { get; set; }
 
         public PayScreen(ProductToSellList products, BillList bills,
-            User actualUser, int table, double total)
+            User actualUser, int table, double total, Languajes languaje)
         {
             Pay = new PayClass(products, bills, actualUser, table, total);
 
             InitializeComponent();
+            drawTexts(languaje);
             Draw();
+            drawTexts(languaje);
         }
 
         private void Draw()
@@ -28,6 +31,23 @@ namespace BarPOS
             lblTotal.Text = Pay.Total.ToString("0.##");
             lblChange.Text = 0.ToString();
             lblGiven.Text = 0.ToString();
+        }
+
+        private void drawTexts(Languajes languaje)
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    lblGivenText.Text = "Recibido";
+                    lblMoneyBackText.Text = "Devolver";
+                    btnPay.Text = "Cobrar";
+                    break;
+                case Languajes.English:
+                    lblGivenText.Text = "Given";
+                    lblMoneyBackText.Text = "Money Back";
+                    btnPay.Text = "Pay";
+                    break;
+            }
         }
 
         //Event to close the actual windows
@@ -46,6 +66,7 @@ namespace BarPOS
                 printPreviewDialog.Document = printDocument;
                 printPreviewDialog.ShowDialog();
                 Pay.Bills.Add(Pay.ActualBill);
+                Paid = true;
             }
         }
 

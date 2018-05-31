@@ -22,6 +22,34 @@ namespace BarPOS
             Configuration = new ConfigurationClass();
             LoadComponents();
             InitializeComponent();
+            draw();
+        }
+
+        private void draw()
+        {
+            switch (Configuration.Languaje)
+            {
+                case Languajes.Castellano:
+                    btnBack.Text = "Mesas";
+                    btnPrint.Text = "Imprimir Cuentas Diarias";
+                    btnBox.Text = "Abrir caja";
+                    lblLogin.Text = "Inicio de sesión requerido!!";
+                    btnClose.Text = "Cerrar";
+                    btnLogIn.Text = "Iniciar Sesion";
+                    btnLogOut.Text = "Cerrar Sesion";
+                    btnHelp.Text = "Ayuda";
+                    break;
+                case Languajes.English:
+                    btnBack.Text = "Tables";
+                    btnPrint.Text = "Print Daily Accounts";
+                    btnBox.Text = "Open box";
+                    lblLogin.Text = "Login required!!";
+                    btnClose.Text = "Close";
+                    btnLogIn.Text = "Log In";
+                    btnLogOut.Text = "Log Out";
+                    btnHelp.Text = "Help";
+                    break;
+            }
         }
 
         //Method to check if everything loads correctly
@@ -52,7 +80,7 @@ namespace BarPOS
                 TableScreen tableScreen = 
                     new TableScreen(Configuration.Products,
                     Configuration.Bills,
-                    LogInScreen.LogedUser);
+                    LogInScreen.LogedUser, Configuration.Languaje);
                 tableScreen.StartPosition = FormStartPosition.CenterScreen;
                 tableScreen.Show();
             }
@@ -66,7 +94,8 @@ namespace BarPOS
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            LogInScreen = new LogInScreen(Configuration.Users);
+            LogInScreen = new LogInScreen(Configuration.Users,
+                Configuration.Languaje);
             LogInScreen.StartPosition = FormStartPosition.CenterScreen;
             LogInScreen.ShowDialog();
             if (LogInScreen.Login)
@@ -115,9 +144,21 @@ namespace BarPOS
         {
             double total = Configuration.CalculateTotalWon(
                 LogInScreen.LogedUser);
-            e.Graphics.DrawString("Total earned: "+total, new
+            e.Graphics.DrawString("Total earned: " + total, new
                     Font("Times new Roman", 40, FontStyle.Regular),
                     Brushes.Black, new PointF(0, 0));
+        }
+
+        private void btnEnglish_Click(object sender, EventArgs e)
+        {
+            Configuration.Languaje = Languajes.English;
+            draw();
+        }
+
+        private void btnSpanish_Click(object sender, EventArgs e)
+        {
+            Configuration.Languaje = Languajes.Castellano;
+            draw();
         }
     }
 }

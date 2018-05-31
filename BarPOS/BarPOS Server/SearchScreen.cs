@@ -12,9 +12,25 @@ namespace BarPOS
     {
         public string TextToSearch { get; set; }
 
-        public SearchScreen()
+        public SearchScreen(Languajes languaje)
         {
             InitializeComponent();
+            drawTexts(languaje);
+        }
+
+        private void drawTexts(Languajes languaje)
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    lblText.Text = "Texto de búsqueda";
+                    btnSearch.Text = "Buscar";
+                    break;
+                case Languajes.English:
+                    lblText.Text = "Text to search";
+                    btnSearch.Text = "Search";
+                    break;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -35,6 +35,7 @@ namespace BarPOS
             return Tables[index - 1];
         }
 
+
         public void Add(Table newTable)
         {
             Tables.Add(newTable);
@@ -45,9 +46,10 @@ namespace BarPOS
             Tables.RemoveAt(removeIndex - 1);
         }
 
-        public void ChangePosition()
+        public void ChangePosition(int newX, int newY, int Index)
         {
-            //TO DO
+            Tables[Index - 1].X = newX;
+            Tables[Index - 1].Y = newY;
         }
 
         public string Load()

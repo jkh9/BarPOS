@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.btnLogIn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserCode = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUserPass = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogIn
             // 
             this.btnLogIn.Font = new System.Drawing.Font("Arial", 21.75F);
-            this.btnLogIn.Location = new System.Drawing.Point(88, 143);
+            this.btnLogIn.Location = new System.Drawing.Point(83, 143);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(165, 63);
             this.btnLogIn.TabIndex = 3;
@@ -46,15 +46,15 @@
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
-            // label1
+            // lblUserCode
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 35);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User Code";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUserCode.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserCode.Location = new System.Drawing.Point(3, 16);
+            this.lblUserCode.Name = "lblUserCode";
+            this.lblUserCode.Size = new System.Drawing.Size(165, 35);
+            this.lblUserCode.TabIndex = 1;
+            this.lblUserCode.Text = "User Code";
+            this.lblUserCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCode
             // 
@@ -64,15 +64,15 @@
             this.txtCode.Size = new System.Drawing.Size(148, 41);
             this.txtCode.TabIndex = 1;
             // 
-            // label2
+            // lblUserPass
             // 
-            this.label2.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 35);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User Pass";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUserPass.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserPass.Location = new System.Drawing.Point(3, 71);
+            this.lblUserPass.Name = "lblUserPass";
+            this.lblUserPass.Size = new System.Drawing.Size(165, 35);
+            this.lblUserPass.TabIndex = 1;
+            this.lblUserPass.Text = "User Pass";
+            this.lblUserPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPass
             // 
@@ -90,8 +90,8 @@
             this.ClientSize = new System.Drawing.Size(329, 218);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtCode);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblUserPass);
+            this.Controls.Add(this.lblUserCode);
             this.Controls.Add(this.btnLogIn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LogInScreen";
@@ -104,9 +104,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserCode;
         private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUserPass;
         private System.Windows.Forms.TextBox txtPass;
     }
 }

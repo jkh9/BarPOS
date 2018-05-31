@@ -44,6 +44,8 @@ namespace BarPOS
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.btnEnglish = new System.Windows.Forms.Button();
+            this.btnSpanish = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +68,8 @@ namespace BarPOS
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnSpanish);
+            this.panel1.Controls.Add(this.btnEnglish);
             this.panel1.Controls.Add(this.btnExitHelp);
             this.panel1.Controls.Add(this.btnHelp);
             this.panel1.Controls.Add(this.lblLogin);
@@ -192,7 +196,7 @@ namespace BarPOS
             // 
             this.picHelp.BackColor = System.Drawing.Color.Transparent;
             this.picHelp.Image = global::BarPOS.Properties.Resources.picHelp;
-            this.picHelp.Location = new System.Drawing.Point(32, 49);
+            this.picHelp.Location = new System.Drawing.Point(-14, 49);
             this.picHelp.Name = "picHelp";
             this.picHelp.Size = new System.Drawing.Size(877, 606);
             this.picHelp.TabIndex = 87;
@@ -212,6 +216,34 @@ namespace BarPOS
             // printDocument
             // 
             this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // btnEnglish
+            // 
+            this.btnEnglish.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEnglish.FlatAppearance.BorderSize = 0;
+            this.btnEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEnglish.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnglish.Location = new System.Drawing.Point(747, 159);
+            this.btnEnglish.Name = "btnEnglish";
+            this.btnEnglish.Size = new System.Drawing.Size(88, 38);
+            this.btnEnglish.TabIndex = 88;
+            this.btnEnglish.Text = "English";
+            this.btnEnglish.UseVisualStyleBackColor = false;
+            this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
+            // 
+            // btnSpanish
+            // 
+            this.btnSpanish.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSpanish.FlatAppearance.BorderSize = 0;
+            this.btnSpanish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSpanish.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpanish.Location = new System.Drawing.Point(841, 159);
+            this.btnSpanish.Name = "btnSpanish";
+            this.btnSpanish.Size = new System.Drawing.Size(91, 38);
+            this.btnSpanish.TabIndex = 88;
+            this.btnSpanish.Text = "Spanish";
+            this.btnSpanish.UseVisualStyleBackColor = false;
+            this.btnSpanish.Click += new System.EventHandler(this.btnSpanish_Click);
             // 
             // ConfigurationScreen
             // 
@@ -245,5 +277,7 @@ namespace BarPOS
         private System.Windows.Forms.Button btnExitHelp;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.Button btnSpanish;
+        private System.Windows.Forms.Button btnEnglish;
     }
 }

@@ -113,7 +113,7 @@ namespace BarPOS
             ProductsToSell.Get(product).Amount++;
         }
 
-        public void SubstractPayProduct(ProductToSell product)
+        public void SubstractProductToSell(ProductToSell product)
         {
             if (ProductsToSell.Get(product).Amount < 2)
             {

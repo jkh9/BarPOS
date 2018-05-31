@@ -16,12 +16,52 @@ namespace BarPOS
     public partial class AccountingManagmentScreen : Form
     {
         private AccountingManagementClass AccountingManagement;
+        private SearchScreen searchScreen;
+        Languajes languaje;
 
-        public AccountingManagmentScreen(BillList bills)
+        public AccountingManagmentScreen(BillList bills, Languajes languaje)
         {
             AccountingManagement = new AccountingManagementClass(bills);
+            searchScreen = new SearchScreen(languaje);
             InitializeComponent();
             Draw();
+            this.languaje = languaje;
+            drawTexts();
+        }
+
+        private void drawTexts()
+        {
+            switch (languaje)
+            {
+                case Languajes.Castellano:
+                    lblBill.Text = "Factura";
+                    lblChangeText.Text = "Cambio";
+                    lblMoneyGivenText.Text = "Dinero Recibido";
+                    lblTotalPriceText.Text = "Precio Total";
+                    lblProduct.Text = "Producto";
+                    lblPrice.Text = "Precio";
+                    lblUnits.Text = "Unidades";
+                    btnBack.Text = "Volver";
+                    btnPrint.Text = "Imprimir";
+                    btnSearch.Text = "Buscar";
+                    lblEmployeeText.Text = "Empleado";
+                    btnBackToMainMenu.Text = "Volver al menu";
+                    break;
+                case Languajes.English:
+                    lblBill.Text = "Bill";
+                    lblChangeText.Text = "Change";
+                    lblMoneyGivenText.Text = "Money Given";
+                    lblTotalPriceText.Text = "Total Price";
+                    lblProduct.Text = "Product";
+                    lblPrice.Text = "Price";
+                    lblUnits.Text = "Units";
+                    btnBack.Text = "Back";
+                    btnPrint.Text = "Print";
+                    btnSearch.Text = "Search";
+                    lblEmployeeText.Text = "Employee";
+                    btnBackToMainMenu.Text = "Back to main";
+                    break;
+            }
         }
 
         //Method to draw the actual product
@@ -134,6 +174,7 @@ namespace BarPOS
                     pnlBill.Controls.Add(LinePanel);
                 }
             }
+            drawTexts();
         }
 
         //Event to close the window
@@ -175,7 +216,6 @@ namespace BarPOS
 
         private void btnSearch_Click(object sender, System.EventArgs e)
         {
-            SearchScreen searchScreen = new SearchScreen();
             searchScreen.StartPosition = FormStartPosition.CenterParent;
             searchScreen.ShowDialog();
             if (AccountingManagement.Search(searchScreen.TextToSearch))

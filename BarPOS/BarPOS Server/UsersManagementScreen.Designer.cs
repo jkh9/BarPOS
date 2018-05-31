@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.pnlTopBar = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.lblUserIndex = new System.Windows.Forms.Label();
             this.btnForward = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnBackward = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCode = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnValidate = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
@@ -64,15 +64,15 @@
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
-            // label1
+            // lblName
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(178, 278);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 40);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Name:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(168, 278);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(111, 40);
+            this.lblName.TabIndex = 17;
+            this.lblName.Text = "Name:";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbImage
             // 
@@ -89,7 +89,7 @@
             // pnlTopBar
             // 
             this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnlTopBar.Controls.Add(this.label4);
+            this.pnlTopBar.Controls.Add(this.lblUser);
             this.pnlTopBar.Controls.Add(this.lblUserIndex);
             this.pnlTopBar.Controls.Add(this.btnForward);
             this.pnlTopBar.Controls.Add(this.btnClose);
@@ -99,16 +99,16 @@
             this.pnlTopBar.Size = new System.Drawing.Size(700, 50);
             this.pnlTopBar.TabIndex = 15;
             // 
-            // label4
+            // lblUser
             // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(192, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 42);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "User";
+            this.lblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblUser.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(119, 5);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(168, 42);
+            this.lblUser.TabIndex = 42;
+            this.lblUser.Text = "Usuario";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblUserIndex
             // 
@@ -165,16 +165,17 @@
             this.btnBackward.UseVisualStyleBackColor = false;
             this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
-            // label3
+            // lblCode
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(178, 381);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 32);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Code:";
+            this.lblCode.AutoSize = true;
+            this.lblCode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblCode.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblCode.Location = new System.Drawing.Point(183, 381);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(94, 32);
+            this.lblCode.TabIndex = 22;
+            this.lblCode.Text = "Code:";
+            this.lblCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnSearch
             // 
@@ -226,7 +227,7 @@
             this.btnModify.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.Location = new System.Drawing.Point(12, 595);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(130, 90);
+            this.btnModify.Size = new System.Drawing.Size(151, 90);
             this.btnModify.TabIndex = 14;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
@@ -240,7 +241,7 @@
             this.btnBackToMainMenu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToMainMenu.Location = new System.Drawing.Point(-1, 49);
             this.btnBackToMainMenu.Name = "btnBackToMainMenu";
-            this.btnBackToMainMenu.Size = new System.Drawing.Size(129, 46);
+            this.btnBackToMainMenu.Size = new System.Drawing.Size(163, 46);
             this.btnBackToMainMenu.TabIndex = 36;
             this.btnBackToMainMenu.Text = "Back to main";
             this.btnBackToMainMenu.UseVisualStyleBackColor = false;
@@ -275,15 +276,15 @@
             this.btnValidate.Visible = false;
             this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 331);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 40);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Password:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPassword.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(123, 331);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(155, 40);
+            this.lblPassword.TabIndex = 17;
+            this.lblPassword.Text = "Password:";
+            this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPassword
             // 
@@ -318,12 +319,12 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.btnBackToMainMenu);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCode);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.pnlTopBar);
             this.Controls.Add(this.btnSearch);
@@ -344,11 +345,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
@@ -358,10 +359,10 @@
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnBackward;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblUserIndex;
     }
 }

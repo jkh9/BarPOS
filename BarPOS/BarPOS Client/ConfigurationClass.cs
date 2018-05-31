@@ -14,6 +14,7 @@ namespace BarPOS
         public ProductsList Products { get; }
         public UsersList Users { get; }
         public bool LogIn { get; set; }
+        public Languajes Languaje { get; set; }
 
         public ConfigurationClass()
         {
@@ -21,6 +22,7 @@ namespace BarPOS
             Bills = new BillList();
             Users = new UsersList();
             LogIn = false;
+            Languaje = Languajes.English;
         }
 
         public void LogInUser()

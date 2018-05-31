@@ -33,6 +33,8 @@
             this.btnAccount = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnSpanish = new System.Windows.Forms.Button();
+            this.btnEnglish = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,12 +103,42 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnSpanish
+            // 
+            this.btnSpanish.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSpanish.FlatAppearance.BorderSize = 0;
+            this.btnSpanish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSpanish.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpanish.Location = new System.Drawing.Point(588, 56);
+            this.btnSpanish.Name = "btnSpanish";
+            this.btnSpanish.Size = new System.Drawing.Size(108, 38);
+            this.btnSpanish.TabIndex = 89;
+            this.btnSpanish.Text = "Castellano";
+            this.btnSpanish.UseVisualStyleBackColor = false;
+            this.btnSpanish.Click += new System.EventHandler(this.btnSpanish_Click);
+            // 
+            // btnEnglish
+            // 
+            this.btnEnglish.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEnglish.FlatAppearance.BorderSize = 0;
+            this.btnEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEnglish.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnglish.Location = new System.Drawing.Point(501, 56);
+            this.btnEnglish.Name = "btnEnglish";
+            this.btnEnglish.Size = new System.Drawing.Size(88, 38);
+            this.btnEnglish.TabIndex = 90;
+            this.btnEnglish.Text = "English";
+            this.btnEnglish.UseVisualStyleBackColor = false;
+            this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
+            // 
             // AdminScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 700);
+            this.Controls.Add(this.btnSpanish);
+            this.Controls.Add(this.btnEnglish);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.btnProducts);
@@ -126,5 +158,7 @@
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnSpanish;
+        private System.Windows.Forms.Button btnEnglish;
     }
 }

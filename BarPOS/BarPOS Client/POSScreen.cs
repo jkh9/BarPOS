@@ -25,16 +25,48 @@ namespace BarPOS
     {
         public POSSClass POS { get; set; }
         PayScreen PayScreen;
+        Languajes Languaje;
 
         public POSScreen(ProductsList products, TableList tables,
-            BillList bills, int index, User employee)
+            BillList bills, int index, User employee, Languajes languaje)
         {
             POS = new POSSClass(products, tables, bills, index,employee);
             InitializeComponent();
 
             DrawCategories();
             DrawTableProducts();
-            DrawProductsToPay();
+            DrawProductsToSell();
+            Languaje = languaje;
+            drawTexts();
+        }
+
+        private void drawTexts()
+        {
+            switch (Languaje)
+            {
+                case Languajes.Castellano:
+                    lblEmployeeText.Text = "Empleado";
+                    lblBox.Text = "Caja";
+                    btnPay.Text = "Cobrar";
+                    btnHelp.Text = "Ayuda";
+                    lblTableText.Text = "Mesa nº";
+                    lblDescription.Text = "Descripcion" ;
+                    lblPrice.Text = "Precio";
+                    lblAmount.Text = "Cantidad";
+                    btnBack.Text = "Volver";
+                    break;
+                case Languajes.English:
+                    lblEmployeeText.Text = "Employee";
+                    lblBox.Text = "Box";
+                    btnPay.Text = "Pay";
+                    btnHelp.Text = "Help";
+                    lblTableText.Text = "Table nº";
+                    lblDescription.Text = "Description";
+                    lblPrice.Text = "Price";
+                    lblAmount.Text = "Amount";
+                    btnBack.Text = "Back";
+                    break;
+            }
         }
 
         private void DrawCategories()
@@ -150,7 +182,15 @@ namespace BarPOS
                             product.Name = "lbl";
                             product.Size = new System.Drawing.Size(90, 70);
                             product.TabIndex = 57;
-                            product.Text = "BACK";
+                            switch (Languaje)
+                            {
+                                case Languajes.Castellano:
+                                    product.Text = "Volver";
+                                    break;
+                                case Languajes.English:
+                                    product.Text = "BACK";
+                                    break;
+                            }
                             product.BackgroundImageLayout = ImageLayout.Stretch;
                             product.UseVisualStyleBackColor = true;
                             product.Click +=
@@ -293,7 +333,7 @@ namespace BarPOS
             }
         }
 
-        private void DrawProductsToPay()
+        private void DrawProductsToSell()
         {
             pnlProductsToSell.Controls.Clear();
             this.lblWorker.Text = POS.Employee.Code.ToString("000");
@@ -395,11 +435,14 @@ namespace BarPOS
             if (POS.ProductsToSell.Count > 0)
             {
                 PayScreen = new PayScreen(POS.ProductsToSell, POS.Bills,
-                POS.Employee, POS.Index, POS.Total);
+                POS.Employee, POS.Index, POS.Total, Languaje);
                 PayScreen.StartPosition = FormStartPosition.CenterScreen;
                 PayScreen.ShowDialog();
-                POS.ProductsToSell.Clear();
-                DrawProductsToPay();
+                if (PayScreen.Paid)
+                {
+                    POS.ProductsToSell.Clear();
+                }
+                DrawProductsToSell();
             }
         }
 
@@ -507,7 +550,7 @@ namespace BarPOS
 
             POS.MoveToProductsToSell(product);
 
-            DrawProductsToPay();
+            DrawProductsToSell();
             DrawTableProducts();
         }
 
@@ -522,9 +565,9 @@ namespace BarPOS
             product.ActualProduct = Products.Get(index).ActualProduct;
 
             POS.MoveToTableProducts(product);
-            POS.SubstractPayProduct(product);
+            POS.SubstractProductToSell(product);
 
-            DrawProductsToPay();
+            DrawProductsToSell();
             DrawTableProducts();
         }
     }

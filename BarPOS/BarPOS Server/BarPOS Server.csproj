@@ -57,6 +57,9 @@
     <Compile Include="..\BarPOS Client\BillList.cs">
       <Link>BillList.cs</Link>
     </Compile>
+    <Compile Include="..\BarPOS Client\Languajes.cs">
+      <Link>Languajes.cs</Link>
+    </Compile>
     <Compile Include="..\BarPOS Client\Product.cs">
       <Link>Product.cs</Link>
     </Compile>

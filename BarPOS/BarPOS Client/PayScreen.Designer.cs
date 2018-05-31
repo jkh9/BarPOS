@@ -44,9 +44,9 @@ namespace BarPOS
             this.btn8 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalText = new System.Windows.Forms.Label();
+            this.lblGivenText = new System.Windows.Forms.Label();
+            this.lblMoneyBackText = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblChange = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -219,35 +219,35 @@ namespace BarPOS
             this.btn7.UseVisualStyleBackColor = true;
             this.btn7.Click += new System.EventHandler(this.btnNumbers_Click);
             // 
-            // label1
+            // lblTotalText
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 40);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Total: ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalText.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalText.Location = new System.Drawing.Point(12, 40);
+            this.lblTotalText.Name = "lblTotalText";
+            this.lblTotalText.Size = new System.Drawing.Size(185, 40);
+            this.lblTotalText.TabIndex = 7;
+            this.lblTotalText.Text = "Total: ";
+            this.lblTotalText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lblGivenText
             // 
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 40);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Given:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGivenText.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGivenText.Location = new System.Drawing.Point(12, 83);
+            this.lblGivenText.Name = "lblGivenText";
+            this.lblGivenText.Size = new System.Drawing.Size(185, 40);
+            this.lblGivenText.TabIndex = 8;
+            this.lblGivenText.Text = "Given:";
+            this.lblGivenText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lblMoneyBackText
             // 
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 40);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Money Back:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMoneyBackText.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoneyBackText.Location = new System.Drawing.Point(12, 129);
+            this.lblMoneyBackText.Name = "lblMoneyBackText";
+            this.lblMoneyBackText.Size = new System.Drawing.Size(185, 40);
+            this.lblMoneyBackText.TabIndex = 8;
+            this.lblMoneyBackText.Text = "Money Back:";
+            this.lblMoneyBackText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTotal
             // 
@@ -381,9 +381,9 @@ namespace BarPOS
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btn0);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMoneyBackText);
+            this.Controls.Add(this.lblGivenText);
+            this.Controls.Add(this.lblTotalText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PayScreen";
             this.Text = "PayScreen";
@@ -408,9 +408,9 @@ namespace BarPOS
         private System.Windows.Forms.Button btn8;
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button btn7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotalText;
+        private System.Windows.Forms.Label lblGivenText;
+        private System.Windows.Forms.Label lblMoneyBackText;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.Button btnClose;
