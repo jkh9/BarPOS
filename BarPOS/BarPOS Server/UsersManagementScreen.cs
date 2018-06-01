@@ -127,7 +127,7 @@ namespace BarPOS
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
-            if (UserManagement.Count > 1)
+            if (UserManagement.Count > 1 && !UserManagement.DrawFounds)
             {
                 updateUser();
             }
@@ -137,7 +137,7 @@ namespace BarPOS
 
         private void btnForward_Click(object sender, EventArgs e)
         {
-            if (UserManagement.Count > 1)
+            if (UserManagement.Count > 1 && !UserManagement.DrawFounds)
             {
                 updateUser();
             }
@@ -190,6 +190,8 @@ namespace BarPOS
                 Draw();
                 pnlTopBar.BackColor = Color.Gold;
                 this.btnBack.Visible = true;
+                this.btnAdd.Visible = false;
+                this.btnModify.Visible = false;
             }
             else
             {
@@ -200,6 +202,8 @@ namespace BarPOS
         private void btnBack_Click(object sender, System.EventArgs e)
         {
             this.btnBack.Visible = false;
+            this.btnAdd.Visible = true;
+            this.btnModify.Visible = true;
             UserManagement.DrawFounds = false;
             pnlTopBar.BackColor = Color.Gainsboro;
 
