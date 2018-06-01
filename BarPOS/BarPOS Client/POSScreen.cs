@@ -280,10 +280,20 @@ namespace BarPOS
                 Label lblAmount = new Label();
                 lblAmount.BackColor = System.Drawing.Color.White;
                 lblAmount.BorderStyle = BorderStyle.FixedSingle;
-                lblAmount.Font = 
-                    new System.Drawing.Font("Arial", 
+                if (actualProduct.Amount > 99)
+                {
+                    lblAmount.Font =
+                    new System.Drawing.Font("Arial",
+                    21.75F, System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else
+                {
+                    lblAmount.Font =
+                    new System.Drawing.Font("Arial",
                     27.75F, System.Drawing.FontStyle.Regular,
                     System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
                 lblAmount.Location = new System.Drawing.Point(-9, 78);
                 lblAmount.Name = "label15";
                 lblAmount.Size = new System.Drawing.Size(68, 65);

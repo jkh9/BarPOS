@@ -104,9 +104,18 @@ namespace BarPOS
         {
             this.Controls.Clear();
             this.InitializeComponent();
-            this.txtCode.Text = (UserManagement.GetActualUser().Code + 1).
+            if (UserManagement.Count == 0)
+            {
+                this.txtCode.Text = "001";
+            }
+            else
+            {
+                this.txtCode.Text = (UserManagement.GetActualUser().Code + 1).
                 ToString("000");
+            }
 
+            lblUserIndex.Text =
+                    (UserManagement.Index+1) + "/" + UserManagement.Count;
             this.btnForward.Visible = false;
             this.btnBackward.Visible = false;
             this.btnAdd.Visible = false;
@@ -118,14 +127,20 @@ namespace BarPOS
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
-            updateUser();
+            if (UserManagement.Count > 1)
+            {
+                updateUser();
+            }
             UserManagement.MoveBackward();
             Draw();
         }
 
         private void btnForward_Click(object sender, EventArgs e)
         {
-            updateUser();
+            if (UserManagement.Count > 1)
+            {
+                updateUser();
+            }
             UserManagement.MoveForward();
             Draw();
         }

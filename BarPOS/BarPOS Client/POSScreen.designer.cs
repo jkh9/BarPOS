@@ -529,12 +529,12 @@
             // 
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(-9, 78);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 65);
             this.label15.TabIndex = 82;
-            this.label15.Text = "10";
+            this.label15.Text = "100";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1

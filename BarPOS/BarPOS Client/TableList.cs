@@ -50,6 +50,7 @@ namespace BarPOS
         {
             Tables[Index - 1].X = newX;
             Tables[Index - 1].Y = newY;
+            Save();
         }
 
         public string Load()

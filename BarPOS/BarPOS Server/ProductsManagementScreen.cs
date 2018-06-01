@@ -118,8 +118,19 @@ namespace BarPOS
         {
             this.Controls.Clear();
             this.InitializeComponent();
-            this.txtCode.Text = (ProductManagement.Count + 1).
+
+            if (ProductManagement.Count == 0)
+            {
+                this.txtCode.Text = "001";
+            }
+            else
+            {
+                this.txtCode.Text = (ProductManagement.Count + 1).
                 ToString("000");
+            }
+
+            lblIndex.Text =
+                    (ProductManagement.Index + 1) + "/" + ProductManagement.Count;
 
             this.btnForward.Visible = false;
             this.btnBackward.Visible = false;
@@ -166,14 +177,20 @@ namespace BarPOS
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
-            modify();
+            if (ProductManagement.Count > 1)
+            {
+                modify();
+            }
             ProductManagement.MoveBackward();
             Draw();
         }
 
         private void btnForward_Click(object sender, EventArgs e)
         {
-            modify();
+            if (ProductManagement.Count > 1)
+            {
+                modify();
+            }
             ProductManagement.MoveForward();
             Draw();
         }

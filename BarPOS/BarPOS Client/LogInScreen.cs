@@ -42,6 +42,11 @@ namespace BarPOS
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            tryLogin();            
+        }
+
+        private void tryLogin()
+        {
             try
             {
                 int code = Convert.ToInt32(txtCode.Text);
@@ -69,6 +74,14 @@ namespace BarPOS
             }
 
             this.Close();
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                tryLogin();
+            }
         }
     }
 }

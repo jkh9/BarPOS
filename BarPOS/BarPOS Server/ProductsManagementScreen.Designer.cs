@@ -184,7 +184,7 @@ namespace BarPOS
             this.txtPrice.Location = new System.Drawing.Point(313, 274);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(288, 32);
-            this.txtPrice.TabIndex = 23;
+            this.txtPrice.TabIndex = 21;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
@@ -206,7 +206,7 @@ namespace BarPOS
             this.txtStock.Location = new System.Drawing.Point(313, 321);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(288, 32);
-            this.txtStock.TabIndex = 25;
+            this.txtStock.TabIndex = 22;
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
@@ -228,7 +228,7 @@ namespace BarPOS
             this.txtMinimunStock.Location = new System.Drawing.Point(313, 368);
             this.txtMinimunStock.Name = "txtMinimunStock";
             this.txtMinimunStock.Size = new System.Drawing.Size(288, 32);
-            this.txtMinimunStock.TabIndex = 27;
+            this.txtMinimunStock.TabIndex = 23;
             this.txtMinimunStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMinimunStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
@@ -250,7 +250,7 @@ namespace BarPOS
             this.txtCategory.Location = new System.Drawing.Point(313, 415);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(288, 32);
-            this.txtCategory.TabIndex = 29;
+            this.txtCategory.TabIndex = 24;
             this.txtCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
@@ -282,7 +282,7 @@ namespace BarPOS
             this.txtBuyPrice.Location = new System.Drawing.Point(313, 462);
             this.txtBuyPrice.Name = "txtBuyPrice";
             this.txtBuyPrice.Size = new System.Drawing.Size(288, 32);
-            this.txtBuyPrice.TabIndex = 30;
+            this.txtBuyPrice.TabIndex = 25;
             this.txtBuyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBuyPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
@@ -309,7 +309,7 @@ namespace BarPOS
             this.btnAdd.Location = new System.Drawing.Point(373, 598);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(130, 90);
-            this.btnAdd.TabIndex = 31;
+            this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -323,7 +323,7 @@ namespace BarPOS
             this.btnDelete.Location = new System.Drawing.Point(194, 598);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(130, 90);
-            this.btnDelete.TabIndex = 32;
+            this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -337,7 +337,7 @@ namespace BarPOS
             this.btnModify.Location = new System.Drawing.Point(12, 598);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(151, 90);
-            this.btnModify.TabIndex = 33;
+            this.btnModify.TabIndex = 28;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
@@ -403,7 +403,7 @@ namespace BarPOS
             this.txtCode.Location = new System.Drawing.Point(313, 509);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(288, 32);
-            this.txtCode.TabIndex = 30;
+            this.txtCode.TabIndex = 26;
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 

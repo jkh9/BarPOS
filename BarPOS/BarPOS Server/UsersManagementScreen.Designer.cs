@@ -200,7 +200,7 @@
             this.btnAdd.Location = new System.Drawing.Point(373, 595);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(130, 90);
-            this.btnAdd.TabIndex = 12;
+            this.btnAdd.TabIndex = 23;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -214,7 +214,7 @@
             this.btnDelete.Location = new System.Drawing.Point(194, 595);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(130, 90);
-            this.btnDelete.TabIndex = 13;
+            this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -228,7 +228,7 @@
             this.btnModify.Location = new System.Drawing.Point(12, 595);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(151, 90);
-            this.btnModify.TabIndex = 14;
+            this.btnModify.TabIndex = 21;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = false;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
@@ -294,7 +294,7 @@
             this.txtPassword.Location = new System.Drawing.Point(295, 334);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(272, 32);
-            this.txtPassword.TabIndex = 18;
+            this.txtPassword.TabIndex = 19;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
@@ -306,7 +306,7 @@
             this.txtCode.Location = new System.Drawing.Point(295, 381);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(272, 32);
-            this.txtCode.TabIndex = 18;
+            this.txtCode.TabIndex = 20;
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.any_KeyPress);
             // 
