@@ -78,3 +78,17 @@ C:\Users\Alumno\Desktop\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.cspr
 C:\Users\Alumno\Desktop\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csproj.CoreCompileInputs.cache
 C:\Users\Alumno\Desktop\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.exe
 C:\Users\Alumno\Desktop\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.pdb
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.exe.config
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.exe
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\bin\Debug\BarPOS.pdb
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csprojAssemblyReference.cache
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.ConfigurationScreen.resources
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.LogInScreen.resources
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.PayScreen.resources
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.POSScreen.resources
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.Properties.Resources.resources
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.TableScreen.resources
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csproj.GenerateResource.cache
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS Client.csproj.CoreCompileInputs.cache
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.exe
+C:\Users\jkh9L\Desktop\Repositories\BarPOS\BarPOS\BarPOS Client\obj\Debug\BarPOS.pdb
